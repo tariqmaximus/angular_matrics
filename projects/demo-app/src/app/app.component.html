@@ -1,1 +1,36 @@
-<ng-moringa-table ></ng-moringa-table>
+<ng-moringa-table 
+title="BackLog"
+  icon="bi bi-grid"
+[statusMap]="statusMap"
+  [variant]="'responsive round-card shadowed '"
+  [collapsible]="true"
+  [data]="data"
+  [progressBy]="'lost'"
+  [searchFilter]="true"
+  [searchBy]="'status'"
+  [pageSize]="5"
+  [Sorting]="true"
+  [paginated]="true"
+  [showActions]="true"
+  [actionButtons]="[
+    {
+      label: 'Transfer to',
+      tooltip: 'Transfer to leads',
+      className: 'icon-btn-success',
+      isDropdown: true,
+      options: ['lead board', 'Actives', 'scheduled']
+    },
+    {
+      label: 'Delete',
+      icon: 'bi bi-trash', 
+      tooltip: 'Delete Lead',
+      className: 'icon-btn-danger'
+    },
+    {
+      label: 'Copy',
+      icon: 'bi bi-files',
+      tooltip: 'Copy Details',
+      className: 'icon-btn-info'
+    }
+  ]"
+></ng-moringa-table>
