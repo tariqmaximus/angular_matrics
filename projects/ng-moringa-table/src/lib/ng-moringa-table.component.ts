@@ -9,7 +9,6 @@ import {
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-
 interface CardButton {
   label?: string;
   icon?: string;
@@ -30,13 +29,12 @@ interface ActionButton {
 
 let uniqueCounter = 0;
 
-
 @Component({
   selector: 'ng-moringa-table',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './ng-moringa-table.component.html',
-  styleUrls: ['./ng-moringa-table.component.css']
+  styleUrls: ['./ng-moringa-table.css']
 })
 export class NgMoringaTableComponent implements OnInit, OnChanges {
   @Input() type!: string;
@@ -44,7 +42,9 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   @Input() columns: { key: string; label: string }[] = [];
   @Input() showActions = true;
   @Input() variant = '';
-  @Input() imgstatus = '';
+  @Input() mediaImage: string = '';
+  @Input() nameLetters: string = '';
+  @Input() mediaStatus = '';
   @Input() title?: string;
   @Input() sub?: string;
   @Input() icon?: string;
@@ -70,6 +70,7 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   activeRowIndex: number | null = null;
   selectedRows: any[] = [];
   filteredData: any[] = [];
+  imageLoadFailedMap: { [key: string]: boolean } = {}; // Track failed images
 
   dataFilters = false;
   searchKeyword = '';
@@ -274,8 +275,10 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
     return val !== undefined && val !== null ? String(val) : '-';
   }
 
-  handleImageError(e: Event): void {
-    (e.target as HTMLImageElement).src = 'assets/dummy.jpg';
+  handleImageError(event: Event, row: any): void {
+    const key = row?.id || row?.[this.searchKey] || row?.name || JSON.stringify(row);
+    this.imageLoadFailedMap[key] = true;
+    (event.target as HTMLImageElement).src = '';
   }
 
   handleButtonClick(btn: ActionButton, row: any): void {
