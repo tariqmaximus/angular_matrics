@@ -992,6 +992,18 @@ table tr td {
   padding: 15px;
   font-size: 14px;
 }
+table tr td .value-lenth {
+  display: inline-block;
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  cursor: pointer;
+}
+table tr td .value-lenth:hover {
+  text-decoration: underline dotted;
+}
 table tr:last-child {
   border: none;
 }

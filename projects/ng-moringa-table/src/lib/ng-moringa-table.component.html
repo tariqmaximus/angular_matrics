@@ -11,20 +11,22 @@
           <span class="text-muted">{{ sub }}</span>
         </h6>
 
-<ul *ngIf="filterStyle === 'tabs'" class="nav nav-tabs mb-2" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" [ngClass]="{ active: selectedOption === '' }" (click)="selectTabOption('')" type="button" role="tab">
-     
-      All
-    </button>
-  </li>
-  <li class="nav-item" role="presentation" *ngFor="let option of searchOptions">
-    <button class="nav-link" [ngClass]="{ active: selectedOption === option }" (click)="selectTabOption(option)" type="button" role="tab">
-      <span class="badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
-      {{ option }}
-    </button>
-  </li>
-</ul>
+        <ul *ngIf="filterStyle === 'tabs'" class="nav nav-tabs mb-2" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" [ngClass]="{ active: selectedOption === '' }" (click)="selectTabOption('')"
+              type="button" role="tab">
+
+              All
+            </button>
+          </li>
+          <li class="nav-item" role="presentation" *ngFor="let option of searchOptions">
+            <button class="nav-link" [ngClass]="{ active: selectedOption === option }" (click)="selectTabOption(option)"
+              type="button" role="tab">
+              <span class="badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
+              {{ option }}
+            </button>
+          </li>
+        </ul>
 
 
         <ng-container *ngIf="filterStyle === 'dropdown'">
@@ -39,78 +41,77 @@
       <div class="d-flex align-items-center flex-wrap gap-2 justify-content-end">
         <ng-content select="[header-component]"></ng-content>
         <div class="form-group mb-0">
-         <div class="form-group mb-0">
-  <button *ngIf="searchButton" class="btn " (click)="toggleFilters()">
-    <i class="bi bi-search"></i>
-  </button>
+          <div class="form-group mb-0">
+            <button *ngIf="searchButton" class="btn " (click)="toggleFilters()">
+              <i class="bi bi-search"></i>
+            </button>
+            <ng-container *ngIf="filterSearch">
 
-  <ng-container *ngIf="filterSearch">
+              <!-- Keyword input -->
+              <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchKeyword"
+                (ngModelChange)="onSearchKeywordChange($event)" />
 
-            <!-- Keyword input -->
-            <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchKeyword"
-              (ngModelChange)="onSearchKeywordChange($event)" />
-
-            <!-- Date calendar button -->
-            <input class="btn" (click)="toggleCalendar()" style="min-width: 120px;"
-              value="{{ selectedDate | date: 'y, MMMM, d' }}">
-
+              <!-- Date calendar button -->
+              <input class="btn" (click)="toggleCalendar()" style="min-width: 120px;"
+                value="{{ selectedDate | date: 'y, MMMM, d' }}">
 
 
 
 
-            <!-- Calendar Popup -->
-            <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
-              <div class="d-flex justify-content-between gap-2 mb-2">
-                <select class="form-select" [(ngModel)]="selectedMonth">
-                  <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
-                </select>
-                <select class="form-select" [(ngModel)]="selectedYear">
-                  <option *ngFor="let y of years" [value]="y">{{ y }}</option>
-                </select>
-              </div>
 
-              <div class="d-grid" style="grid-template-columns: repeat(7, 1fr); gap: 4px;">
-                <div class="text-center fw-bold" *ngFor="let d of dayNames">{{ d }}</div>
-                <div *ngFor="let day of calendarDays" class="text-center p-1 border rounded"
-                  [class.bg-primary]="isSelected(day)" [class.text-white]="isSelected(day)" (click)="selectDate(day)"
-                  style="cursor: pointer;">
-                  {{ day.getDate() }}
+              <!-- Calendar Popup -->
+              <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
+                <div class="d-flex justify-content-between gap-2 mb-2">
+                  <select class="form-select" [(ngModel)]="selectedMonth">
+                    <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
+                  </select>
+                  <select class="form-select" [(ngModel)]="selectedYear">
+                    <option *ngFor="let y of years" [value]="y">{{ y }}</option>
+                  </select>
+                </div>
+
+                <div class="d-grid" style="grid-template-columns: repeat(7, 1fr); gap: 4px;">
+                  <div class="text-center fw-bold" *ngFor="let d of dayNames">{{ d }}</div>
+                  <div *ngFor="let day of calendarDays" class="text-center p-1 border rounded"
+                    [class.bg-primary]="isSelected(day)" [class.text-white]="isSelected(day)" (click)="selectDate(day)"
+                    style="cursor: pointer;">
+                    {{ day.getDate() }}
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between mt-3">
+                  <button class="btn btn-sm" (click)="cancel()">Cancel</button>
+                  <button class="btn btn-sm btn-primary" (click)="confirm()">Confirm</button>
                 </div>
               </div>
+            </ng-container>
+          </div>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button *ngFor="let button of headerButtons" type="button" class="btn " [id]="button.targetId"
+              (click)="executeAction(button)">
+              <i *ngIf="button.icon" [class]="button.icon"></i>
+              <span *ngIf="button.label">{{ button.label }}</span>
+            </button>
 
-              <div class="d-flex justify-content-between mt-3">
-                <button class="btn btn-sm" (click)="cancel()">Cancel</button>
-                <button class="btn btn-sm btn-primary" (click)="confirm()">Confirm</button>
-              </div>
-            </div>
-          </ng-container>
+            <button *ngIf="collapsible" class="btn " type="button" (click)="toggleCard()">
+              <i [class]="isCollapsed ? 'bi bi-arrows-expand' : 'bi bi-arrows-collapse'"></i>
+            </button>
+          </div>
         </div>
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button *ngFor="let button of headerButtons" type="button" class="btn " [id]="button.targetId"
-            (click)="executeAction(button)">
-            <i *ngIf="button.icon" [class]="button.icon"></i>
-            <span *ngIf="button.label">{{ button.label }}</span>
-          </button>
 
-          <button *ngIf="collapsible" class="btn " type="button" (click)="toggleCard()">
-            <i [class]="isCollapsed ? 'bi bi-arrows-expand' : 'bi bi-arrows-collapse'"></i>
-          </button>
-        </div>
       </div>
 
-    </div>
 
-    
-  </div>
-  <div *ngIf="progressBy" class="progress">
+    </div>
+    <div *ngIf="progressBy" class="progress">
       <div class="progress-bar" [ngClass]="getStatusStyles(selectedOption || progressBy).progressClass"
         role="progressbar" [style.width.%]="progressValue" [attr.aria-valuenow]="progressValue" aria-valuemin="0"
         aria-valuemax="100">
         <p class="tag">{{ progressValue }}%</p>
       </div>
     </div>
-</div>
- <div class="moringa-wraper-body  p-0">
+  </div>
+  <div class="moringa-wraper-body  p-0">
 
     <div class="pt-2 ">
       <table [ngClass]="variant">
@@ -195,7 +196,7 @@
 
                       </div>
 
-                      <div class="profile-details">
+                      <div class="profile-details" >
                         <p class="mb-0 name  text-dark">{{ row.name || 'Unknown' }}</p>
                         <p class="mb-0 text-muted">{{ row.source || 'No Information' }}</p>
                       </div>
@@ -232,7 +233,11 @@
                   </div>
                 </ng-container>
                 <ng-container *ngSwitchDefault>
-                  <span class="value">{{ getValue(row, column.key) }}</span>
+                  <span class="value"
+      [ngClass]="{ 'value-lenth': shouldApplyValueLenth(column.key) }"
+      [attr.title]="shouldApplyValueLenth(column.key) ? getValue(row, column.key) : null">
+  {{ getValue(row, column.key) }}
+</span>
                 </ng-container>
               </ng-container>
             </td>

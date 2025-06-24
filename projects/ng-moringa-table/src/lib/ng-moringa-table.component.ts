@@ -54,7 +54,7 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   @Input() idPrefix?: string;
   @Input() headerButtons: CardButton[] = [];
   @Input() actionButtons: ActionButton[] = [];
-
+@Input() valueLenthColumns: string[] = [];
   @Input() filterBy?: string;
   @Input() filterStyle: 'tabs' | 'dropdown' | 'none' = 'none';
   @Input() searchButton = true;
@@ -100,7 +100,9 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   get filterSearch(): boolean {
     return this.filterStyle !== 'none';
   }
-
+shouldApplyValueLenth(key: string): boolean {
+  return this.valueLenthColumns.includes(key);
+}
   toggleFilters(): void {
     this.datePicker = !this.datePicker;
   }
