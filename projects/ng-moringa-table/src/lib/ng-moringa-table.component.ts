@@ -54,8 +54,10 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   @Input() idPrefix?: string;
   @Input() headerButtons: CardButton[] = [];
   @Input() actionButtons: ActionButton[] = [];
-  @Input() searchBy?: string;
-  @Input() searchFilter = false;
+
+  @Input() filterBy?: string;
+  @Input() filterStyle: 'tabs' | 'dropdown' | 'none' = 'none';
+  @Input() searchButton = true;
   @Input() Sorting = false;
   @Input() autoGenerateColumns = true;
   @Input() excludeColumns: string[] = [];
@@ -70,9 +72,8 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   activeRowIndex: number | null = null;
   selectedRows: any[] = [];
   filteredData: any[] = [];
-  imageLoadFailedMap: { [key: string]: boolean } = {}; // Track failed images
+  imageLoadFailedMap: { [key: string]: boolean } = {};
 
-  dataFilters = false;
   searchKeyword = '';
   selectedOption = '';
   startDate: Date | null = null;
@@ -96,6 +97,14 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   calendarDays: Date[] = [];
 
+  get filterSearch(): boolean {
+    return this.filterStyle !== 'none';
+  }
+
+  toggleFilters(): void {
+    this.datePicker = !this.datePicker;
+  }
+
   ngOnInit(): void {
     this.internalIdPrefix = this.idPrefix || `smart-table-${uniqueCounter++}`;
     this.normalizeActionButtons();
@@ -106,11 +115,6 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.applyFilters();
-  }
-
-  toggleFilters(): void {
-    this.dataFilters = !this.dataFilters;
-    if (!this.dataFilters) this.datePicker = false;
   }
 
   applyFilters(): void {
@@ -160,6 +164,11 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
 
   onSearchOptionChange(event: Event): void {
     this.selectedOption = (event.target as HTMLSelectElement).value;
+    this.applyFilters();
+  }
+
+  selectTabOption(option: string): void {
+    this.selectedOption = option;
     this.applyFilters();
   }
 
@@ -232,11 +241,11 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   }
 
   get shouldShowSearchOptions(): boolean {
-    return !!this.searchBy;
+    return !!this.filterBy;
   }
 
   get searchKey(): string {
-    return this.searchBy || '';
+    return this.filterBy || '';
   }
 
   get searchOptions(): string[] {

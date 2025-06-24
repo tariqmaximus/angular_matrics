@@ -1,13 +1,14 @@
+<!-- Use: 'tabs' | 'dropdown' | 'none' -->
 <ng-moringa-table 
-title="BackLog"
+  title="BackLog"
   icon="bi bi-grid"
-[statusMap]="statusMap"
-  [variant]="'responsive round-card shadowed '"
+  [statusMap]="statusMap"
+  [variant]="'responsive round-card shadowed'"
   [collapsible]="true"
   [data]="data"
   [progressBy]="'lost'"
-  [searchFilter]="true"
-  [searchBy]="'status'"
+  [filterBy]="'status'"
+  [filterStyle]="'tabs'"
   [pageSize]="5"
   mediaImage="assets/dummy.jpg"
   [Sorting]="true"
@@ -23,7 +24,7 @@ title="BackLog"
     },
     {
       label: 'Delete',
-      icon: 'bi bi-trash', 
+      icon: 'bi bi-trash',
       tooltip: 'Delete Lead',
       className: 'icon-btn-danger'
     },
@@ -34,4 +35,4 @@ title="BackLog"
       className: 'icon-btn-info'
     }
   ]"
-></ng-moringa-table>
+/>

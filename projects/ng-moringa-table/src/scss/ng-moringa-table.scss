@@ -262,12 +262,24 @@
     box-shadow: none !important;
   }
 
-  &:hover {
-    ::-webkit-scrollbar {
-      display: block !important;
+.nav-tabs {
+  margin: 0 !important;
+  margin-left: variables.$table-spacing !important;
+  .nav-item {
+    border: none;
+    padding: 0;
+    .nav-link {
+      padding:variables.$btn-spacing  variables.$table-spacing;
+      color: variables.$muted-color;
+      text-transform: capitalize;
+      font-size: 12px;
+      border-radius: variables.$table-round;
+      &.active {
+        background-color: variables.$bs-border;
+      }
     }
-
   }
+}
 
   .date-picker {
     position: absolute;
@@ -341,7 +353,7 @@
     margin-top: variables.$card-header-height ;
    
   max-width: 100%;
-  overflow-X:scroll;
+  overflow-X:auto;
    
     &.no-header {
       margin-top: 0 !important;

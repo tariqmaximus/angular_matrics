@@ -1,23 +1,35 @@
 {
-    "name": "ng-moringa-table",
-    "version": "1.0.4",
-    "author": "Tariq Jarral",
-    "description": "A modern, responsive, dynamic Angular table component",
-    "keywords": [
-        "angular",
-        "table",
-        "component"
-    ],
-    "license": "MIT",
-    "peerDependencies": {
-        "@angular/common": "^19.2.0",
-        "@angular/core": "^19.2.0",
-        "bootstrap": "^5.3.7"
-    },
-    "dependencies": {
-        "bootstrap-icons": "^1.13.1"
-    },
-    "main": "fesm2022/ng-moringa-table.mjs",
-    "module": "fesm2022/ng-moringa-table.mjs",
-    "typings": "index.d.ts"
+  "name": "ng-moringa-table",
+  "version": "1.0.1",
+  "author": "Tariq Jarral",
+  "description": "A modern, responsive, and reusable Angular smart table component with filters, pagination, and action controls.",
+  "keywords": [
+    "angular",
+    "smart-table",
+    "responsive-table",
+    "angular-component",
+    "data-table",
+    "dynamic-table"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0",
+    "bootstrap": "^5.3.7"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.13.1"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./fesm2022/ng-moringa-table.mjs",
+      "default": "./fesm2022/ng-moringa-table.mjs"
+    }
+  },
+  "sideEffects": false,
+  "module": "fesm2022/ng-moringa-table.mjs",
+  "typings": "index.d.ts"
 }

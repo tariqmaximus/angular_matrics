@@ -499,8 +499,23 @@
     box-shadow: none !important;
   }
 }
-.moringa-wraper:hover ::-webkit-scrollbar {
-  display: block !important;
+.moringa-wraper .nav-tabs {
+  margin: 0 !important;
+  margin-left: 15px !important;
+}
+.moringa-wraper .nav-tabs .nav-item {
+  border: none;
+  padding: 0;
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link {
+  padding: 5px 15px;
+  color: #888888;
+  text-transform: capitalize;
+  font-size: 12px;
+  border-radius: 8px;
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link.active {
+  background-color: #e7e7e7;
 }
 .moringa-wraper .date-picker {
   position: absolute;
@@ -566,7 +581,7 @@
   transition: 0.4s;
   margin-top: 60px;
   max-width: 100%;
-  overflow-X: scroll;
+  overflow-X: auto;
 }
 .moringa-wraper .moringa-wraper-body.no-header {
   margin-top: 0 !important;

@@ -4,25 +4,45 @@
     <div class="container-fluid ">
 
       <div class="d-flex align-items-center gap-2">
-        <ng-content select="[header-component]"></ng-content>
+
         <i class="title-icon" *ngIf="icon" [class]="icon"></i>
         <h6 class="table-title">
           {{ title }}
           <span class="text-muted">{{ sub }}</span>
         </h6>
+
+     <ul *ngIf="filterStyle === 'tabs'" class="nav nav-tabs mb-2" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" [ngClass]="{ active: selectedOption === '' }" (click)="selectTabOption('')" type="button" role="tab">
+      All
+    </button>
+  </li>
+  <li class="nav-item" role="presentation" *ngFor="let option of searchOptions">
+    <button class="nav-link" [ngClass]="{ active: selectedOption === option }" (click)="selectTabOption(option)" type="button" role="tab">
+      {{ option }}
+    </button>
+  </li>
+</ul>
+
+
+        <ng-container *ngIf="filterStyle === 'dropdown'">
+          <select class="form-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
+            <option value="">All</option>
+            <option *ngFor="let option of searchOptions" [value]="option">{{ option }}</option>
+          </select>
+        </ng-container>
+
+
       </div>
       <div class="d-flex align-items-center flex-wrap gap-2 justify-content-end">
+        <ng-content select="[header-component]"></ng-content>
         <div class="form-group mb-0">
-          <button *ngIf="searchFilter" class="btn " (click)="toggleFilters()">
-            <i class="bi bi-search"></i>
-          </button>
+         <div class="form-group mb-0">
+  <button *ngIf="searchButton" class="btn " (click)="toggleFilters()">
+    <i class="bi bi-search"></i>
+  </button>
 
-          <ng-container *ngIf="dataFilters">
-
-            <select class="form-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
-              <option value="">All</option>
-              <option *ngFor="let option of searchOptions" [value]="option">{{ option }}</option>
-            </select>
+  <ng-container *ngIf="filterSearch">
 
             <!-- Keyword input -->
             <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchKeyword"
@@ -78,17 +98,17 @@
 
     </div>
 
-    <div *ngIf="progressBy" class="progress">
+    
+  </div>
+  <div *ngIf="progressBy" class="progress">
       <div class="progress-bar" [ngClass]="getStatusStyles(selectedOption || progressBy).progressClass"
         role="progressbar" [style.width.%]="progressValue" [attr.aria-valuenow]="progressValue" aria-valuemin="0"
         aria-valuemax="100">
         <p class="tag">{{ progressValue }}%</p>
       </div>
     </div>
-  </div>
-
-
-  <div class="moringa-wraper-body  p-0">
+</div>
+ <div class="moringa-wraper-body  p-0">
 
     <div class="pt-2 ">
       <table [ngClass]="variant">
