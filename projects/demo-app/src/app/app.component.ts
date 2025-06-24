@@ -18,6 +18,7 @@ export class AppComponent {
   confirmed: 'info',
   completed: 'success',
   failed: 'danger',
+  archived: 'muted',
   cancelled: 'danger',
   lost: 'danger',
   backlog: 'light',
