@@ -19,6 +19,7 @@
   </li>
   <li class="nav-item" role="presentation" *ngFor="let option of searchOptions">
     <button class="nav-link" [ngClass]="{ active: selectedOption === option }" (click)="selectTabOption(option)" type="button" role="tab">
+      <span class="badge" >3</span>
       {{ option }}
     </button>
   </li>

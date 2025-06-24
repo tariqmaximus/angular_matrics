@@ -502,9 +502,11 @@
 .moringa-wraper .nav-tabs {
   margin: 0 !important;
   margin-left: 15px !important;
+  gap: 15px;
+  border: none;
 }
 .moringa-wraper .nav-tabs .nav-item {
-  border: none;
+  border: none !important;
   padding: 0;
 }
 .moringa-wraper .nav-tabs .nav-item .nav-link {
@@ -512,10 +514,112 @@
   color: #888888;
   text-transform: capitalize;
   font-size: 12px;
+  border: none !important;
   border-radius: 8px;
+  position: relative;
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge {
+  border-radius: 50px;
+  padding: 5px;
+  background: white;
+  color: #63634e;
+  font-size: 10px;
+  text-transform: uppercase;
+  right: -2px;
+  top: -2px;
+  height: auto;
+  position: absolute;
+  display: none;
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.success {
+  color: var(--success-color, #28a745);
+  background-color: rgb(175.1304347826, 235.8695652174, 189);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.pending {
+  color: var(--warning-color, #f1a10a);
+  background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.info {
+  color: var(--info-color, #17a2b8);
+  background-color: rgb(167, 233.4782608696, 244);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.danger {
+  color: var(--error-color, #dc3545);
+  background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.warning {
+  color: var(--warning-color, #f1a10a);
+  background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.primary {
+  color: var(--prim-color, #007bff);
+  background-color: rgb(204, 228.6, 255);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.muted {
+  color: var(--muted-color, #888888);
+  background-color: #eeeeee;
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.secondary {
+  color: var(--muted-color, #888888);
+  background-color: #eeeeee;
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.light {
+  color: var(--prim-bg, #888888);
+  background-color: hsl(210, 16.6666666667%, 137.6470588235%);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.default {
+  color: var(--bg-color, #adb5bd);
+  background-color: hsl(210, 10.8108108108%, 110.9803921569%);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.archived {
+  color: var(--archived-color, #888888);
+  background-color: hsl(210, 10.8108108108%, 110.9803921569%);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.processing {
+  color: var(--processing-color, var(--info-color, #17a2b8));
+  background-color: rgb(167, 233.4782608696, 244);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.failed {
+  color: var(--error-color, #dc3545);
+  background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.queued {
+  color: var(--info-color, #17a2b8);
+  background-color: rgb(167, 233.4782608696, 244);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.on-hold {
+  color: var(--muted-color, #888888);
+  background-color: #eeeeee;
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.suspended {
+  color: var(--dark-color, #212529);
+  background-color: rgb(126.4594594595, 139, 151.5405405405);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.expired {
+  color: var(--light-color, #f1f3f5);
+  background-color: hsl(210, 16.6666666667%, 135.2941176471%);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.rejected {
+  color: var(--error-color, #dc3545);
+  background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.approved {
+  color: var(--success-color, #28a745);
+  background-color: rgb(175.1304347826, 235.8695652174, 189);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.active {
+  color: var(--prim-color, #007bff);
+  background-color: rgb(204, 228.6, 255);
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link .badge.draft {
+  color: var(--text-color, #888888);
+  background-color: rgb(175.6125, 182, 188.3875);
 }
 .moringa-wraper .nav-tabs .nav-item .nav-link.active {
-  background-color: #e7e7e7;
+  background: #e7e7e7;
+}
+.moringa-wraper .nav-tabs .nav-item .nav-link.active .badge {
+  display: block;
 }
 .moringa-wraper .date-picker {
   position: absolute;

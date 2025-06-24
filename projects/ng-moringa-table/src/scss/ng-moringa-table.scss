@@ -265,17 +265,49 @@
 .nav-tabs {
   margin: 0 !important;
   margin-left: variables.$table-spacing !important;
+  gap: variables.$table-spacing;
+  border: none;
   .nav-item {
-    border: none;
+    border: none !important;
     padding: 0;
     .nav-link {
       padding:variables.$btn-spacing  variables.$table-spacing;
       color: variables.$muted-color;
       text-transform: capitalize;
       font-size: 12px;
+      border: none !important;
       border-radius: variables.$table-round;
+     position: relative;
+    
+
+
+.badge {
+  border-radius: 50px;
+  padding: 5px;
+  background: white;
+  color: variables.$dark-color;
+  font-size: 10px;
+  text-transform: uppercase;
+  right: -2px;
+  top: -2px;
+  height: auto;
+  position: absolute;
+display: none;
+  @each $name, $color in variants.$variants {
+    &.#{$name} {
+        color: $color;
+  $fallback: map.get(variants.$variant-colors, $name);
+  background-color: if($fallback != null, color.adjust($fallback, $lightness: 40%), color.adjust($color, 10%));
+    }
+  }
+}
+
       &.active {
-        background-color: variables.$bs-border;
+        background: variables.$bs-border;
+        .badge {
+          display: block;
+          
+        }
       }
     }
   }
