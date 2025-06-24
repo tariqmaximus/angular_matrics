@@ -994,7 +994,7 @@ table tr td {
 }
 table tr td .value-lenth {
   display: inline-block;
-  max-width: 150px;
+  max-width: 100px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
