@@ -11,15 +11,16 @@
           <span class="text-muted">{{ sub }}</span>
         </h6>
 
-     <ul *ngIf="filterStyle === 'tabs'" class="nav nav-tabs mb-2" id="myTab" role="tablist">
+<ul *ngIf="filterStyle === 'tabs'" class="nav nav-tabs mb-2" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link" [ngClass]="{ active: selectedOption === '' }" (click)="selectTabOption('')" type="button" role="tab">
+     
       All
     </button>
   </li>
   <li class="nav-item" role="presentation" *ngFor="let option of searchOptions">
     <button class="nav-link" [ngClass]="{ active: selectedOption === option }" (click)="selectTabOption(option)" type="button" role="tab">
-      <span class="badge" >3</span>
+      <span class="badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
       {{ option }}
     </button>
   </li>

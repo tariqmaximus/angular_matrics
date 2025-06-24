@@ -147,6 +147,10 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
     this.currentPage = 1;
   }
 
+  getTabCount(option: string): number {
+    return this.filteredData.filter(item => item[this.searchKey] === option).length;
+  }
+
   sortByColumn(key: string): void {
     if (this.sortKey === key) {
       this.sortAsc = !this.sortAsc;
