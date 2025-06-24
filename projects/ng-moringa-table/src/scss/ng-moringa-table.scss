@@ -340,7 +340,8 @@
     transition: 0.4s;
     margin-top: variables.$card-header-height ;
    
-
+  max-width: 100%;
+  overflow-X:scroll;
    
     &.no-header {
       margin-top: 0 !important;
@@ -508,6 +509,7 @@
 table {
   width: 100%;
   background: none;
+
   .media-tile {
   display: flex;
   align-items: center;
@@ -580,9 +582,8 @@ table {
     font-size: 12px;
     font-weight: 500;
     color: variables.$muted-color;
-
+padding:calc($table-spacing) ;
     text-transform: uppercase;
-    padding: variables.$table-spacing ;
 
     &:last-child {
       >div {
@@ -623,7 +624,7 @@ table {
     }
 
     td {
-     padding: 0;
+     padding:calc($table-spacing) ;
       font-size: 14px;
 
     }
