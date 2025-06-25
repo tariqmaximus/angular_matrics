@@ -3,6 +3,7 @@ import { NgMoringaTableComponent } from '../../../ng-moringa-table/src/public-ap
 
 
 
+
 @Component({
   selector: 'app-root',
   imports: [NgMoringaTableComponent],

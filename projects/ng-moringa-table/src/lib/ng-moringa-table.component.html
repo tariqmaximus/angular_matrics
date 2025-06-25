@@ -1,6 +1,6 @@
-<div class="moringa-wraper" [class.collapsed]="isCollapsed">
+<div class="moringa-wraper" [class.collapsed]="isCollapsed"  [ngClass]="variant">
 
-  <div class="moringa-wraper-header" *ngIf="moringaHeader">
+  <div class="moringa-header" *ngIf="moringaHeader">
     <div class="container-fluid ">
 
       <div class="d-flex align-items-center gap-2">
@@ -10,8 +10,8 @@
           {{ title }}
           <span class="text-muted">{{ sub }}</span>
         </h6>
-
-        <ul *ngIf="filterStyle === 'tabs'" class="nav nav-tabs mb-2" id="myTab" role="tablist">
+  
+        <ul *ngIf="filterStyle.includes('tabs')" class="nav nav-tabs mb-2" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link" [ngClass]="{ active: selectedOption === '' }" (click)="selectTabOption('')"
               type="button" role="tab">
@@ -29,63 +29,69 @@
         </ul>
 
 
-        <ng-container *ngIf="filterStyle === 'dropdown'">
-          <select class="form-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
-            <option value="">All</option>
-            <option *ngFor="let option of searchOptions" [value]="option">{{ option }}</option>
-          </select>
-        </ng-container>
+       
 
 
       </div>
       <div class="d-flex align-items-center flex-wrap gap-2 justify-content-end">
         <ng-content select="[header-component]"></ng-content>
-        <div class="form-group mb-0">
+        <div class="form-group mb-0 gap-2">
           <div class="form-group mb-0">
-            <button *ngIf="searchButton" class="btn " (click)="toggleFilters()">
-              <i class="bi bi-search"></i>
-            </button>
-            <ng-container *ngIf="filterSearch">
 
-              <!-- Keyword input -->
-              <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchKeyword"
-                (ngModelChange)="onSearchKeywordChange($event)" />
+  <ng-container >
+    <ng-container *ngIf="filterStyle.includes('dropdown')">
+          <select class="form-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
+            <option value="">All</option>
+            <option *ngFor="let option of searchOptions" [value]="option">{{ option }}</option>
+          </select>
+        </ng-container>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search..."
+      *ngIf="filterStyle.includes('keyword')"
+      [(ngModel)]="searchKeyword"
+      (ngModelChange)="onSearchKeywordChange($event)" />
 
-              <!-- Date calendar button -->
-              <input class="btn" (click)="toggleCalendar()" style="min-width: 120px;"
-                value="{{ selectedDate | date: 'y, MMMM, d' }}">
+   <input
+      class="btn"
+      *ngIf="filterStyle.includes('date')"
+      (click)="toggleCalendar()"
+      style="min-width: 120px;"
+      [value]="selectedDate | date: 'y, MMMM, d'" />
 
+    <!-- Calendar Popup -->
+    <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <select class="form-select" [(ngModel)]="selectedMonth">
+          <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
+        </select>
+        <select class="form-select" [(ngModel)]="selectedYear">
+          <option *ngFor="let y of years" [value]="y">{{ y }}</option>
+        </select>
+      </div>
 
+      <div class="d-grid" style="grid-template-columns: repeat(7, 1fr); gap: 4px;">
+        <div class="text-center fw-bold" *ngFor="let d of dayNames">{{ d }}</div>
+        <div *ngFor="let day of calendarDays"
+             class="text-center p-1 border rounded"
+             [class.bg-primary]="isSelected(day)"
+             [class.text-white]="isSelected(day)"
+             (click)="selectDate(day)"
+             style="cursor: pointer;">
+          {{ day.getDate() }}
+        </div>
+      </div>
 
+      <div class="d-flex justify-content-between mt-3">
+        <button class="btn btn-sm" (click)="cancel()">Cancel</button>
+        <button class="btn btn-sm btn-primary" (click)="confirm()">Confirm</button>
+      </div>
+    </div>
+  
+  </ng-container>
+</div>
 
-
-              <!-- Calendar Popup -->
-              <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
-                <div class="d-flex justify-content-between gap-2 mb-2">
-                  <select class="form-select" [(ngModel)]="selectedMonth">
-                    <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
-                  </select>
-                  <select class="form-select" [(ngModel)]="selectedYear">
-                    <option *ngFor="let y of years" [value]="y">{{ y }}</option>
-                  </select>
-                </div>
-
-                <div class="d-grid" style="grid-template-columns: repeat(7, 1fr); gap: 4px;">
-                  <div class="text-center fw-bold" *ngFor="let d of dayNames">{{ d }}</div>
-                  <div *ngFor="let day of calendarDays" class="text-center p-1 border rounded"
-                    [class.bg-primary]="isSelected(day)" [class.text-white]="isSelected(day)" (click)="selectDate(day)"
-                    style="cursor: pointer;">
-                    {{ day.getDate() }}
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-between mt-3">
-                  <button class="btn btn-sm" (click)="cancel()">Cancel</button>
-                  <button class="btn btn-sm btn-primary" (click)="confirm()">Confirm</button>
-                </div>
-              </div>
-            </ng-container>
-          </div>
           <div class="btn-group" role="group" aria-label="Basic example">
             <button *ngFor="let button of headerButtons" type="button" class="btn " [id]="button.targetId"
               (click)="executeAction(button)">
@@ -111,10 +117,10 @@
       </div>
     </div>
   </div>
-  <div class="moringa-wraper-body  p-0">
+  <div class="moringa-body  p-0">
 
     <div class="pt-2 ">
-      <table [ngClass]="variant">
+      <table >
         <thead>
           <tr>
             <th *ngFor="let column of columns; let colIndex = index" (click)="Sorting ? sortByColumn(column.key) : null"
@@ -196,7 +202,7 @@
 
                       </div>
 
-                      <div class="profile-details" >
+                      <div class="media-details" >
                         <p class="mb-0 name  text-dark">{{ row.name || 'Unknown' }}</p>
                         <p class="mb-0 text-muted">{{ row.source || 'No Information' }}</p>
                       </div>
@@ -216,7 +222,7 @@
                         <i *ngIf="btn.icon" [class]="btn.icon"></i>
 
                       </button>
-                      <div *ngIf="btn.isDropdown" class="dropdown btn btn-sm">
+                      <div *ngIf="btn.isDropdown" class="dropdown btn p-0">
                         <button class="btn no-bg dropdown-toggle" type="button" data-bs-toggle="dropdown"
                           [ngClass]="btn.className" [attr.title]="btn.tooltip">
                           {{ btn.label }}
@@ -259,7 +265,7 @@
         <tfoot *ngIf="paginated">
           <tr>
             <td [attr.colspan]="columns.length + 1">
-              <div class="pagination form-group justify-content-end ">
+              <div class="pagination form-group justify-content-end mb-0 ">
                 <button class="btn" (click)="prevPage()" [disabled]="currentPage === 1">
                   <i class="bi bi-chevron-left"></i>
                 </button>

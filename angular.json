@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-   "ng-moringa-table": {
+"ng-moringa-table": {
   "projectType": "library",
   "root": "projects/ng-moringa-table",
   "sourceRoot": "projects/ng-moringa-table/src",
@@ -15,8 +15,7 @@
       }
     }
   }
-}
-,
+},
     "demo-app": {
       "projectType": "application",
       "schematics": {},
@@ -41,11 +40,10 @@
               }
             ],
            "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+
 ],
            "scripts": [
-        "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+     
       ]
           },
           "configurations": {
@@ -102,11 +100,10 @@
               }
             ],
            "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+
 ],
              "scripts": [
-        "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+       
       ]
           }
         }

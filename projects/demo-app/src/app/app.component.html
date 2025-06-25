@@ -2,13 +2,15 @@
 <ng-moringa-table 
   title="BackLog"
   icon="bi bi-grid"
-  [statusMap]="statusMap"
-  [variant]="'responsive round-card shadowed'"
+    [data]="data"
+   [statusMap]="statusMap"
+  [variant]="'round-card  responsive'"
   [collapsible]="true"
-  [data]="data"
-  [progressBy]="'archived'"
+  [progressBy]="'lost'"
   [filterBy]="'status'"
-  [filterStyle]="'dropdown'"
+[filterStyle]="['tabs', 'keyword', 'dropdown', 'date']"
+
+  
   [pageSize]="5"
    [valueLenthColumns]="['email', 'organization', 'phone', 'tags']"
   mediaImage="assets/dummy.jpg"

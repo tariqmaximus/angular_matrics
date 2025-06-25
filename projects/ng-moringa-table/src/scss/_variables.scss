@@ -4,7 +4,8 @@
 $primary-color: #0173df;
 $dark-color: #63634e;
 $muted-color: #888888;
-$table-bg: #ffffff;
+$table-bg: rgba(255, 255, 255, 0.4);
+$table-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); // Medium shadow
 $active-color:rgb(238, 238, 238);
 
 //Border & Shadow
@@ -22,5 +23,5 @@ $btn-flate: 0px;
 $table-shadow: 0 0px 16px rgba(0, 0, 0, 0.1); // Large shadow
 $media-size: 35px;
 $dp-round: 10px;
-$card-header-height: 60px;
+$moringa-header-height: 60px;
 
