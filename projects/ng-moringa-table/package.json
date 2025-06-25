@@ -1,6 +1,6 @@
 {
   "name": "ng-moringa-table",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "author": "Tariq Jarral",
   "description": "A modern, responsive, and reusable Angular smart table component with filters, pagination, and action controls.",
   "keywords": [

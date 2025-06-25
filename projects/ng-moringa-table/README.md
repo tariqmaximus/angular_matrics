@@ -1,63 +1,195 @@
-# NgMoringaTable
+ng-moringa-table
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+A dynamic and responsive Angular table component with smart filtering, custom buttons, checkboxes, and pagination.
 
-## Code scaffolding
+✨ Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+✅ Customizable column definitions
 
-```bash
-ng generate component component-name
-```
+🔍 Built-in search and date filters
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+📊 Progress tracking bar per status
 
-```bash
-ng generate --help
-```
+🔁 Tabs or dropdown filters
 
-## Building
+📦 Fully standalone component (Angular 17+ compatible)
 
-To build the library, run:
+📱 Mobile-friendly responsive layout
 
-```bash
-ng build ng-moringa-table
-```
+📦 Installation
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+npm install ng-moringa-table
 
-### Publishing the Library
+🔧 Usage
 
-Once the project is built, you can publish your library by following these steps:
+Import in your Angular component or module:
 
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ng-moringa-table
-   ```
+import { NgMoringaTableComponent } from 'ng-moringa-table';
 
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
+@NgModule({
+  imports: [NgMoringaTableComponent]
+})
+export class YourModule {}
 
-## Running unit tests
+Use in template:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+<ng-moringa-table
+  [data]="tableData"
+  [columns]="columnDefs"
+  [searchButton]="true"
+  [filterSearch]="true"
+  [filterStyle]="'tabs'"
+  [headerButtons]="headerActions"
+  [actionButtons]="rowActions"
+  [Sorting]="true"
+  [paginated]="true"
+  [collapsible]="true"
+  [progressBy]="'status'"
+></ng-moringa-table>
 
-```bash
-ng test
-```
+🧩 Inputs
 
-## Running end-to-end tests
+Input
 
-For end-to-end (e2e) testing, run:
+Type
 
-```bash
-ng e2e
-```
+Description
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+data
 
-## Additional Resources
+any[]
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Table data
+
+columns
+
+{ key: string, label: string }[]
+
+Column definitions
+
+searchButton
+
+boolean
+
+Show/hide search toggle
+
+filterSearch
+
+boolean
+
+Show keyword & date filter bar
+
+filterStyle
+
+`'tabs'
+
+'dropdown'`
+
+Filter style UI
+
+headerButtons
+
+CardButton[]
+
+Buttons in the header toolbar
+
+actionButtons
+
+ActionButton[]
+
+Buttons for each row
+
+Sorting
+
+boolean
+
+Enable column sorting
+
+paginated
+
+boolean
+
+Enable pagination controls
+
+collapsible
+
+boolean
+
+Enable collapse toggle
+
+progressBy
+
+string
+
+Key for progress tracking (e.g., 'status')
+
+searchOptions
+
+string[]
+
+Options for filter (tabs/dropdown)
+
+📤 Outputs
+
+Output
+
+Type
+
+Description
+
+rowSelected
+
+EventEmitter<any>
+
+Emits when a row is selected
+
+buttonClicked
+
+EventEmitter<{ button: ActionButton, row: any }>
+
+Emits when row button clicked
+
+📘 Types
+
+CardButton
+
+interface CardButton {
+  label?: string;
+  icon?: string;
+  targetId: string;
+  action?: () => void;
+}
+
+ActionButton
+
+interface ActionButton {
+  label?: string;
+  tooltip: string;
+  icon?: string;
+  className?: string;
+  isDropdown?: boolean;
+  options?: string[];
+  action?: (row: any) => void;
+  dropdownAction?: (selected: string, row: any) => void;
+}
+
+🧪 Development
+
+To build the library:
+
+npm run build:moringa
+
+To publish to npm:
+
+cd dist/ng-moringa-table
+npm publish --access public
+
+🔗 Links
+
+Live Demo (Coming Soon)
+
+GitHub Repository (if public)
+
+📄 License
+
+MIT © 2025 Tariq Mehmood
