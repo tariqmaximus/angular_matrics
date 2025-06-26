@@ -6,7 +6,7 @@
 @use './index' as *;
 
 
-.moringa-wraper {
+.ng-moringa-table {
   position: relative;
 font-family: Arial, Helvetica, sans-serif;
   border-radius: variables.$table-flate;
@@ -16,11 +16,11 @@ font-family: Arial, Helvetica, sans-serif;
 
 
   .btn,
-  .form-select,
-  .form-control {
+  .moringa-form-select,
+  .moringa-form-control {
     border: 1px solid variables.$bs-border;
     color: variables.$muted-color;
-    height: 35px;
+padding: variables.$btn-spacing;
     outline: none;
 
     &:focus {
@@ -31,6 +31,7 @@ font-family: Arial, Helvetica, sans-serif;
     }
   }
 
+
   .btn {
     font-size: 12px;
 
@@ -40,7 +41,7 @@ font-family: Arial, Helvetica, sans-serif;
     gap: variables.$btn-spacing;
     border: 1px solid variables.$bs-border;
     color: variables.$dark-color;
-    height: 35px;
+
 
     i {
       font-size: 12px;
@@ -141,7 +142,9 @@ font-family: Arial, Helvetica, sans-serif;
 
 
       }
-
+p {
+  margin: 0;
+}
       .name {
         font-size: 0.8rem;
         text-align: left;
@@ -246,11 +249,16 @@ font-family: Arial, Helvetica, sans-serif;
     }
   }
 
-
-  .form-group {
+.text-muted {
+  color: variables.$muted-color;
+}
+  .moringa-group {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 0;
+    height: variables.$group-height;
+    align-items: stretch;
 
     >* {
       border-radius: 0;
@@ -294,17 +302,30 @@ font-family: Arial, Helvetica, sans-serif;
         }
       }
     }
+    &.align-center {
+      justify-content: center;
+    }
+     &.align-left {
+      justify-content: flex-start;
+    }
+     &.align-right {
+      justify-content: flex-end;
+    }
+    &.sm {
+      height: variables.$group-height-sm;
+    }
   }
 
-  .nav-tabs {
-    margin: 0 !important;
-    margin-left: variables.$table-spacing !important;
+  .moringa-tabs {
+
+    margin:0;
     gap: variables.$table-spacing;
     border: none;
-
+display: flex;
     .nav-item {
       border: none !important;
       padding: 0;
+      list-style: none;
 
       .nav-link {
         padding: variables.$btn-spacing variables.$table-spacing;
@@ -313,6 +334,7 @@ font-family: Arial, Helvetica, sans-serif;
         font-size: 12px;
         border: none !important;
         border-radius: variables.$table-round;
+        cursor: pointer;
         position: relative;
 
 
@@ -447,6 +469,7 @@ font-family: Arial, Helvetica, sans-serif;
         right: -5px;
         top: -10px;
         opacity: 0.9;
+        margin: 0;
         transition: 0.4s;
 
       }
@@ -495,25 +518,19 @@ font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    .container-fluid {
+.left-side {
+  display: flex;
+}
+    .moringa-container {
       height: $moringa-header-height;
       display: flex !important;
       align-items: center;
       justify-content: space-between;
     }
 
-    .inner {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
 
-    .form-select,
-    .form-control {
-      font-size: 12px;
-    }
+
+ 
 
     .mobile-btn {
       display: none;
@@ -597,7 +614,7 @@ font-family: Arial, Helvetica, sans-serif;
 
   }
 .moringa-header {
- .container-fluid {
+ .moringa-container {
   padding: 0 calc($table-spacing);
  }
 }
@@ -691,7 +708,7 @@ font-family: Arial, Helvetica, sans-serif;
     }
   }
 
- .nav-tabs {
+ .moringa-tabs {
 display: none;
   }
 
