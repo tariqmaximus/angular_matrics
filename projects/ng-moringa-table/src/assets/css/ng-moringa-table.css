@@ -6,6 +6,134 @@
   padding-bottom: 0;
   transition: 0.4s;
 }
+.ng-moringa-table .media-tile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  gap: 15px;
+}
+.ng-moringa-table .media-tile .media-img {
+  background-color: #0173df;
+  width: 35px;
+  height: 35px;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.ng-moringa-table .media-tile .media-img i {
+  font-size: 40px;
+}
+.ng-moringa-table .media-tile .media-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ng-moringa-table .media-tile .media-img.success {
+  background-color: var(--success-color, #28a745);
+  border: 3px solid rgb(175.1304347826, 235.8695652174, 189);
+}
+.ng-moringa-table .media-tile .media-img.pending {
+  background-color: var(--warning-color, #f1a10a);
+  border: 3px solid rgb(252.8087649402, 235.2788844622, 202.1912350598);
+}
+.ng-moringa-table .media-tile .media-img.info {
+  background-color: var(--info-color, #17a2b8);
+  border: 3px solid rgb(167, 233.4782608696, 244);
+}
+.ng-moringa-table .media-tile .media-img.danger {
+  background-color: var(--error-color, #dc3545);
+  border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
+}
+.ng-moringa-table .media-tile .media-img.warning {
+  background-color: var(--warning-color, #f1a10a);
+  border: 3px solid rgb(252.8087649402, 235.2788844622, 202.1912350598);
+}
+.ng-moringa-table .media-tile .media-img.primary {
+  background-color: var(--prim-color, #007bff);
+  border: 3px solid rgb(204, 228.6, 255);
+}
+.ng-moringa-table .media-tile .media-img.muted {
+  background-color: var(--muted-color, #888888);
+  border: 3px solid #eeeeee;
+}
+.ng-moringa-table .media-tile .media-img.secondary {
+  background-color: var(--muted-color, #888888);
+  border: 3px solid #eeeeee;
+}
+.ng-moringa-table .media-tile .media-img.light {
+  background-color: var(--prim-bg, #888888);
+  border: 3px solid hsl(210, 16.6666666667%, 137.6470588235%);
+}
+.ng-moringa-table .media-tile .media-img.default {
+  background-color: var(--bg-color, #adb5bd);
+  border: 3px solid hsl(210, 10.8108108108%, 110.9803921569%);
+}
+.ng-moringa-table .media-tile .media-img.archived {
+  background-color: var(--archived-color, #888888);
+  border: 3px solid hsl(210, 10.8108108108%, 110.9803921569%);
+}
+.ng-moringa-table .media-tile .media-img.processing {
+  background-color: var(--processing-color, var(--info-color, #17a2b8));
+  border: 3px solid rgb(167, 233.4782608696, 244);
+}
+.ng-moringa-table .media-tile .media-img.failed {
+  background-color: var(--error-color, #dc3545);
+  border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
+}
+.ng-moringa-table .media-tile .media-img.queued {
+  background-color: var(--info-color, #17a2b8);
+  border: 3px solid rgb(167, 233.4782608696, 244);
+}
+.ng-moringa-table .media-tile .media-img.on-hold {
+  background-color: var(--muted-color, #888888);
+  border: 3px solid #eeeeee;
+}
+.ng-moringa-table .media-tile .media-img.suspended {
+  background-color: var(--dark-color, #212529);
+  border: 3px solid rgb(126.4594594595, 139, 151.5405405405);
+}
+.ng-moringa-table .media-tile .media-img.expired {
+  background-color: var(--light-color, #f1f3f5);
+  border: 3px solid hsl(210, 16.6666666667%, 135.2941176471%);
+}
+.ng-moringa-table .media-tile .media-img.rejected {
+  background-color: var(--error-color, #dc3545);
+  border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
+}
+.ng-moringa-table .media-tile .media-img.approved {
+  background-color: var(--success-color, #28a745);
+  border: 3px solid rgb(175.1304347826, 235.8695652174, 189);
+}
+.ng-moringa-table .media-tile .media-img.active {
+  background-color: var(--prim-color, #007bff);
+  border: 3px solid rgb(204, 228.6, 255);
+}
+.ng-moringa-table .media-tile .media-img.draft {
+  background-color: var(--text-color, #888888);
+  border: 3px solid rgb(175.6125, 182, 188.3875);
+}
+.ng-moringa-table .media-tile p {
+  margin: 0;
+}
+.ng-moringa-table .media-tile .name {
+  font-size: 0.8rem;
+  text-align: left;
+  width: 100px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ng-moringa-table .media-tile .name p {
+  font-size: 0.7;
+  color: #888888;
+}
 .ng-moringa-table .btn,
 .ng-moringa-table .moringa-form-select,
 .ng-moringa-table .moringa-form-control {
@@ -207,134 +335,6 @@
   width: 100%;
   background: none;
 }
-.ng-moringa-table table .media-tile {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-decoration: none;
-  gap: 15px;
-}
-.ng-moringa-table table .media-tile .media-img {
-  background-color: #0173df;
-  width: 35px;
-  height: 35px;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-}
-.ng-moringa-table table .media-tile .media-img i {
-  font-size: 40px;
-}
-.ng-moringa-table table .media-tile .media-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.ng-moringa-table table .media-tile .media-img.success {
-  background-color: var(--success-color, #28a745);
-  border: 3px solid rgb(175.1304347826, 235.8695652174, 189);
-}
-.ng-moringa-table table .media-tile .media-img.pending {
-  background-color: var(--warning-color, #f1a10a);
-  border: 3px solid rgb(252.8087649402, 235.2788844622, 202.1912350598);
-}
-.ng-moringa-table table .media-tile .media-img.info {
-  background-color: var(--info-color, #17a2b8);
-  border: 3px solid rgb(167, 233.4782608696, 244);
-}
-.ng-moringa-table table .media-tile .media-img.danger {
-  background-color: var(--error-color, #dc3545);
-  border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
-}
-.ng-moringa-table table .media-tile .media-img.warning {
-  background-color: var(--warning-color, #f1a10a);
-  border: 3px solid rgb(252.8087649402, 235.2788844622, 202.1912350598);
-}
-.ng-moringa-table table .media-tile .media-img.primary {
-  background-color: var(--prim-color, #007bff);
-  border: 3px solid rgb(204, 228.6, 255);
-}
-.ng-moringa-table table .media-tile .media-img.muted {
-  background-color: var(--muted-color, #888888);
-  border: 3px solid #eeeeee;
-}
-.ng-moringa-table table .media-tile .media-img.secondary {
-  background-color: var(--muted-color, #888888);
-  border: 3px solid #eeeeee;
-}
-.ng-moringa-table table .media-tile .media-img.light {
-  background-color: var(--prim-bg, #888888);
-  border: 3px solid hsl(210, 16.6666666667%, 137.6470588235%);
-}
-.ng-moringa-table table .media-tile .media-img.default {
-  background-color: var(--bg-color, #adb5bd);
-  border: 3px solid hsl(210, 10.8108108108%, 110.9803921569%);
-}
-.ng-moringa-table table .media-tile .media-img.archived {
-  background-color: var(--archived-color, #888888);
-  border: 3px solid hsl(210, 10.8108108108%, 110.9803921569%);
-}
-.ng-moringa-table table .media-tile .media-img.processing {
-  background-color: var(--processing-color, var(--info-color, #17a2b8));
-  border: 3px solid rgb(167, 233.4782608696, 244);
-}
-.ng-moringa-table table .media-tile .media-img.failed {
-  background-color: var(--error-color, #dc3545);
-  border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
-}
-.ng-moringa-table table .media-tile .media-img.queued {
-  background-color: var(--info-color, #17a2b8);
-  border: 3px solid rgb(167, 233.4782608696, 244);
-}
-.ng-moringa-table table .media-tile .media-img.on-hold {
-  background-color: var(--muted-color, #888888);
-  border: 3px solid #eeeeee;
-}
-.ng-moringa-table table .media-tile .media-img.suspended {
-  background-color: var(--dark-color, #212529);
-  border: 3px solid rgb(126.4594594595, 139, 151.5405405405);
-}
-.ng-moringa-table table .media-tile .media-img.expired {
-  background-color: var(--light-color, #f1f3f5);
-  border: 3px solid hsl(210, 16.6666666667%, 135.2941176471%);
-}
-.ng-moringa-table table .media-tile .media-img.rejected {
-  background-color: var(--error-color, #dc3545);
-  border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
-}
-.ng-moringa-table table .media-tile .media-img.approved {
-  background-color: var(--success-color, #28a745);
-  border: 3px solid rgb(175.1304347826, 235.8695652174, 189);
-}
-.ng-moringa-table table .media-tile .media-img.active {
-  background-color: var(--prim-color, #007bff);
-  border: 3px solid rgb(204, 228.6, 255);
-}
-.ng-moringa-table table .media-tile .media-img.draft {
-  background-color: var(--text-color, #888888);
-  border: 3px solid rgb(175.6125, 182, 188.3875);
-}
-.ng-moringa-table table .media-tile p {
-  margin: 0;
-}
-.ng-moringa-table table .media-tile .name {
-  font-size: 0.8rem;
-  text-align: left;
-  width: 100px;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.ng-moringa-table table .media-tile .name p {
-  font-size: 0.7;
-  color: #888888;
-}
 .ng-moringa-table table .ellipsize {
   max-width: 200px;
   overflow: hidden;
@@ -405,7 +405,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0;
-  height: 40px;
+  height: 35px;
   align-items: stretch;
 }
 .ng-moringa-table .moringa-group > * {
@@ -605,8 +605,8 @@
 }
 .ng-moringa-table .checkbox-wrapper .cbx .checkbox svg {
   position: absolute;
-  top: 6px;
-  left: 4px;
+  top: 7px;
+  left: 6px;
   fill: none;
   stroke: white;
   stroke-width: 2;
@@ -920,6 +920,9 @@
 }
 .ng-moringa-table.round-card .date-picker {
   border-radius: 8px !important;
+}
+.ng-moringa-table.round-card .date-picker .media-tile .media-img {
+  border-radius: 10px;
 }
 .ng-moringa-table.round-card .moringa-header .moringa-container {
   padding: 0 15px;
