@@ -376,6 +376,8 @@ display: flex;
   // Checkbox Wrapper
   .checkbox-wrapper {
     padding: 0;
+    display: flex;
+    align-items: center;
 
     .cbx {
       user-select: none;
@@ -716,7 +718,29 @@ display: none;
 }
 
 
-
+.moringa-dropdown {
+  position: relative;
+  .dropdown-menu {
+    margin: 0;
+    background: variables.$table-bg;
+    border: 1px solid variables.$bs-border;
+    position: absolute;
+    padding: 0;
+    width: 100px;
+    z-index: 1;
+    li {
+      list-style: none;
+      text-align: left;
+      .dropdown-item {
+        border: none;
+        border-radius: 0;
+        padding:variables.$table-spacing variables.$btn-spacing ;
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+}
 
 
 
