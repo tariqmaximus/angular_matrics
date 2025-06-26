@@ -35,7 +35,7 @@ let uniqueCounter = 0;
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './ng-moringa-table.component.html',
-  styleUrls: ['../scss/ng-moringa-table.scss']
+  styleUrls: ['../assets/css/ng-moringa-table.css']
 })
 export class NgMoringaTableComponent implements OnInit, OnChanges {
   @Input() type!: string;
