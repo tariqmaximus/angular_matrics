@@ -1,10 +1,11 @@
-<!-- Use: 'tabs' | 'dropdown' | 'none' -->
+
+<div class="container">
 <ng-moringa-table 
   title="BackLog"
   icon="bi bi-grid"
     [data]="data"
    [statusMap]="statusMap"
-  [variant]="'round-card  responsive'"
+  [variant]="'round-card bordered shadowed responsive'"
   [collapsible]="true"
   [progressBy]="'lost'"
   [filterBy]="'status'"
@@ -31,11 +32,7 @@
       tooltip: 'Delete Lead',
       className: 'icon-btn-danger'
     },
-    {
-      label: 'Copy',
-      icon: 'bi bi-files',
-      tooltip: 'Copy Details',
-      className: 'icon-btn-info'
-    }
+   
   ]"
 />
+</div>

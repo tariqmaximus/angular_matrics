@@ -3,10 +3,11 @@
   <div class="moringa-header" *ngIf="moringaHeader">
     <div class="moringa-container ">
 
-      <div class="left-side">
+      <div class="moringa-group gap">
 
-        <i class="title-icon" *ngIf="icon" [class]="icon"></i>
+        
         <h6 class="table-title">
+          <i class="title-icon" *ngIf="icon" [class]="icon"></i>
           {{ title }}
           <span class="text-muted">{{ sub }}</span>
         </h6>
@@ -22,7 +23,7 @@
           <li class="nav-item" role="presentation" *ngFor="let option of searchOptions">
             <button class="nav-link" [ngClass]="{ active: selectedOption === option }" (click)="selectTabOption(option)"
               type="button" role="tab">
-              <span class="badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
+              <span class="moringa-badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
               {{ option }}
             </button>
           </li>
@@ -33,32 +34,32 @@
 
 
       </div>
-      <div class="moringa-group">
+      <div class="moringa-group gap">
         <ng-content select="[header-component]"></ng-content>
-        <div class="moringa-group">
+        <div class="moringa-group gap">
           <div class="moringa-group ">
 
             <ng-container>
               <ng-container *ngIf="filterStyle.includes('dropdown')">
-                <select class="moringa-form-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
+                <select class="moringa-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
                   <option value="">All</option>
                   <option *ngFor="let option of searchOptions" [value]="option">{{ option }}</option>
                 </select>
               </ng-container>
-              <input type="text" class="moringa-form-control" placeholder="Search..."
+              <input type="text" class="moringa-input" placeholder="Search..."
                 *ngIf="filterStyle.includes('keyword')" [(ngModel)]="searchKeyword"
                 (ngModelChange)="onSearchKeywordChange($event)" />
 
-              <input class="btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
+              <input class="moringa-btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
                 style="min-width: 120px;" [value]="selectedDate | date: 'y, MMMM, d'" />
 
               <!-- Calendar Popup -->
               <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
                 <div class="moringa-group">
-                  <select class="moringa-form-select" [(ngModel)]="selectedMonth">
+                  <select class="moringa-select" [(ngModel)]="selectedMonth">
                     <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
                   </select>
-                  <select class="moringa-form-select" [(ngModel)]="selectedYear">
+                  <select class="moringa-select" [(ngModel)]="selectedYear">
                     <option *ngFor="let y of years" [value]="y">{{ y }}</option>
                   </select>
                 </div>
@@ -73,8 +74,8 @@
                 </div>
 
                 <div class="moringa-group">
-                  <button class="btn btn-sm" (click)="cancel()">Cancel</button>
-                  <button class="btn btn-sm btn-primary" (click)="confirm()">Confirm</button>
+                  <button class="moringa-btn " (click)="cancel()">Cancel</button>
+                  <button class="moringa-btn primary" (click)="confirm()">Confirm</button>
                 </div>
               </div>
 
@@ -82,14 +83,27 @@
           </div>
 
           <div class="moringa-group">
-            <button *ngFor="let button of headerButtons" type="button" class="btn " [id]="button.targetId"
+            <button *ngFor="let button of headerButtons" type="button" class="moringa-btn " [id]="button.targetId"
               (click)="executeAction(button)">
               <i *ngIf="button.icon" [class]="button.icon"></i>
               <span *ngIf="button.label">{{ button.label }}</span>
             </button>
 
-            <button *ngIf="collapsible" class="btn " type="button" (click)="toggleCard()">
-              <i [class]="isCollapsed ? 'bi bi-arrows-expand' : 'bi bi-arrows-collapse'"></i>
+            <button *ngIf="collapsible" class="moringa-btn " type="button" (click)="toggleCard()">
+              <ng-container>
+  <svg *ngIf="isCollapsed" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+       fill="currentColor" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+          d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10"/>
+  </svg>
+
+  <svg *ngIf="!isCollapsed" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+       fill="currentColor" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+          d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8m7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0m-.5 11.707-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0z"/>
+  </svg>
+</ng-container>
+
             </button>
           </div>
         </div>
@@ -102,7 +116,7 @@
       <div class="progress-bar" [ngClass]="getStatusStyles(selectedOption || progressBy).progressClass"
         role="progressbar" [style.width.%]="progressValue" [attr.aria-valuenow]="progressValue" aria-valuemin="0"
         aria-valuemax="100">
-        <p class="tag">{{ progressValue }}%</p>
+        <p class="moringa-tag">{{ progressValue }}%</p>
       </div>
     </div>
   </div>
@@ -114,7 +128,7 @@
           <tr>
             <th *ngFor="let column of columns; let colIndex = index" (click)="Sorting ? sortByColumn(column.key) : null"
               class="text-nowrap text-start align-middle " style="cursor: pointer;" scope="col">
-              <div class="moringa-group">
+              <div class="sorting-group">
                 <!-- Always show Select All checkbox -->
                 <ng-container *ngIf="colIndex === 0">
                   <div class="checkbox-wrapper">
@@ -128,9 +142,11 @@
                         </svg>
                       </div>
                       <div *ngIf="selectedRows.length > 1" class="moringa-dropdown ">
-                        <button class="btn no-bg p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        <button class="moringa-btn no-bg p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false"
                           (click)="$event.stopPropagation()">
-                          <i class="bi bi-three-dots-vertical"></i>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+</svg>
                         </button>
                         <ul class="dropdown-menu">
                           <li *ngFor="let btn of actionButtons">
@@ -147,11 +163,26 @@
                 <span>{{ column.label }}</span>
 
                 <!-- Sort Icon -->
-                <i *ngIf="Sorting" class="ms-1" [ngClass]="{
-        'bi bi-arrow-up': sortKey === column.key && sortAsc,
-        'bi bi-arrow-down': sortKey === column.key && !sortAsc,
-        'bi bi-arrow-down-up': sortKey !== column.key
-      }"></i>
+         <ng-container *ngIf="Sorting">
+  <svg *ngIf="sortKey === column.key && sortAsc" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+    fill="currentColor" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
+  </svg>
+
+  <svg *ngIf="sortKey === column.key && !sortAsc" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+    fill="currentColor" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+  </svg>
+
+  <svg *ngIf="sortKey !== column.key" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+    fill="currentColor" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5" />
+  </svg>
+</ng-container>
+
               </div>
             </th>
           </tr>
@@ -206,13 +237,13 @@
                 <ng-container *ngSwitchCase="'action'">
                   <div class="moringa-group sm align-right ">
                     <ng-container *ngFor="let btn of actionButtons">
-                      <button *ngIf="!btn.isDropdown" class="btn btn-sm" [ngClass]="btn.className"
+                      <button *ngIf="!btn.isDropdown" class="moringa-btn" [ngClass]="btn.className"
                         [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
                         <i *ngIf="btn.icon" [class]="btn.icon"></i>
 
                       </button>
-                      <div *ngIf="btn.isDropdown" class="moringa-dropdown btn p-0">
-                        <button class="btn no-bg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      <div *ngIf="btn.isDropdown" class="moringa-dropdown moringa-btn p-0">
+                        <button class="moringa-btn no-bg dropdown-toggle" type="button" data-bs-toggle="dropdown"
                           [ngClass]="btn.className" [attr.title]="btn.tooltip">
                           {{ btn.label }}
                         </button>
@@ -236,7 +267,7 @@
               </ng-container>
             </td>
             <td class="mobile-btn">
-              <button class="btn" (click)="toggleRowClass(i)">
+              <button class="moringa-btn" (click)="toggleRowClass(i)">
                 <i [ngClass]="{
                 'bi bi-chevron-down': activeRowIndex === i,
                 'bi bi-chevron-right': activeRowIndex !== i
@@ -254,12 +285,16 @@
           <tr>
             <td [attr.colspan]="columns.length + 1">
               <div class="pagination moringa-group align-right ">
-                <button class="btn" (click)="prevPage()" [disabled]="currentPage === 1">
-                  <i class="bi bi-chevron-left"></i>
+                <button class="moringa-btn" (click)="prevPage()" [disabled]="currentPage === 1">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+</svg>
                 </button>
-                <span class="btn">Page {{ currentPage }} of {{ totalPages }}</span>
-                <button class="btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
-                  <i class="bi bi-chevron-right"></i>
+                <span class="moringa-btn">Page {{ currentPage }} of {{ totalPages }}</span>
+                <button class="moringa-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+</svg>
                 </button>
               </div>
             </td>

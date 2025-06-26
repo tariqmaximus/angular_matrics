@@ -134,23 +134,24 @@
   font-size: 0.7;
   color: #888888;
 }
-.ng-moringa-table .btn,
-.ng-moringa-table .moringa-form-select,
-.ng-moringa-table .moringa-form-control {
+.ng-moringa-table .moringa-btn,
+.ng-moringa-table .moringa-select,
+.ng-moringa-table .moringa-input {
   border: 1px solid #e7e7e7;
   color: #888888;
   padding: 5px;
   outline: none;
 }
-.ng-moringa-table .btn:focus,
-.ng-moringa-table .moringa-form-select:focus,
-.ng-moringa-table .moringa-form-control:focus {
+.ng-moringa-table .moringa-btn:focus,
+.ng-moringa-table .moringa-select:focus,
+.ng-moringa-table .moringa-input:focus {
   border-color: #e7e7e7;
   box-shadow: none;
   color: #63634e;
 }
-.ng-moringa-table .btn {
+.ng-moringa-table .moringa-btn {
   font-size: 12px;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,87 +159,91 @@
   border: 1px solid #e7e7e7;
   color: #63634e;
 }
-.ng-moringa-table .btn i {
+.ng-moringa-table .moringa-btn i {
   font-size: 12px;
   color: #888888;
 }
-.ng-moringa-table .btn:focus {
+.ng-moringa-table .moringa-btn:focus {
   box-shadow: none;
+  background-color: #f5f5f5;
 }
-.ng-moringa-table .btn:disabled {
-  border-color: #e7e7e7;
+.ng-moringa-table .moringa-btn:disabled {
+  border-color: #f5f5f5;
 }
-.ng-moringa-table .btn.no-bg {
+.ng-moringa-table .moringa-btn:hover {
+  background-color: #f5f5f5;
+}
+.ng-moringa-table .moringa-btn.no-bg {
   border: none !important;
 }
-.ng-moringa-table .btn span {
+.ng-moringa-table .moringa-btn span {
   font-size: 12px;
   color: #888888;
 }
-.ng-moringa-table .btn.success {
+.ng-moringa-table .moringa-btn.success {
   color: #28a745;
 }
-.ng-moringa-table .btn.pending {
+.ng-moringa-table .moringa-btn.pending {
   color: #f1a10a;
 }
-.ng-moringa-table .btn.info {
+.ng-moringa-table .moringa-btn.info {
   color: #17a2b8;
 }
-.ng-moringa-table .btn.danger {
+.ng-moringa-table .moringa-btn.danger {
   color: #dc3545;
 }
-.ng-moringa-table .btn.warning {
+.ng-moringa-table .moringa-btn.warning {
   color: #f1a10a;
 }
-.ng-moringa-table .btn.primary {
+.ng-moringa-table .moringa-btn.primary {
   color: #007bff;
 }
-.ng-moringa-table .btn.muted {
+.ng-moringa-table .moringa-btn.muted {
   color: #888888;
 }
-.ng-moringa-table .btn.secondary {
+.ng-moringa-table .moringa-btn.secondary {
   color: #888888;
 }
-.ng-moringa-table .btn.light {
+.ng-moringa-table .moringa-btn.light {
   color: #f8f9fa;
 }
-.ng-moringa-table .btn.default {
+.ng-moringa-table .moringa-btn.default {
   color: #adb5bd;
 }
-.ng-moringa-table .btn.archived {
+.ng-moringa-table .moringa-btn.archived {
   color: #adb5bd;
 }
-.ng-moringa-table .btn.processing {
+.ng-moringa-table .moringa-btn.processing {
   color: #17a2b8;
 }
-.ng-moringa-table .btn.failed {
+.ng-moringa-table .moringa-btn.failed {
   color: #dc3545;
 }
-.ng-moringa-table .btn.queued {
+.ng-moringa-table .moringa-btn.queued {
   color: #17a2b8;
 }
-.ng-moringa-table .btn.on-hold {
+.ng-moringa-table .moringa-btn.on-hold {
   color: #888888;
 }
-.ng-moringa-table .btn.suspended {
+.ng-moringa-table .moringa-btn.suspended {
   color: #212529;
 }
-.ng-moringa-table .btn.expired {
+.ng-moringa-table .moringa-btn.expired {
   color: #f1f3f5;
 }
-.ng-moringa-table .btn.rejected {
+.ng-moringa-table .moringa-btn.rejected {
   color: #dc3545;
 }
-.ng-moringa-table .btn.approved {
+.ng-moringa-table .moringa-btn.approved {
   color: #28a745;
 }
-.ng-moringa-table .btn.active {
+.ng-moringa-table .moringa-btn.active {
   color: #007bff;
 }
-.ng-moringa-table .btn.draft {
+.ng-moringa-table .moringa-btn.draft {
   color: #495057;
 }
-.ng-moringa-table .tag {
+.ng-moringa-table .moringa-tag {
   border-radius: 8px;
   padding: 4px;
   background: white;
@@ -247,87 +252,87 @@
   text-transform: uppercase;
   height: auto;
 }
-.ng-moringa-table .tag.success {
+.ng-moringa-table .moringa-tag.success {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .tag.pending {
+.ng-moringa-table .moringa-tag.pending {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .tag.info {
+.ng-moringa-table .moringa-tag.info {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .tag.danger {
+.ng-moringa-table .moringa-tag.danger {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .tag.warning {
+.ng-moringa-table .moringa-tag.warning {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .tag.primary {
+.ng-moringa-table .moringa-tag.primary {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .tag.muted {
+.ng-moringa-table .moringa-tag.muted {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .tag.secondary {
+.ng-moringa-table .moringa-tag.secondary {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .tag.light {
+.ng-moringa-table .moringa-tag.light {
   color: var(--prim-bg, #888888);
   background-color: hsl(210, 16.6666666667%, 137.6470588235%);
 }
-.ng-moringa-table .tag.default {
+.ng-moringa-table .moringa-tag.default {
   color: var(--bg-color, #adb5bd);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .tag.archived {
+.ng-moringa-table .moringa-tag.archived {
   color: var(--archived-color, #888888);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .tag.processing {
+.ng-moringa-table .moringa-tag.processing {
   color: var(--processing-color, var(--info-color, #17a2b8));
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .tag.failed {
+.ng-moringa-table .moringa-tag.failed {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .tag.queued {
+.ng-moringa-table .moringa-tag.queued {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .tag.on-hold {
+.ng-moringa-table .moringa-tag.on-hold {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .tag.suspended {
+.ng-moringa-table .moringa-tag.suspended {
   color: var(--dark-color, #212529);
   background-color: rgb(126.4594594595, 139, 151.5405405405);
 }
-.ng-moringa-table .tag.expired {
+.ng-moringa-table .moringa-tag.expired {
   color: var(--light-color, #f1f3f5);
   background-color: hsl(210, 16.6666666667%, 135.2941176471%);
 }
-.ng-moringa-table .tag.rejected {
+.ng-moringa-table .moringa-tag.rejected {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .tag.approved {
+.ng-moringa-table .moringa-tag.approved {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .tag.active {
+.ng-moringa-table .moringa-tag.active {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .tag.draft {
+.ng-moringa-table .moringa-tag.draft {
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
 }
@@ -351,6 +356,16 @@
   padding: 15px 0;
   text-transform: uppercase;
 }
+.ng-moringa-table table th .sorting-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.ng-moringa-table table th .sorting-group svg {
+  fill: #63634e;
+  width: 14px;
+  height: auto;
+}
 .ng-moringa-table table th:last-child > div {
   justify-content: flex-end;
 }
@@ -368,11 +383,11 @@
   right: 0;
   top: 18px;
 }
-.ng-moringa-table table tr .mobile-btn .btn {
+.ng-moringa-table table tr .mobile-btn .moringa-btn {
   border: none !important;
   background: none;
 }
-.ng-moringa-table table tr .mobile-btn .btn i {
+.ng-moringa-table table tr .mobile-btn .moringa-btn i {
   color: #888888;
 }
 .ng-moringa-table table tr td {
@@ -450,12 +465,18 @@
 .ng-moringa-table .moringa-group.align-right {
   justify-content: flex-end;
 }
+.ng-moringa-table .moringa-group.gap-sm {
+  gap: 5px;
+}
+.ng-moringa-table .moringa-group.gap {
+  gap: 15px !important;
+}
 .ng-moringa-table .moringa-group.sm {
-  height: 30px;
+  height: 30px !important;
 }
 .ng-moringa-table .moringa-tabs {
+  padding: 0;
   margin: 0;
-  gap: 15px;
   border: none;
   display: flex;
 }
@@ -463,118 +484,123 @@
   border: none !important;
   padding: 0;
   list-style: none;
+  display: flex;
+  align-items: center;
 }
 .ng-moringa-table .moringa-tabs .nav-item .nav-link {
   padding: 5px 15px;
   color: #888888;
   text-transform: capitalize;
+  background-color: #fff;
   font-size: 12px;
   border: none !important;
-  border-radius: 8px;
+  border-radius: 0;
   cursor: pointer;
   position: relative;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge {
-  border-radius: 50px;
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge {
+  border-radius: 100%;
   padding: 5px;
   background: white;
   color: #63634e;
   font-size: 10px;
   text-transform: uppercase;
-  right: -2px;
-  top: -2px;
+  right: -7px;
+  z-index: 1;
+  width: 10px;
+  top: -7px;
   height: auto;
   position: absolute;
   display: none;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.success {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.success {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.pending {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.pending {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.info {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.info {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.danger {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.danger {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.warning {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.warning {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.primary {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.primary {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.muted {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.muted {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.secondary {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.secondary {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.light {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.light {
   color: var(--prim-bg, #888888);
   background-color: hsl(210, 16.6666666667%, 137.6470588235%);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.default {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.default {
   color: var(--bg-color, #adb5bd);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.archived {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.archived {
   color: var(--archived-color, #888888);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.processing {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.processing {
   color: var(--processing-color, var(--info-color, #17a2b8));
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.failed {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.failed {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.queued {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.queued {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.on-hold {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.on-hold {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.suspended {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.suspended {
   color: var(--dark-color, #212529);
   background-color: rgb(126.4594594595, 139, 151.5405405405);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.expired {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.expired {
   color: var(--light-color, #f1f3f5);
   background-color: hsl(210, 16.6666666667%, 135.2941176471%);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.rejected {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.rejected {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.approved {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.approved {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.active {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.active {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .badge.draft {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.draft {
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
 }
 .ng-moringa-table .moringa-tabs .nav-item .nav-link.active {
   background: rgb(238, 238, 238);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link.active .badge {
+.ng-moringa-table .moringa-tabs .nav-item .nav-link.active .moringa-badge {
   display: block;
 }
 .ng-moringa-table .checkbox-wrapper {
@@ -591,7 +617,7 @@
   min-width: 55px;
   cursor: pointer;
 }
-.ng-moringa-table .checkbox-wrapper .cbx .btn {
+.ng-moringa-table .checkbox-wrapper .cbx .moringa-btn {
   padding: 0;
   height: auto;
 }
@@ -654,7 +680,7 @@
   position: relative;
   overflow: inherit;
 }
-.ng-moringa-table .progress .progress-bar .tag {
+.ng-moringa-table .progress .progress-bar .moringa-tag {
   width: auto;
   height: auto;
   position: absolute;
@@ -669,7 +695,7 @@
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .progress .progress-bar.success .tag {
+.ng-moringa-table .progress .progress-bar.success .moringa-tag {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
@@ -677,7 +703,7 @@
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .progress .progress-bar.pending .tag {
+.ng-moringa-table .progress .progress-bar.pending .moringa-tag {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
@@ -685,7 +711,7 @@
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.info .tag {
+.ng-moringa-table .progress .progress-bar.info .moringa-tag {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
@@ -693,7 +719,7 @@
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.danger .tag {
+.ng-moringa-table .progress .progress-bar.danger .moringa-tag {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
@@ -701,7 +727,7 @@
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .progress .progress-bar.warning .tag {
+.ng-moringa-table .progress .progress-bar.warning .moringa-tag {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
@@ -709,7 +735,7 @@
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .progress .progress-bar.primary .tag {
+.ng-moringa-table .progress .progress-bar.primary .moringa-tag {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
@@ -717,7 +743,7 @@
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.muted .tag {
+.ng-moringa-table .progress .progress-bar.muted .moringa-tag {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
@@ -725,7 +751,7 @@
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.secondary .tag {
+.ng-moringa-table .progress .progress-bar.secondary .moringa-tag {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
@@ -733,7 +759,7 @@
   color: var(--prim-bg, #888888);
   background-color: hsl(210, 16.6666666667%, 137.6470588235%);
 }
-.ng-moringa-table .progress .progress-bar.light .tag {
+.ng-moringa-table .progress .progress-bar.light .moringa-tag {
   color: var(--prim-bg, #888888);
   background-color: hsl(210, 16.6666666667%, 137.6470588235%);
 }
@@ -741,7 +767,7 @@
   color: var(--bg-color, #adb5bd);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .progress .progress-bar.default .tag {
+.ng-moringa-table .progress .progress-bar.default .moringa-tag {
   color: var(--bg-color, #adb5bd);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
@@ -749,7 +775,7 @@
   color: var(--archived-color, #888888);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .progress .progress-bar.archived .tag {
+.ng-moringa-table .progress .progress-bar.archived .moringa-tag {
   color: var(--archived-color, #888888);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
@@ -757,7 +783,7 @@
   color: var(--processing-color, var(--info-color, #17a2b8));
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.processing .tag {
+.ng-moringa-table .progress .progress-bar.processing .moringa-tag {
   color: var(--processing-color, var(--info-color, #17a2b8));
   background-color: rgb(167, 233.4782608696, 244);
 }
@@ -765,7 +791,7 @@
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.failed .tag {
+.ng-moringa-table .progress .progress-bar.failed .moringa-tag {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
@@ -773,7 +799,7 @@
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.queued .tag {
+.ng-moringa-table .progress .progress-bar.queued .moringa-tag {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
@@ -781,7 +807,7 @@
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.on-hold .tag {
+.ng-moringa-table .progress .progress-bar.on-hold .moringa-tag {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
@@ -789,7 +815,7 @@
   color: var(--dark-color, #212529);
   background-color: rgb(126.4594594595, 139, 151.5405405405);
 }
-.ng-moringa-table .progress .progress-bar.suspended .tag {
+.ng-moringa-table .progress .progress-bar.suspended .moringa-tag {
   color: var(--dark-color, #212529);
   background-color: rgb(126.4594594595, 139, 151.5405405405);
 }
@@ -797,7 +823,7 @@
   color: var(--light-color, #f1f3f5);
   background-color: hsl(210, 16.6666666667%, 135.2941176471%);
 }
-.ng-moringa-table .progress .progress-bar.expired .tag {
+.ng-moringa-table .progress .progress-bar.expired .moringa-tag {
   color: var(--light-color, #f1f3f5);
   background-color: hsl(210, 16.6666666667%, 135.2941176471%);
 }
@@ -805,7 +831,7 @@
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.rejected .tag {
+.ng-moringa-table .progress .progress-bar.rejected .moringa-tag {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
@@ -813,7 +839,7 @@
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .progress .progress-bar.approved .tag {
+.ng-moringa-table .progress .progress-bar.approved .moringa-tag {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
@@ -821,7 +847,7 @@
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .progress .progress-bar.active .tag {
+.ng-moringa-table .progress .progress-bar.active .moringa-tag {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
@@ -829,7 +855,7 @@
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
 }
-.ng-moringa-table .progress .progress-bar.draft .tag {
+.ng-moringa-table .progress .progress-bar.draft .moringa-tag {
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
 }
@@ -916,7 +942,7 @@
 }
 .ng-moringa-table.round-card {
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #fff;
 }
 .ng-moringa-table.round-card .date-picker {
   border-radius: 8px !important;
@@ -979,7 +1005,7 @@
 }
 .ng-moringa-table .moringa-dropdown .dropdown-menu {
   margin: 0;
-  background: rgba(255, 255, 255, 0.4);
+  background: #fff;
   border: 1px solid #e7e7e7;
   position: absolute;
   padding: 0;

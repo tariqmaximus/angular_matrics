@@ -4,12 +4,13 @@
 $primary-color: #0173df;
 $dark-color: #63634e;
 $muted-color: #888888;
-$table-bg: rgba(255, 255, 255, 0.4);
+$table-bg: #fff;
 $table-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); // Medium shadow
 $active-color:rgb(238, 238, 238);
 
 //Border & Shadow
 $bs-border: #e7e7e7;
+$disabled-border: #f5f5f5;
 $check-box-border: $bs-border;
 
 //Layout & Spacing Variables

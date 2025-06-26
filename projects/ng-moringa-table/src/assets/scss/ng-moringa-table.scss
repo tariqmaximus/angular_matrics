@@ -75,9 +75,9 @@ p {
       }
 
     }
-  .btn,
-  .moringa-form-select,
-  .moringa-form-control {
+  .moringa-btn,
+  .moringa-select,
+  .moringa-input {
     border: 1px solid variables.$bs-border;
     color: variables.$muted-color;
 padding: variables.$btn-spacing;
@@ -92,9 +92,9 @@ padding: variables.$btn-spacing;
   }
 
 
-  .btn {
+  .moringa-btn {
     font-size: 12px;
-
+background-color: $table-bg;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,10 +110,14 @@ padding: variables.$btn-spacing;
 
     &:focus {
       box-shadow: none;
+      background-color: variables.$disabled-border;
     }
 
     &:disabled {
-      border-color: variables.$bs-border;
+      border-color: variables.$disabled-border;
+    }
+    &:hover {
+      background-color: variables.$disabled-border;
     }
 
     &.no-bg {
@@ -138,7 +142,7 @@ padding: variables.$btn-spacing;
 
   }
 
-  .tag {
+  .moringa-tag {
     border-radius: variables.$table-round;
     padding: 4px;
     background: white;
@@ -179,7 +183,16 @@ padding: variables.$btn-spacing;
       color: variables.$muted-color;
       padding: calc($table-spacing) 0;
       text-transform: uppercase;
-
+.sorting-group {
+  display: flex;
+  gap: variables.$table-spacing;
+  align-items: center;
+  svg {
+  fill: variables.$dark-color;
+  width: 14px;
+  height: auto;
+}
+}
       &:last-child {
         >div {
           justify-content: flex-end;
@@ -208,7 +221,7 @@ padding: variables.$btn-spacing;
         right: 0;
         top: 18px;
 
-        .btn {
+        .moringa-btn {
           border: none !important;
           background: none;
 
@@ -311,43 +324,54 @@ padding: variables.$btn-spacing;
      &.align-right {
       justify-content: flex-end;
     }
+    &.gap-sm {
+      gap: variables.$btn-spacing;
+    }
+    &.gap {
+      gap: variables.$table-spacing !important;
+    }
     &.sm {
-      height: variables.$group-height-sm;
+      height: variables.$group-height-sm !important;
     }
   }
 
   .moringa-tabs {
-
+padding: 0;
     margin:0;
-    gap: variables.$table-spacing;
+
     border: none;
 display: flex;
     .nav-item {
       border: none !important;
       padding: 0;
       list-style: none;
+      display: flex;
+      align-items: center;
 
       .nav-link {
         padding: variables.$btn-spacing variables.$table-spacing;
         color: variables.$muted-color;
         text-transform: capitalize;
+        background-color: variables.$table-bg;
         font-size: 12px;
         border: none !important;
-        border-radius: variables.$table-round;
+        border-radius: 0;
         cursor: pointer;
         position: relative;
 
 
 
-        .badge {
-          border-radius: 50px;
+        .moringa-badge {
+          border-radius: 100%;
           padding: 5px;
           background: white;
           color: variables.$dark-color;
           font-size: 10px;
           text-transform: uppercase;
-          right: -2px;
-          top: -2px;
+          right: -7px;
+          z-index: 1;
+          width: 10px;
+          top: -7px;
           height: auto;
           position: absolute;
           display: none;
@@ -364,7 +388,7 @@ display: flex;
         &.active {
           background: variables.$active-color;
 
-          .badge {
+          .moringa-badge {
             display: block;
 
           }
@@ -388,7 +412,7 @@ display: flex;
       min-width: 55px;
       cursor: pointer;
 
-      .btn {
+      .moringa-btn {
         padding: 0;
         height: auto;
       }
@@ -463,7 +487,7 @@ display: flex;
       position: relative;
       overflow: inherit;
 
-      .tag {
+      .moringa-tag {
         width: auto;
         height: auto;
         position: absolute;
@@ -482,7 +506,7 @@ display: flex;
           $fallback: map.get(variants.$variant-colors, $name);
           background-color: if($fallback !=null, color.adjust($fallback, $lightness: 40%), color.adjust($color, 10%));
 
-          .tag {
+          .moringa-tag {
 
             color: $color;
             $fallback: map.get(variants.$variant-colors, $name);

@@ -228,7 +228,7 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   getStatusStyles(status: string): { tagClass: string; progressClass: string } {
     const color = this.statusMap?.[status?.toLowerCase()] || 'info';
     return {
-      tagClass: `tag ${color}`,
+      tagClass: `moringa-tag ${color}`,
       progressClass: `progress-bar ${color}`
     };
   }

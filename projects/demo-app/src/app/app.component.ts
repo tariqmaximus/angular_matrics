@@ -8,6 +8,7 @@ import { NgMoringaTableComponent } from '../../../ng-moringa-table/src/public-ap
   selector: 'app-root',
   imports: [NgMoringaTableComponent],
   templateUrl: './app.component.html',
+  styleUrls: ['./styles.css']
 
 })
 export class AppComponent {
