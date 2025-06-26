@@ -4,7 +4,8 @@ import {
   OnInit,
   OnChanges,
   Output,
-  EventEmitter
+  EventEmitter,
+  HostListener
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -142,6 +143,18 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   getTabCount(option: string): number {
     return this.filteredData.filter(item => item[this.searchKey] === option).length;
   }
+dropdownShownIndex: number | null = null;
+
+toggleDropdown(index: number, event: MouseEvent): void {
+  event.stopPropagation();
+  this.dropdownShownIndex = this.dropdownShownIndex === index ? null : index;
+}
+
+@HostListener('document:click')
+onOutsideClick(): void {
+  this.dropdownShownIndex = null;
+}
+
 
   selectTabOption(option: string): void {
     this.selectedOption = option;
