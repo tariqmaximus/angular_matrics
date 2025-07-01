@@ -1,3 +1,29 @@
+.moringa-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 35px;
+  align-items: stretch;
+}
+.moringa-group.align-center {
+  justify-content: center;
+}
+.moringa-group.align-left {
+  justify-content: flex-start;
+}
+.moringa-group.align-right {
+  justify-content: flex-end;
+}
+.moringa-group.gap-sm {
+  gap: 5px;
+}
+.moringa-group.gap {
+  gap: 15px !important;
+}
+.moringa-group.sm {
+  height: 30px !important;
+}
+
 .ng-moringa-table {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
@@ -5,10 +31,15 @@
   min-height: 60px;
   padding-bottom: 0;
   transition: 0.4s;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.ng-moringa-table * {
+  box-sizing: border-box;
 }
 .ng-moringa-table .moringa-body {
   transition: 0.4s;
-  overflow-x: auto;
+  width: 100%;
 }
 .ng-moringa-table .moringa-body.no-header {
   margin-top: 0 !important;
@@ -16,44 +47,35 @@
 .ng-moringa-table table {
   width: 100%;
 }
-.ng-moringa-table table th, .ng-moringa-table table td {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  vertical-align: middle;
-}
-.ng-moringa-table table .ellipsize {
-  max-width: 200px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.ng-moringa-table table td, .ng-moringa-table table th {
+  min-width: 100px;
 }
 .ng-moringa-table table .key {
   display: none;
 }
-.ng-moringa-table table th {
+.ng-moringa-table table thead {
+  border-bottom: 1px solid #e7e7e7;
+  text-transform: capitalize;
+}
+.ng-moringa-table table thead th {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: bold;
   color: #888888;
   padding: 15px 0;
   text-transform: uppercase;
 }
-.ng-moringa-table table th .sorting-group {
+.ng-moringa-table table thead th .sorting-group {
   display: flex;
-  gap: 15px;
+  gap: 5px;
   align-items: center;
 }
-.ng-moringa-table table th .sorting-group svg {
+.ng-moringa-table table thead th .sorting-group svg {
   fill: #63634e;
-  width: 14px;
+  width: 13px;
   height: auto;
 }
-.ng-moringa-table table th:last-child > div {
+.ng-moringa-table table thead th:last-child > div {
   justify-content: flex-end;
-}
-.ng-moringa-table table thead {
-  border-bottom: 1px solid #e7e7e7;
-  text-transform: capitalize;
 }
 .ng-moringa-table table tr {
   border-bottom: 1px solid #e7e7e7;
@@ -72,8 +94,8 @@
   color: #888888;
 }
 .ng-moringa-table table tr td {
-  padding: 15px 0;
-  font-size: 14px;
+  padding: 5px 0;
+  font-size: 13px;
 }
 .ng-moringa-table table tr td .value-lenth {
   display: inline-block;
@@ -248,7 +270,7 @@
 .ng-moringa-table .moringa-input {
   border: 1px solid #e7e7e7;
   color: #888888;
-  padding: 10px;
+  padding: 0 10px;
   outline: none;
 }
 .ng-moringa-table .moringa-btn:focus,
@@ -447,65 +469,6 @@
 }
 .ng-moringa-table .text-muted {
   color: #888888;
-}
-.ng-moringa-table .moringa-group {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0;
-  height: 35px;
-  align-items: stretch;
-}
-.ng-moringa-table .moringa-group > * {
-  border-radius: 0;
-  transition: 0.4s;
-}
-.ng-moringa-table .moringa-group > *:not(:last-child) {
-  border-right: none;
-}
-.ng-moringa-table .moringa-group > *:first-child {
-  border-radius: 5px 0 0 5px;
-}
-.ng-moringa-table .moringa-group > *:only-child {
-  border-radius: 5px !important;
-}
-.ng-moringa-table .moringa-group > *:last-child {
-  border-radius: 0 5px 5px 0;
-}
-.ng-moringa-table .moringa-group > *:focus {
-  outline: none;
-  box-shadow: none;
-}
-.ng-moringa-table .moringa-group > *:active {
-  border-color: #e7e7e7;
-}
-.ng-moringa-table .moringa-group > *.active {
-  background-color: rgb(238, 238, 238);
-  color: #63634e;
-}
-.ng-moringa-table .moringa-group > *.active span {
-  color: #63634e;
-}
-.ng-moringa-table .moringa-group > *.active i {
-  color: #0173df;
-}
-.ng-moringa-table .moringa-group.align-center {
-  justify-content: center;
-}
-.ng-moringa-table .moringa-group.align-left {
-  justify-content: flex-start;
-}
-.ng-moringa-table .moringa-group.align-right {
-  justify-content: flex-end;
-}
-.ng-moringa-table .moringa-group.gap-sm {
-  gap: 5px;
-}
-.ng-moringa-table .moringa-group.gap {
-  gap: 15px !important;
-}
-.ng-moringa-table .moringa-group.sm {
-  height: 30px !important;
 }
 .ng-moringa-table .moringa-tabs {
   padding: 0;
@@ -976,11 +939,44 @@
 .ng-moringa-table.round-card .date-picker {
   border-radius: 8px !important;
 }
-.ng-moringa-table.round-card .date-picker .media-tile .media-img {
-  border-radius: 10px;
+.ng-moringa-table.round-card .media-tile .media-img {
+  border-radius: 10px !important;
 }
 .ng-moringa-table.round-card .moringa-header .moringa-container {
   padding: 0 15px;
+}
+.ng-moringa-table.round-card .moringa-group > * {
+  border-radius: 0;
+  transition: 0.4s;
+}
+.ng-moringa-table.round-card .moringa-group > *:not(:last-child) {
+  border-right: none;
+}
+.ng-moringa-table.round-card .moringa-group > *:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.ng-moringa-table.round-card .moringa-group > *:only-child {
+  border-radius: 5px !important;
+}
+.ng-moringa-table.round-card .moringa-group > *:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.ng-moringa-table.round-card .moringa-group > *:focus {
+  outline: none;
+  box-shadow: none;
+}
+.ng-moringa-table.round-card .moringa-group > *:active {
+  border-color: #e7e7e7;
+}
+.ng-moringa-table.round-card .moringa-group > *.active {
+  background-color: rgb(238, 238, 238);
+  color: #63634e;
+}
+.ng-moringa-table.round-card .moringa-group > *.active span {
+  color: #63634e;
+}
+.ng-moringa-table.round-card .moringa-group > *.active i {
+  color: #0173df;
 }
 .ng-moringa-table.round-card table th {
   padding: 15px;
@@ -1081,7 +1077,7 @@
   border-radius: 0;
   background: transparent;
   text-align: left;
-  font-size: 14px;
+  font-size: 13px;
   color: #63634e;
   cursor: pointer;
 }

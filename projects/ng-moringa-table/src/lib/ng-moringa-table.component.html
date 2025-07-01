@@ -121,7 +121,7 @@
   </div>
   <div class="moringa-body ">
 
-    <div class="pt-2 ">
+    <div class="table-wrapper">
       <table>
         <thead>
           <tr>
@@ -193,7 +193,7 @@
             [ngClass]="{ 'dynamic-row': activeRowIndex === i }">
             <td *ngFor="let column of columns">
               <ng-container [ngSwitch]="column.key">
-                <ng-container *ngSwitchCase="'profileImage'">
+                <ng-container *ngSwitchCase="'mediaTile'">
                   <div class="moringa-group">
                     <div class="checkbox-wrapper">
                       <input class="inp-cbx" [id]="prefix + '-cbx-' + i" type="checkbox"
@@ -211,12 +211,12 @@
                       <div class="media-img " [ngClass]="statusMap[row.status]">
 
                         <!-- Show image only if not failed -->
-                        <img *ngIf="row.profileImage && !imageLoadFailedMap[row?.id || row?.[searchKey] || row?.name]"
-                          class="img-fluid" [src]="row.profileImage || mediaImage" alt="Media Image"
+                        <img *ngIf="row.mediaTile && !imageLoadFailedMap[row?.id || row?.[searchKey] || row?.name]"
+                          class="img-fluid" [src]="row.mediaTile || mediaImage" alt="Media Image"
                           (error)="handleImageError($event, row)" />
 
                         <!-- Show fallback name letters if image failed or missing -->
-                        <span *ngIf="!row.profileImage || imageLoadFailedMap[row?.id || row?.[searchKey] || row?.name]"
+                        <span *ngIf="!row.mediaTile || imageLoadFailedMap[row?.id || row?.[searchKey] || row?.name]"
                           class="letter-fallback">
                           {{ (row.name || '??').substring(0, 2).toUpperCase() }}
                         </span>

@@ -3,7 +3,39 @@
 @use './variables' as variables;
 @use './variants' as variants;
 @use './index' as *;
+  .moringa-group {
+    display: flex;
+    align-items: center;
 
+    gap: 0;
+    height: variables.$group-height;
+    align-items: stretch;
+
+ 
+    &.align-center {
+      justify-content: center;
+    }
+
+    &.align-left {
+      justify-content: flex-start;
+    }
+
+    &.align-right {
+      justify-content: flex-end;
+    }
+
+    &.gap-sm {
+      gap: variables.$btn-spacing;
+    }
+
+    &.gap {
+      gap: variables.$table-spacing !important;
+    }
+
+    &.sm {
+      height: variables.$group-height-sm !important;
+    }
+  }
 
 .ng-moringa-table {
   position: relative;
@@ -12,10 +44,15 @@
   min-height: variables.$moringa-header-height;
   padding-bottom: 0;
   transition: 0.4s;
+  width: 100%;
+* {
+  box-sizing: border-box;
+}
+  -webkit-overflow-scrolling: touch; 
   .moringa-body {
     transition: 0.4s;
-overflow-x: auto;
 
+width: 100%;
 
 
     &.no-header {
@@ -23,43 +60,46 @@ overflow-x: auto;
 
     }
   }
+  .table-wrapper {
+   
+
+ 
+}
  table {
-   width: 100%;
-  th, td {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  vertical-align: middle;
+
+width: 100%;
+
+
+td, th {
+  min-width: 100px;  // کالم کی چوڑائی کو کم از کم 100px پر محدود کریں
 }
 
-
-
-    .ellipsize {
-      max-width: 200px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
 
     .key {
       display: none;
     }
 
-    th {
+ 
+
+    thead {
+
+      border-bottom: 1px solid $bs-border;
+      text-transform: capitalize;
+   th {
       font-size: 12px;
-      font-weight: 500;
+      font-weight: bold;
       color: variables.$muted-color;
-      padding: calc($table-spacing) 0;
+      padding: variables.$table-spacing 0;
       text-transform: uppercase;
 
       .sorting-group {
         display: flex;
-        gap: variables.$table-spacing;
+        gap: variables.$btn-spacing;
         align-items: center;
 
         svg {
           fill: variables.$dark-color;
-          width: 14px;
+          width: 13px;
           height: auto;
         }
       }
@@ -71,12 +111,6 @@ overflow-x: auto;
       }
 
     }
-
-    thead {
-
-      border-bottom: 1px solid $bs-border;
-      text-transform: capitalize;
-
     }
 
 
@@ -105,8 +139,8 @@ overflow-x: auto;
       }
 
       td {
-        padding: calc($table-spacing) 0;
-        font-size: 14px;
+        padding: variables.$btn-spacing 0;
+        font-size: 13px;
 
         .value-lenth {
           display: inline-block;
@@ -230,7 +264,7 @@ overflow-x: auto;
   .moringa-input {
     border: 1px solid variables.$bs-border;
     color: variables.$muted-color;
-    padding: 10px;
+    padding:0 10px;
     outline: none;
 
     &:focus {
@@ -317,81 +351,7 @@ overflow-x: auto;
     color: variables.$muted-color;
   }
 
-  .moringa-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0;
-    height: variables.$group-height;
-    align-items: stretch;
 
-    >* {
-      border-radius: 0;
-      transition: 0.4s;
-
-      &:not(:last-child) {
-        border-right: none;
-      }
-
-      &:first-child {
-        border-radius: variables.$btn-round 0 0 $btn-round;
-      }
-
-      &:only-child {
-        border-radius: variables.$btn-round !important;
-      }
-
-      &:last-child {
-        border-radius: 0 $btn-round $btn-round 0;
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: none;
-      }
-
-      &:active {
-        border-color: variables.$bs-border;
-      }
-
-      &.active {
-        background-color: variables.$active-color;
-        color: variables.$dark-color;
-
-        span {
-          color: variables.$dark-color;
-        }
-
-        i {
-          color: variables.$primary-color;
-        }
-      }
-    }
-
-    &.align-center {
-      justify-content: center;
-    }
-
-    &.align-left {
-      justify-content: flex-start;
-    }
-
-    &.align-right {
-      justify-content: flex-end;
-    }
-
-    &.gap-sm {
-      gap: variables.$btn-spacing;
-    }
-
-    &.gap {
-      gap: variables.$table-spacing !important;
-    }
-
-    &.sm {
-      height: variables.$group-height-sm !important;
-    }
-  }
 
   .moringa-tabs {
     padding: 0;
@@ -702,12 +662,15 @@ overflow-x: auto;
     .date-picker {
       border-radius: variables.$table-round !important;
 
-      .media-tile {
+ 
+
+    }
+     .media-tile {
 
 
         .media-img {
 
-          border-radius: variables.$dp-round;
+          border-radius: variables.$dp-round !important;
 
 
 
@@ -719,15 +682,57 @@ overflow-x: auto;
 
 
       }
-
-    }
-
     .moringa-header {
       .moringa-container {
         padding: 0 calc($table-spacing);
       }
     }
+ .moringa-group {
+  
 
+    >* {
+      border-radius: 0;
+      transition: 0.4s;
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+
+      &:first-child {
+        border-radius: variables.$btn-round 0 0 $btn-round;
+      }
+
+      &:only-child {
+        border-radius: variables.$btn-round !important;
+      }
+
+      &:last-child {
+        border-radius: 0 $btn-round $btn-round 0;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      &:active {
+        border-color: variables.$bs-border;
+      }
+
+      &.active {
+        background-color: variables.$active-color;
+        color: variables.$dark-color;
+
+        span {
+          color: variables.$dark-color;
+        }
+
+        i {
+          color: variables.$primary-color;
+        }
+      }
+    }
+  }
     table {
 
 
@@ -881,7 +886,7 @@ overflow-x: auto;
           border-radius: 0;
           background: transparent;
           text-align: left;
-          font-size: 14px;
+          font-size: 13px;
           color: variables.$dark-color;
           cursor: pointer;
 
