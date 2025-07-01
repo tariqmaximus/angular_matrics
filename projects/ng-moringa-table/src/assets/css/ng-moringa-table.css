@@ -8,6 +8,7 @@
 }
 .ng-moringa-table .moringa-body {
   transition: 0.4s;
+  overflow-x: auto;
 }
 .ng-moringa-table .moringa-body.no-header {
   margin-top: 0 !important;

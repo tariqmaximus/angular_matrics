@@ -1,195 +1,118 @@
-ng-moringa-table
+# @tariq-jarral/ng-moringa-table
 
-A dynamic and responsive Angular table component with smart filtering, custom buttons, checkboxes, and pagination.
+A powerful, reusable Angular smart table component designed with flexibility and interactivity in mind. Easily integrate search filters, sorting, pagination, status tags, actions, and progress indicators — all without relying on Bootstrap or external icon libraries.
 
-✨ Features
+---
 
-✅ Customizable column definitions
+## 📦 Installation
 
-🔍 Built-in search and date filters
+```bash
+npm install @tariq-jarral/ng-moringa-table
+```
 
-📊 Progress tracking bar per status
+Make sure your project is using Angular v15+.
 
-🔁 Tabs or dropdown filters
+---
 
-📦 Fully standalone component (Angular 17+ compatible)
+## 🧩 Usage
 
-📱 Mobile-friendly responsive layout
+Import and use the component directly since it's standalone:
 
-📦 Installation
+### In Your Component
 
-npm install ng-moringa-table
+```ts
+import { NgMoringaTableComponent } from '@tariq-jarral/ng-moringa-table';
 
-🔧 Usage
-
-Import in your Angular component or module:
-
-import { NgMoringaTableComponent } from 'ng-moringa-table';
-
-@NgModule({
-  imports: [NgMoringaTableComponent]
+@Component({
+  selector: 'app-my-page',
+  standalone: true,
+  imports: [NgMoringaTableComponent],
+  template: `<ng-moringa-table [data]="myData" [columns]="columns"></ng-moringa-table>`
 })
-export class YourModule {}
+export class MyPageComponent {
+  columns = [
+    { key: 'name', label: 'Name' },
+    { key: 'email', label: 'Email' },
+    { key: 'status', label: 'Status' }
+  ];
 
-Use in template:
-
-<ng-moringa-table
-  [data]="tableData"
-  [columns]="columnDefs"
-  [searchButton]="true"
-  [filterSearch]="true"
-  [filterStyle]="'tabs'"
-  [headerButtons]="headerActions"
-  [actionButtons]="rowActions"
-  [Sorting]="true"
-  [paginated]="true"
-  [collapsible]="true"
-  [progressBy]="'status'"
-></ng-moringa-table>
-
-🧩 Inputs
-
-Input
-
-Type
-
-Description
-
-data
-
-any[]
-
-Table data
-
-columns
-
-{ key: string, label: string }[]
-
-Column definitions
-
-searchButton
-
-boolean
-
-Show/hide search toggle
-
-filterSearch
-
-boolean
-
-Show keyword & date filter bar
-
-filterStyle
-
-`'tabs'
-
-'dropdown'`
-
-Filter style UI
-
-headerButtons
-
-CardButton[]
-
-Buttons in the header toolbar
-
-actionButtons
-
-ActionButton[]
-
-Buttons for each row
-
-Sorting
-
-boolean
-
-Enable column sorting
-
-paginated
-
-boolean
-
-Enable pagination controls
-
-collapsible
-
-boolean
-
-Enable collapse toggle
-
-progressBy
-
-string
-
-Key for progress tracking (e.g., 'status')
-
-searchOptions
-
-string[]
-
-Options for filter (tabs/dropdown)
-
-📤 Outputs
-
-Output
-
-Type
-
-Description
-
-rowSelected
-
-EventEmitter<any>
-
-Emits when a row is selected
-
-buttonClicked
-
-EventEmitter<{ button: ActionButton, row: any }>
-
-Emits when row button clicked
-
-📘 Types
-
-CardButton
-
-interface CardButton {
-  label?: string;
-  icon?: string;
-  targetId: string;
-  action?: () => void;
+  myData = [
+    { name: 'John Doe', email: 'john@example.com', status: 'active' },
+    { name: 'Jane Doe', email: 'jane@example.com', status: 'inactive' }
+  ];
 }
+```
 
-ActionButton
+---
 
-interface ActionButton {
-  label?: string;
-  tooltip: string;
-  icon?: string;
-  className?: string;
-  isDropdown?: boolean;
-  options?: string[];
-  action?: (row: any) => void;
-  dropdownAction?: (selected: string, row: any) => void;
-}
+## ⚙️ Inputs
 
-🧪 Development
+| Input               | Type                               | Description |
+|--------------------|------------------------------------|-------------|
+| `data`             | `any[]`                            | Table row data |
+| `columns`          | `{ key: string; label: string }[]` | Column definitions |
+| `filterStyle`      | `('tabs' \| 'dropdown' \| 'keyword' \| 'date')[]` | Filter UI modes |
+| `searchButton`     | `boolean`                          | Show search input |
+| `Sorting`          | `boolean`                          | Enable sorting |
+| `paginated`        | `boolean`                          | Enable pagination |
+| `pageSize`         | `number`                           | Items per page |
+| `statusMap`        | `Record<string, string>`           | Status color classes |
+| `actionButtons`    | `ActionButton[]`                   | Row action buttons |
+| `headerButtons`    | `CardButton[]`                     | Header-level buttons |
+| `progressBy`       | `string`                           | Key to base progress bar on |
+| `collapsible`      | `boolean`                          | Make card collapsible |
+| `title` / `sub`    | `string`                           | Header text |
+| `icon`             | `string`                           | Optional icon class |
+| `excludeColumns`   | `string[]`                         | Hide auto-generated columns |
+| `valueLenthColumns`| `string[]`                         | Apply ellipsis style |
 
-To build the library:
+---
 
-npm run build:moringa
+## 🔁 Outputs
 
-To publish to npm:
+| Output     | Type                                      | Description |
+|------------|-------------------------------------------|-------------|
+| `rowAction`| `EventEmitter<{ action: string; row: any }>` | Emits when action button is clicked |
 
-cd dist/ng-moringa-table
-npm publish --access public
+---
 
-🔗 Links
+## 🎨 Customization
 
-Live Demo (Coming Soon)
+- Use `variant` input to apply a custom style class to the whole table
+- Provide a `statusMap` for color-coding status values:
 
-GitHub Repository (if public)
+```ts
+statusMap = {
+  active: 'success',
+  inactive: 'danger',
+  pending: 'warning'
+};
+```
 
-📄 License
+---
 
-MIT © 2025 Tariq Mehmood
+## 📅 Date Picker Filter
+
+Enable `filterStyle` with `'date'` to show an inline calendar. Date filtering works on rows with a `date` property.
+
+---
+
+## 📌 Action Button Example
+
+```ts
+actionButtons = [
+  {
+    label: 'Edit',
+    tooltip: 'Edit row',
+    icon: 'bi bi-pencil',
+    className: 'btn-edit',
+    action: (row) => console.log('Edit', row)
+  }
+];
+```
+
+---
+
+## ✅ License
+
+MIT License © [Tariq Jarral](https://github.com/tariq-jarral)
