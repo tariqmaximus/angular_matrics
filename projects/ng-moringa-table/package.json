@@ -1,36 +1,31 @@
 {
-  "name": "ng-moringa-table",
-  "version": "1.0.3",
+  "name": "ng-moringa-table-v1",
+  "version": "1.0.1",
+  "description": "Smart Angular table v1 with filters, pagination, and actions",
   "author": "Tariq Jarral",
-  "description": "A modern, responsive, and reusable Angular smart table component with filters, pagination, and action controls.",
-  "keywords": [
-    "angular",
-    "smart-table",
-    "responsive-table",
-    "angular-component",
-    "data-table",
-    "dynamic-table"
-  ],
   "license": "MIT",
-  "peerDependencies": {
-    "@angular/core": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
-    "@angular/common": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  "publishConfig": {
+    "access": "public"
   },
-  "dependencies": {},
+  "peerDependencies": {
+    "@angular/common": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "@angular/core": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
   "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+    "./component": {
+      "import": "./ng-moringa-table.component.js"
     }
   },
-  "sideEffects": false,
-  "module": "fesm2022/ng-moringa-table.mjs",
-  "main": "bundles/ng-moringa-table.umd.js",
-  "typings": "index.d.ts",
   "files": [
-    "lib",
-    "fesm2022",
-    "bundles",
-    "index.d.ts"
+    "fesm2022/",
+    "fesm2015/",
+    "esm2022/",
+    "esm2015/",
+    "bundles/",
+    "*.js",
+    "*.d.ts",
+    "*.css",
+    "README.md",
+    "LICENSE"
   ]
 }

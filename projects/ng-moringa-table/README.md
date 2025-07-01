@@ -1,4 +1,4 @@
-# @tariq-jarral/ng-moringa-table
+# ng-moringa-table-v3
 
 A powerful, reusable Angular smart table component designed with flexibility and interactivity in mind. Easily integrate search filters, sorting, pagination, status tags, actions, and progress indicators — all without relying on Bootstrap or external icon libraries.
 
@@ -7,7 +7,7 @@ A powerful, reusable Angular smart table component designed with flexibility and
 ## 📦 Installation
 
 ```bash
-npm install @tariq-jarral/ng-moringa-table
+npm install ng-moringa-table-v3
 ```
 
 Make sure your project is using Angular v15+.
@@ -21,7 +21,7 @@ Import and use the component directly since it's standalone:
 ### In Your Component
 
 ```ts
-import { NgMoringaTableComponent } from '@tariq-jarral/ng-moringa-table';
+import { NgMoringaTableComponent } from 'ng-moringa-table-v3';
 
 @Component({
   selector: 'app-my-page',
