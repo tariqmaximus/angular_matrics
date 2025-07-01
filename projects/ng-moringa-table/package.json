@@ -1,7 +1,7 @@
 {
-  "name": "ng-moringa-table-v1",
+  "name": "ng-moringa-table",
   "version": "1.0.1",
-  "description": "Smart Angular table v1 with filters, pagination, and actions",
+  "description": "Smart Angular table with filters, pagination, and actions",
   "author": "Tariq Jarral",
   "license": "MIT",
   "publishConfig": {
