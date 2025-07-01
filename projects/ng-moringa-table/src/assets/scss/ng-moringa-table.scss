@@ -389,7 +389,8 @@ td, th {
           text-transform: uppercase;
           right: -7px;
           z-index: 1;
-          width: 10px;
+          width: 20px;
+          height: 20px;
           top: -7px;
           height: auto;
           position: absolute;
@@ -447,7 +448,7 @@ td, th {
         svg {
           position: absolute;
           top: 4px;
-          left: 4px;
+          left: 2px;
           fill: none;
           stroke: white;
           stroke-width: 2;
@@ -743,7 +744,7 @@ td, th {
 
       th {
 
-        padding: calc($table-spacing);
+        padding: variables.$table-spacing !important;
 
 
       }
@@ -839,7 +840,8 @@ td, th {
     .moringa-btn {
       padding: variables.$btn-spacing;
     }
-    .moringa-btn-toggle::after {
+    .moringa-btn-toggle {
+    &:after {
       display: inline-block;
       margin-left: 0.255em;
       vertical-align: 0.255em;
@@ -849,7 +851,7 @@ td, th {
       border-bottom: 0;
       border-left: 0.3em solid transparent;
     }
-
+  }
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -857,9 +859,10 @@ td, th {
       z-index: 10;
       background-color: variables.$table-bg;
       border: 1px solid variables.$bs-border;
-      border-radius: 6px;
+      border-radius:variables.$btn-round ;
       min-width: 140px;
-      padding: 4px 0;
+      
+      padding: 0;
       margin: 0;
       list-style: none;
       box-shadow: variables.$table-shadow;
@@ -881,19 +884,32 @@ td, th {
         .dropdown-item {
           display: block;
           width: 100%;
-          padding: variables.$table-spacing variables.$btn-spacing;
+          padding: variables.$table-spacing variables.$table-spacing;
           border: none;
           border-radius: 0;
           background: transparent;
           text-align: left;
           font-size: 13px;
           color: variables.$dark-color;
+          transition: 0.4s;
           cursor: pointer;
 
           &:hover {
-            background-color: variables.$active-color ;
+            background-color: variables.$primary-color ;
+            color: white;
           }
         }
+
+        &:first-child {
+          .dropdown-item {
+  border-radius:variables.$btn-round variables.$btn-round 0 0 ;
+          }
+}
+&:last-child {
+  .dropdown-item {
+  border-radius: 0 0 variables.$btn-round variables.$btn-round;
+  }
+}
       }
 
     }

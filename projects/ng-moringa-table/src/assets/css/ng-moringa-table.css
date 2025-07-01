@@ -503,7 +503,8 @@
   text-transform: uppercase;
   right: -7px;
   z-index: 1;
-  width: 10px;
+  width: 20px;
+  height: 20px;
   top: -7px;
   height: auto;
   position: absolute;
@@ -628,7 +629,7 @@
 .ng-moringa-table .checkbox-wrapper .cbx .checkbox svg {
   position: absolute;
   top: 4px;
-  left: 4px;
+  left: 2px;
   fill: none;
   stroke: white;
   stroke-width: 2;
@@ -979,7 +980,7 @@
   color: #0173df;
 }
 .ng-moringa-table.round-card table th {
-  padding: 15px;
+  padding: 15px !important;
 }
 .ng-moringa-table.round-card table tr td {
   padding: 15px;
@@ -1032,7 +1033,7 @@
 .ng-moringa-table .moringa-dropdown .moringa-btn {
   padding: 5px;
 }
-.ng-moringa-table .moringa-dropdown .moringa-btn-toggle::after {
+.ng-moringa-table .moringa-dropdown .moringa-btn-toggle:after {
   display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
@@ -1049,9 +1050,9 @@
   z-index: 10;
   background-color: #fff;
   border: 1px solid #e7e7e7;
-  border-radius: 6px;
+  border-radius: 5px;
   min-width: 140px;
-  padding: 4px 0;
+  padding: 0;
   margin: 0;
   list-style: none;
   box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1);
@@ -1072,17 +1073,25 @@
 .ng-moringa-table .moringa-dropdown .dropdown-menu li .dropdown-item {
   display: block;
   width: 100%;
-  padding: 15px 5px;
+  padding: 15px 15px;
   border: none;
   border-radius: 0;
   background: transparent;
   text-align: left;
   font-size: 13px;
   color: #63634e;
+  transition: 0.4s;
   cursor: pointer;
 }
 .ng-moringa-table .moringa-dropdown .dropdown-menu li .dropdown-item:hover {
-  background-color: rgb(238, 238, 238);
+  background-color: #0173df;
+  color: white;
+}
+.ng-moringa-table .moringa-dropdown .dropdown-menu li:first-child .dropdown-item {
+  border-radius: 5px 5px 0 0;
+}
+.ng-moringa-table .moringa-dropdown .dropdown-menu li:last-child .dropdown-item {
+  border-radius: 0 0 5px 5px;
 }
 
 /*# sourceMappingURL=ng-moringa-table.css.map */

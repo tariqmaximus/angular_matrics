@@ -244,7 +244,7 @@
                         {{ btn.label }}
                       </button>
                       <div *ngIf="btn.isDropdown" class="moringa-dropdown moringa-btn">
-                        <button class="moringa-btn no-bg dropdown-toggle" (click)="toggleDropdown(i, $event)"
+                        <button class="moringa-btn no-bg moringa-btn-toggle" (click)="toggleDropdown(i, $event)"
                           [ngClass]="btn.className" [attr.title]="btn.tooltip">
                           {{ btn.label }}
                         </button>
