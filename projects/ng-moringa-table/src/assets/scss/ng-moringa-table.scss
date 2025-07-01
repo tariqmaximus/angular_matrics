@@ -12,7 +12,127 @@
   min-height: variables.$moringa-header-height;
   padding-bottom: 0;
   transition: 0.4s;
+  .moringa-body {
+    transition: 0.4s;
 
+
+
+
+    &.no-header {
+      margin-top: 0 !important;
+
+    }
+  }
+ table {
+   width: 100%;
+  th, td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+
+
+    .ellipsize {
+      max-width: 200px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .key {
+      display: none;
+    }
+
+    th {
+      font-size: 12px;
+      font-weight: 500;
+      color: variables.$muted-color;
+      padding: calc($table-spacing) 0;
+      text-transform: uppercase;
+
+      .sorting-group {
+        display: flex;
+        gap: variables.$table-spacing;
+        align-items: center;
+
+        svg {
+          fill: variables.$dark-color;
+          width: 14px;
+          height: auto;
+        }
+      }
+
+      &:last-child {
+        >div {
+          justify-content: flex-end;
+        }
+      }
+
+    }
+
+    thead {
+
+      border-bottom: 1px solid $bs-border;
+      text-transform: capitalize;
+
+    }
+
+
+
+    tr {
+
+
+
+      border-bottom: 1px solid variables.$bs-border;
+
+      .mobile-btn {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 18px;
+
+        .moringa-btn {
+          border: none !important;
+          background: none;
+
+          i {
+            color: variables.$muted-color;
+          }
+
+        }
+      }
+
+      td {
+        padding: calc($table-spacing) 0;
+        font-size: 14px;
+
+        .value-lenth {
+          display: inline-block;
+          max-width: 100px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          vertical-align: middle;
+          cursor: pointer;
+        }
+
+        .value-lenth:hover {
+          text-decoration: underline dotted;
+        }
+
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    tfoot {
+      border-top: 1px solid $bs-border;
+    }
+  }
   .media-tile {
     display: flex;
     align-items: center;
@@ -76,28 +196,32 @@
     }
 
   }
-.moringa-select {
-  appearance: none; /* Remove native arrow in most browsers */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  color:variables.$muted-color ;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20,40 70,90 120,40' stroke='%23333' stroke-width='15' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 0.75rem;
-  min-width: 150px;
-  cursor: pointer;
-   option {
-  padding: 0.5rem;
-  background-color: variables.$table-bg;
-  color: variables.$dark-color;
-  border: 1px solid variables.$bs-border;
-}
-  &:focus {
 
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-}
+  .moringa-select {
+    appearance: none;
+    /* Remove native arrow in most browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: variables.$muted-color ;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20,40 70,90 120,40' stroke='%23333' stroke-width='15' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.75rem;
+    min-width: 150px;
+    cursor: pointer;
+
+    option {
+      padding: 0.5rem;
+      background-color: variables.$table-bg;
+      color: variables.$dark-color;
+      border: 1px solid variables.$bs-border;
+    }
+
+    &:focus {
+
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+  }
 
 
 
@@ -187,111 +311,7 @@
     }
   }
 
-  table {
-    width: 100%;
-    background: none;
-
-
-
-    .ellipsize {
-      max-width: 200px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
-    .key {
-      display: none;
-    }
-
-    th {
-      font-size: 12px;
-      font-weight: 500;
-      color: variables.$muted-color;
-      padding: calc($table-spacing) 0;
-      text-transform: uppercase;
-
-      .sorting-group {
-        display: flex;
-        gap: variables.$table-spacing;
-        align-items: center;
-
-        svg {
-          fill: variables.$dark-color;
-          width: 14px;
-          height: auto;
-        }
-      }
-
-      &:last-child {
-        >div {
-          justify-content: flex-end;
-        }
-      }
-
-    }
-
-    thead {
-
-      border-bottom: 1px solid $bs-border;
-      text-transform: capitalize;
-
-    }
-
-
-
-    tr {
-
-      
-  
-      border-bottom: 1px solid variables.$bs-border;
-
-      .mobile-btn {
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 18px;
-
-        .moringa-btn {
-          border: none !important;
-          background: none;
-
-          i {
-            color: variables.$muted-color;
-          }
-
-        }
-      }
-
-      td {
-        padding: calc($table-spacing) 0;
-        font-size: 14px;
-
-        .value-lenth {
-          display: inline-block;
-          max-width: 100px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          vertical-align: middle;
-          cursor: pointer;
-        }
-
-        .value-lenth:hover {
-          text-decoration: underline dotted;
-        }
-
-      }
-
-      &:last-child {
-        border: none;
-      }
-    }
-
-    tfoot {
-      border-top: 1px solid $bs-border;
-    }
-  }
+ 
 
   .text-muted {
     color: variables.$muted-color;
@@ -458,8 +478,8 @@
 
       .checkbox {
         position: relative;
-            width: 20px;
-    height: 20px;
+        width: 20px;
+        height: 20px;
         border-radius: variables.$btn-round;
         border: 2px solid $check-box-border;
         transition: all 0.2s ease;
@@ -557,11 +577,6 @@
 
   }
 
-
-
-
-
-
   .date-picker {
     position: absolute;
     padding: variables.$table-spacing;
@@ -627,18 +642,6 @@
     }
   }
 
-  .moringa-body {
-    transition: 0.4s;
-
-
-    max-width: 100%;
-    overflow-X: auto;
-
-    &.no-header {
-      margin-top: 0 !important;
-
-    }
-  }
 
 
   @include mobile-view {
@@ -651,6 +654,7 @@
   &.collapsed {
     padding-bottom: 0;
     height: variables.$moringa-header-height;
+    border-radius: variables.$table-flate 0 0 !important;
 
     .moringa-header {
       border-bottom: 1px solid transparent;
@@ -673,6 +677,25 @@
 
   &.round-card {
     border-radius: variables.$table-round;
+
+    .moringa-tabs {
+
+
+      .nav-item {
+
+
+        .nav-link {
+
+          border-radius: variables.$btn-round;
+
+
+
+
+
+
+        }
+      }
+    }
 
     background-color: variables.$table-bg;
 
@@ -807,24 +830,25 @@
 
   .moringa-dropdown {
     position: relative;
+    padding: 0;
     .moringa-btn {
       padding: variables.$btn-spacing;
     }
-.moringa-btn-toggle::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
-}
+    .moringa-btn-toggle::after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
 
     .dropdown-menu {
       position: absolute;
-top:100%;
-left: 0;
+      top: 100%;
+      left: 0;
       z-index: 10;
       background-color: variables.$table-bg;
       border: 1px solid variables.$bs-border;
@@ -862,7 +886,7 @@ left: 0;
           cursor: pointer;
 
           &:hover {
-            background-color:variables.$active-color ;
+            background-color: variables.$active-color ;
           }
         }
       }

@@ -6,6 +6,92 @@
   padding-bottom: 0;
   transition: 0.4s;
 }
+.ng-moringa-table .moringa-body {
+  transition: 0.4s;
+}
+.ng-moringa-table .moringa-body.no-header {
+  margin-top: 0 !important;
+}
+.ng-moringa-table table {
+  width: 100%;
+}
+.ng-moringa-table table th, .ng-moringa-table table td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.ng-moringa-table table .ellipsize {
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ng-moringa-table table .key {
+  display: none;
+}
+.ng-moringa-table table th {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888888;
+  padding: 15px 0;
+  text-transform: uppercase;
+}
+.ng-moringa-table table th .sorting-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.ng-moringa-table table th .sorting-group svg {
+  fill: #63634e;
+  width: 14px;
+  height: auto;
+}
+.ng-moringa-table table th:last-child > div {
+  justify-content: flex-end;
+}
+.ng-moringa-table table thead {
+  border-bottom: 1px solid #e7e7e7;
+  text-transform: capitalize;
+}
+.ng-moringa-table table tr {
+  border-bottom: 1px solid #e7e7e7;
+}
+.ng-moringa-table table tr .mobile-btn {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 18px;
+}
+.ng-moringa-table table tr .mobile-btn .moringa-btn {
+  border: none !important;
+  background: none;
+}
+.ng-moringa-table table tr .mobile-btn .moringa-btn i {
+  color: #888888;
+}
+.ng-moringa-table table tr td {
+  padding: 15px 0;
+  font-size: 14px;
+}
+.ng-moringa-table table tr td .value-lenth {
+  display: inline-block;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.ng-moringa-table table tr td .value-lenth:hover {
+  text-decoration: underline dotted;
+}
+.ng-moringa-table table tr:last-child {
+  border: none;
+}
+.ng-moringa-table table tfoot {
+  border-top: 1px solid #e7e7e7;
+}
 .ng-moringa-table .media-tile {
   display: flex;
   align-items: center;
@@ -135,7 +221,8 @@
   color: #888888;
 }
 .ng-moringa-table .moringa-select {
-  appearance: none; /* Remove native arrow in most browsers */
+  appearance: none;
+  /* Remove native arrow in most browsers */
   -webkit-appearance: none;
   -moz-appearance: none;
   color: #888888;
@@ -356,81 +443,6 @@
 .ng-moringa-table .moringa-tag.draft {
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
-}
-.ng-moringa-table table {
-  width: 100%;
-  background: none;
-}
-.ng-moringa-table table .ellipsize {
-  max-width: 200px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.ng-moringa-table table .key {
-  display: none;
-}
-.ng-moringa-table table th {
-  font-size: 12px;
-  font-weight: 500;
-  color: #888888;
-  padding: 15px 0;
-  text-transform: uppercase;
-}
-.ng-moringa-table table th .sorting-group {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-.ng-moringa-table table th .sorting-group svg {
-  fill: #63634e;
-  width: 14px;
-  height: auto;
-}
-.ng-moringa-table table th:last-child > div {
-  justify-content: flex-end;
-}
-.ng-moringa-table table thead {
-  border-bottom: 1px solid #e7e7e7;
-  text-transform: capitalize;
-}
-.ng-moringa-table table tr {
-  border-bottom: 1px solid #e7e7e7;
-}
-.ng-moringa-table table tr .mobile-btn {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 18px;
-}
-.ng-moringa-table table tr .mobile-btn .moringa-btn {
-  border: none !important;
-  background: none;
-}
-.ng-moringa-table table tr .mobile-btn .moringa-btn i {
-  color: #888888;
-}
-.ng-moringa-table table tr td {
-  padding: 15px 0;
-  font-size: 14px;
-}
-.ng-moringa-table table tr td .value-lenth {
-  display: inline-block;
-  max-width: 100px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  vertical-align: middle;
-  cursor: pointer;
-}
-.ng-moringa-table table tr td .value-lenth:hover {
-  text-decoration: underline dotted;
-}
-.ng-moringa-table table tr:last-child {
-  border: none;
-}
-.ng-moringa-table table tfoot {
-  border-top: 1px solid #e7e7e7;
 }
 .ng-moringa-table .text-muted {
   color: #888888;
@@ -930,14 +942,6 @@
   color: #888888;
   font-size: 18px;
 }
-.ng-moringa-table .moringa-body {
-  transition: 0.4s;
-  max-width: 100%;
-  overflow-X: auto;
-}
-.ng-moringa-table .moringa-body.no-header {
-  margin-top: 0 !important;
-}
 @media (max-width: 768px) {
   .ng-moringa-table .moringa-body {
     max-height: inherit;
@@ -947,6 +951,7 @@
 .ng-moringa-table.collapsed {
   padding-bottom: 0;
   height: 60px;
+  border-radius: 0px 0 0 !important;
 }
 .ng-moringa-table.collapsed .moringa-header {
   border-bottom: 1px solid transparent;
@@ -963,6 +968,9 @@
 .ng-moringa-table.round-card {
   border-radius: 8px;
   background-color: #fff;
+}
+.ng-moringa-table.round-card .moringa-tabs .nav-item .nav-link {
+  border-radius: 5px;
 }
 .ng-moringa-table.round-card .date-picker {
   border-radius: 8px !important;
@@ -1022,6 +1030,7 @@
 }
 .ng-moringa-table .moringa-dropdown {
   position: relative;
+  padding: 0;
 }
 .ng-moringa-table .moringa-dropdown .moringa-btn {
   padding: 5px;

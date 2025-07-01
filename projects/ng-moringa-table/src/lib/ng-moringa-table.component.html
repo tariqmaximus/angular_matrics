@@ -65,7 +65,7 @@
 
                 <div class="d-grid" style="grid-template-columns: repeat(7, 1fr); gap: 4px;">
                   <div class="text-center fw-bold" *ngFor="let d of dayNames">{{ d }}</div>
-                  <div *ngFor="let day of calendarDays" class="text-center p-1 border rounded"
+                  <div *ngFor="let day of calendarDays" class="text-center  border rounded"
                     [class.bg-primary]="isSelected(day)" [class.text-white]="isSelected(day)" (click)="selectDate(day)"
                     style="cursor: pointer;">
                     {{ day.getDate() }}
@@ -119,7 +119,7 @@
       </div>
     </div>
   </div>
-  <div class="moringa-body  p-0">
+  <div class="moringa-body ">
 
     <div class="pt-2 ">
       <table>
@@ -141,7 +141,7 @@
                         </svg>
                       </div>
                       <div *ngIf="selectedRows.length > 1" class="moringa-dropdown">
-                        <button class="moringa-btn no-bg p-0" (click)="toggleDropdown(-1, $event)">
+                        <button class="moringa-btn no-bg " (click)="toggleDropdown(-1, $event)">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                             <path
@@ -243,7 +243,7 @@
                         <i *ngIf="btn.icon" [class]="btn.icon"></i>
                         {{ btn.label }}
                       </button>
-                      <div *ngIf="btn.isDropdown" class="moringa-dropdown moringa-btn p-0">
+                      <div *ngIf="btn.isDropdown" class="moringa-dropdown moringa-btn">
                         <button class="moringa-btn no-bg dropdown-toggle" (click)="toggleDropdown(i, $event)"
                           [ngClass]="btn.className" [attr.title]="btn.tooltip">
                           {{ btn.label }}
