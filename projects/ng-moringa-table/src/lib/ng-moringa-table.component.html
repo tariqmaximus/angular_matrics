@@ -189,7 +189,7 @@
             <td *ngFor="let column of columns">
               <ng-container [ngSwitch]="column.key">
                 <ng-container *ngSwitchCase="'mediaTile'">
-                  <div class="moringa-btn-group">
+                  <div class="moringa-group">
                     <div class="checkbox-wrapper">
                       <input class="inp-cbx" [id]="prefix + '-cbx-' + i" type="checkbox"
                         (change)="toggleSelectRow(row, $event)" [checked]="selectedRows.includes(row)" />
@@ -280,7 +280,11 @@
         </tbody>
         <tfoot *ngIf="paginated">
           <tr>
-            <td [attr.colspan]="columns.length + 1">
+            <td >
+              <ng-content select="[footer-component]"></ng-content>
+            </td>
+            <td [attr.colspan]="columns.length + 0">
+              
               <div class="pagination moringa-btn-group align-right ">
                 <button class="moringa-btn" (click)="prevPage()" [disabled]="currentPage === 1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

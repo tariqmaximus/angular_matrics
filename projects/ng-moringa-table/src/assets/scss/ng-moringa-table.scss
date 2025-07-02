@@ -121,10 +121,10 @@ width: 100%;
  table {
 
 width: 100%;
-
+border-collapse: separate; 
 
 td, th {
-  min-width: 100px;  // کالم کی چوڑائی کو کم از کم 100px پر محدود کریں
+  min-width: 100px; 
 }
 
 
@@ -168,11 +168,9 @@ td, th {
 
 
 
-    tr {
+   tr {
 
 
-
-      border-bottom: 1px solid variables.$bs-border;
 
       .mobile-btn {
         display: none;
@@ -194,7 +192,7 @@ td, th {
       td {
         padding: variables.$btn-spacing 0;
         font-size: 13px;
-
+border-bottom: 1px solid variables.$bs-border;
         .value-lenth {
           display: inline-block;
           max-width: 100px;
@@ -212,12 +210,20 @@ td, th {
       }
 
       &:last-child {
-        border: none;
+        td {
+
+        }
+        
       }
     }
 
     tfoot {
       border-top: 1px solid $bs-border;
+      tr {
+        td {
+          border: none;
+        }
+      }
     }
   }
 .day-btn {
@@ -933,7 +939,7 @@ svg {
 
         tbody {
           tr {
-            max-height: 80px;
+           
             overflow: hidden;
 
             td {
