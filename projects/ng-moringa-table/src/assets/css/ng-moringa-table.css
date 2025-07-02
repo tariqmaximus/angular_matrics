@@ -14,6 +14,12 @@
 .moringa-group.align-right {
   justify-content: flex-end;
 }
+.moringa-group.align-justify {
+  justify-content: space-between;
+}
+.moringa-group.align-justify > * {
+  width: 100%;
+}
 .moringa-group.gap-sm {
   gap: 5px;
 }
@@ -114,6 +120,42 @@
 }
 .ng-moringa-table table tfoot {
   border-top: 1px solid #e7e7e7;
+}
+.ng-moringa-table .date-picker {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  min-width: 350px;
+}
+.ng-moringa-table .date-picker .d-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 5px;
+}
+.ng-moringa-table .date-picker .d-grid .text-center {
+  padding: 8px 0;
+  border-radius: 5px;
+  font-size: 13px;
+  user-select: none;
+}
+.ng-moringa-table .date-picker .d-grid .text-center.fw-bold {
+  color: #63634e;
+  font-weight: 600;
+}
+.ng-moringa-table .date-picker .d-grid .text-center.border {
+  border: 1px solid #e7e7e7;
+  transition: background-color 0.2s, color 0.2s;
+}
+.ng-moringa-table .date-picker .d-grid .text-center.border:hover {
+  background-color: rgb(238, 238, 238);
+}
+.ng-moringa-table .date-picker .d-grid .text-center.text-white {
+  color: #fff !important;
+}
+.ng-moringa-table .date-picker .footer {
+  margin-top: 15px;
 }
 .ng-moringa-table .media-tile {
   display: flex;
@@ -290,8 +332,11 @@
   border: 1px solid #e7e7e7;
   color: #63634e;
 }
+.ng-moringa-table .moringa-btn svg {
+  width: 14px;
+}
 .ng-moringa-table .moringa-btn i {
-  font-size: 12px;
+  font-size: 14px;
   color: #888888;
 }
 .ng-moringa-table .moringa-btn:focus {

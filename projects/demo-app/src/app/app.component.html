@@ -9,11 +9,9 @@
   [collapsible]="true"
   [progressBy]="'lost'"
   [filterBy]="'status'"
-[filterStyle]="['tabs', 'keyword', 'dropdown', 'date']"
-
-  
+  [filterStyle]="['tabs', 'keyword', 'dropdown', 'date']"
   [pageSize]="3"
-   [valueLenthColumns]="['email', 'organization', 'phone', 'tags']"
+  [valueLenthColumns]="['email', 'organization', 'phone', 'tags']"
   mediaImage="assets/dummy.jpg"
   [Sorting]="true"
   [paginated]="true"
@@ -22,7 +20,7 @@
     {
       label: 'Dropdown',
       tooltip: 'Dropdown for table',
-      className: 'icon-btn-success',
+      className: 'success',
       isDropdown: true,
       options: ['lead board', 'Actives', 'scheduled']
     },
@@ -30,7 +28,7 @@
       label: 'Delete',
       icon: '',
       tooltip: 'Delete Lead',
-      className: 'icon-btn-danger'
+      className: 'danger'
     },
    
   ]"

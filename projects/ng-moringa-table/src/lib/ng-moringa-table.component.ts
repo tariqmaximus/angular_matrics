@@ -39,34 +39,34 @@ let uniqueCounter = 0;
   styleUrls: ['../assets/css/ng-moringa-table.css']
 })
 export class NgMoringaTableComponent implements OnInit, OnChanges {
-  @Input() type!: string;
   @Input() data: any[] = [];
   @Input() columns: { key: string; label: string }[] = [];
-  @Input() showActions = true;
-  @Input() variant = '';
-  @Input() mediaImage = '';
-  @Input() nameLetters = '';
-  @Input() mediaStatus = '';
-  @Input() title?: string;
-  @Input() sub?: string;
-  @Input() icon?: string;
-  @Input() moringaHeader = true;
-  @Input() showFooter = false;
-  @Input() collapsible = false;
-  @Input() idPrefix?: string;
-  @Input() headerButtons: CardButton[] = [];
-  @Input() actionButtons: ActionButton[] = [];
-  @Input() valueLenthColumns: string[] = [];
+  @Input() autoGenerateColumns = true;
+  @Input() excludeColumns: string[] = [];
   @Input() filterBy?: string;
   @Input() filterStyle: ('tabs' | 'dropdown' | 'date' | 'keyword' | 'none')[] = [];
   @Input() searchButton = true;
   @Input() Sorting = false;
-  @Input() autoGenerateColumns = true;
-  @Input() excludeColumns: string[] = [];
-  @Input() progressBy?: string;
-  @Input() paginated = false;
   @Input() pageSize = 10;
+  @Input() paginated = false;
+  @Input() showActions = true;
+  @Input() actionButtons: ActionButton[] = [];
+  @Input() headerButtons: CardButton[] = [];
+  @Input() collapsible = false;
+  @Input() variant = '';
+  @Input() moringaHeader = true;
+  @Input() showFooter = false;
+  @Input() icon?: string;
+  @Input() title?: string;
+  @Input() sub?: string;
+  @Input() mediaImage = '';
+  @Input() nameLetters = '';
+  @Input() mediaStatus = '';
+  @Input() idPrefix?: string;
+  @Input() valueLenthColumns: string[] = [];
+  @Input() progressBy?: string;
   @Input() statusMap: Record<string, string> = defaultStatusMap;
+
   @Output() rowAction = new EventEmitter<{ action: string; row: any }>();
 
   internalIdPrefix!: string;
@@ -74,29 +74,23 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   activeRowIndex: number | null = null;
   selectedRows: any[] = [];
   filteredData: any[] = [];
-  imageLoadFailedMap: Record<string, boolean> = {};
-
   searchKeyword = '';
   selectedOption = '';
-  startDate: Date | null = null;
-  endDate: Date | null = null;
   currentPage = 1;
-  selectedDate = new Date();
+  sortKey: string | null = null;
+  sortAsc: boolean = true;
+  dropdownShownIndex: number | null = null;
+  imageLoadFailedMap: Record<string, boolean> = {};
+
+  // Calendar
+  selectedDate: Date = new Date();
   selectedMonth = this.selectedDate.getMonth();
   selectedYear = this.selectedDate.getFullYear();
   datePicker = false;
-
-  sortKey: string | null = null;
-  sortAsc = true;
-
-  months = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ];
-
+  calendarDays: (Date | null)[] = [];
+  months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   years = Array.from({ length: 100 }, (_, i) => 1980 + i);
   dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  calendarDays: Date[] = [];
 
   ngOnInit(): void {
     this.internalIdPrefix = this.idPrefix || `smart-table-${uniqueCounter++}`;
@@ -112,15 +106,10 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
 
   applyFilters(): void {
     this.filteredData = this.data.filter(item => {
-      const keywordMatch = !this.searchKeyword ||
-        Object.values(item).some(val => String(val).toLowerCase().includes(this.searchKeyword.toLowerCase()));
-
+      const keywordMatch = !this.searchKeyword || Object.values(item).some(val => String(val).toLowerCase().includes(this.searchKeyword.toLowerCase()));
       const optionMatch = !this.selectedOption || item[this.searchKey] === this.selectedOption;
-
       const itemDate = item.date ? new Date(item.date) : null;
-      const dateMatch = (!this.startDate || (itemDate && itemDate >= this.startDate)) &&
-                        (!this.endDate || (itemDate && itemDate <= this.endDate));
-
+      const dateMatch = !this.filterStyle.includes('date') || !this.datePicker || !itemDate || (itemDate.toDateString() === this.selectedDate.toDateString());
       return keywordMatch && optionMatch && dateMatch;
     });
 
@@ -128,82 +117,11 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
       this.filteredData.sort((a, b) => {
         const aVal = a[this.sortKey!];
         const bVal = b[this.sortKey!];
-        return this.sortAsc ? (aVal > bVal ? 1 : aVal < bVal ? -1 : 0) : (aVal < bVal ? 1 : aVal > bVal ? -1 : 0);
+        return this.sortAsc ? (aVal > bVal ? 1 : -1) : (aVal < bVal ? 1 : -1);
       });
     }
 
     this.currentPage = 1;
-  }
-
-  sortByColumn(key: string): void {
-    this.sortKey === key ? this.sortAsc = !this.sortAsc : (this.sortKey = key, this.sortAsc = true);
-    this.applyFilters();
-  }
-
-  getTabCount(option: string): number {
-    return this.filteredData.filter(item => item[this.searchKey] === option).length;
-  }
-dropdownShownIndex: number | null = null;
-
-toggleDropdown(index: number, event: MouseEvent): void {
-  event.stopPropagation();
-  this.dropdownShownIndex = this.dropdownShownIndex === index ? null : index;
-}
-
-@HostListener('document:click')
-onOutsideClick(): void {
-  this.dropdownShownIndex = null;
-}
-
-
-  selectTabOption(option: string): void {
-    this.selectedOption = option;
-    this.applyFilters();
-  }
-
-  toggleCalendar(): void {
-    this.datePicker = !this.datePicker;
-    this.generateCalendar();
-  }
-
-  generateCalendar(): void {
-    const date = new Date(this.selectedYear, this.selectedMonth, 1);
-    const days: Date[] = [];
-
-    while (date.getMonth() === this.selectedMonth) {
-      days.push(new Date(date));
-      date.setDate(date.getDate() + 1);
-    }
-
-    const startDay = new Date(this.selectedYear, this.selectedMonth, 1).getDay();
-    for (let i = 0; i < startDay; i++) days.unshift(new Date(0));
-
-    this.calendarDays = days;
-  }
-
-  selectDate(date: Date): void {
-    if (!isNaN(date.getTime())) this.selectedDate = new Date(date);
-  }
-
-  isSelected(date: Date): boolean {
-    return date.getDate() === this.selectedDate.getDate() &&
-           date.getMonth() === this.selectedDate.getMonth() &&
-           date.getFullYear() === this.selectedDate.getFullYear();
-  }
-
-  cancel(): void { this.datePicker = false; }
-
-  confirm(): void {
-    this.startDate = this.selectedDate;
-    this.endDate = this.selectedDate;
-    this.applyFilters();
-    this.datePicker = false;
-  }
-
-  normalizeActionButtons(): void {
-    this.actionButtons = this.actionButtons.map(btn =>
-      typeof btn === 'string' ? { label: btn, tooltip: btn, className: 'btn' } : btn
-    );
   }
 
   setColumns(): void {
@@ -217,17 +135,29 @@ onOutsideClick(): void {
     }
   }
 
+  sortByColumn(key: string): void {
+    if (this.sortKey === key) {
+      this.sortAsc = !this.sortAsc;
+    } else {
+      this.sortKey = key;
+      this.sortAsc = true;
+    }
+    this.applyFilters();
+  }
+
+  getTabCount(option: string): number {
+    return this.filteredData.filter(item => item[this.searchKey] === option).length;
+  }
+
   get prefix(): string { return this.internalIdPrefix; }
   get searchKey(): string { return this.filterBy || ''; }
   get searchOptions(): string[] {
     return [...new Set(this.data.map(item => item[this.searchKey]).filter(Boolean))].sort((a, b) => a.localeCompare(b));
   }
-
   get pagedData(): any[] {
     const start = (this.currentPage - 1) * this.pageSize;
     return this.paginated ? this.filteredData.slice(start, start + this.pageSize) : this.filteredData;
   }
-
   get totalPages(): number { return Math.ceil(this.filteredData.length / this.pageSize); }
 
   get progressValue(): number {
@@ -238,17 +168,69 @@ onOutsideClick(): void {
     return Math.round((match / total) * 100);
   }
 
-  getStatusStyles(status: string): { tagClass: string; progressClass: string } {
-    const color = this.statusMap?.[status?.toLowerCase()] || 'info';
-    return {
-      tagClass: `moringa-tag ${color}`,
-      progressClass: `progress-bar ${color}`
-    };
+  toggleCalendar(): void {
+    this.datePicker = !this.datePicker;
+    if (this.datePicker) this.generateCalendar();
   }
 
-  getValue(row: any, key: string): string {
-    const val = row?.[key];
-    return val !== undefined && val !== null ? String(val) : '-';
+  onMonthOrYearChange(): void {
+    this.generateCalendar();
+  }
+
+  generateCalendar(): void {
+    const firstDay = new Date(this.selectedYear, this.selectedMonth, 1);
+    const totalDays = new Date(this.selectedYear, this.selectedMonth + 1, 0).getDate();
+    const startDay = firstDay.getDay();
+    const days: (Date | null)[] = [];
+    for (let i = 0; i < startDay; i++) days.push(null);
+    for (let d = 1; d <= totalDays; d++) days.push(new Date(this.selectedYear, this.selectedMonth, d));
+    this.calendarDays = days;
+  }
+
+  isSelected(date: Date | null): boolean {
+    return !!date && date.getDate() === this.selectedDate.getDate() && date.getMonth() === this.selectedDate.getMonth() && date.getFullYear() === this.selectedDate.getFullYear();
+  }
+
+  selectDate(date: Date | null): void {
+    if (date && !isNaN(date.getTime())) this.selectedDate = new Date(date);
+  }
+
+  confirm(): void {
+    this.applyFilters();
+    this.datePicker = false;
+  }
+
+  cancel(): void {
+    this.datePicker = false;
+  }
+
+  toggleDropdown(index: number, event: MouseEvent): void {
+    event.stopPropagation();
+    this.dropdownShownIndex = this.dropdownShownIndex === index ? null : index;
+  }
+
+@HostListener('document:click', ['$event'])
+onOutsideClick(event: MouseEvent): void {
+  const target = event.target as HTMLElement;
+
+  // Check if clicked element is inside the date-picker or the toggle button
+  const clickedInsideDatePicker = target.closest('.date-picker');
+  const clickedCalendarButton = target.closest('.moringa-btn');
+
+  if (!clickedInsideDatePicker && !clickedCalendarButton) {
+    this.datePicker = false;
+    this.dropdownShownIndex = null; // also close dropdowns
+  }
+}
+
+
+  selectTabOption(option: string): void {
+    this.selectedOption = option;
+    this.applyFilters();
+  }
+
+  normalizeActionButtons(): void {
+    this.actionButtons = this.actionButtons.map(btn => typeof btn === 'string' ? { label: btn, tooltip: btn, className: 'btn' } : btn);
   }
 
   handleImageError(event: Event, row: any): void {
@@ -300,10 +282,11 @@ onOutsideClick(): void {
       this.selectedRows.forEach(row => btn.dropdownAction!(userChoice, row));
     }
   }
-onSearchKeywordChange(value: string): void {
-  this.searchKeyword = value;
-  this.applyFilters();
-}
+
+  onSearchKeywordChange(value: string): void {
+    this.searchKeyword = value;
+    this.applyFilters();
+  }
 
   executeAction(button: CardButton): void {
     button.action?.();
@@ -325,16 +308,22 @@ onSearchKeywordChange(value: string): void {
     if (!this.searchKey) return [];
     const total = this.filteredData.length;
     const counts: Record<string, number> = {};
-
     for (const item of this.filteredData) {
       const key = item[this.searchKey];
       if (key) counts[key] = (counts[key] || 0) + 1;
     }
+    return Object.entries(counts).map(([name, count]) => ({ name, count, percent: total ? Math.round((count / total) * 100) : 0 }));
+  }
+    getStatusStyles(status: string): { tagClass: string; progressClass: string } {
+    const color = this.statusMap?.[status?.toLowerCase()] || 'info';
+    return {
+      tagClass: `moringa-tag ${color}`,
+      progressClass: `progress-bar ${color}`
+    };
+  }
 
-    return Object.entries(counts).map(([name, count]) => ({
-      name,
-      count,
-      percent: total ? Math.round((count / total) * 100) : 0
-    }));
+  getValue(row: any, key: string): string {
+    const val = row?.[key];
+    return val !== undefined && val !== null ? String(val) : '-';
   }
 }

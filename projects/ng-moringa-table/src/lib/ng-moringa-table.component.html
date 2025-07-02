@@ -1,11 +1,7 @@
 <div class="ng-moringa-table" [class.collapsed]="isCollapsed" [ngClass]="variant">
-
   <div class="moringa-header" *ngIf="moringaHeader">
     <div class="moringa-container ">
-
       <div class="moringa-group gap">
-
-
         <h6 class="table-title">
           <i class="title-icon" *ngIf="icon" [class]="icon"></i>
           {{ title }}
@@ -16,7 +12,6 @@
           <li class="nav-item" role="presentation">
             <button class="nav-link" [ngClass]="{ active: selectedOption === '' }" (click)="selectTabOption('')"
               type="button" role="tab">
-
               All
             </button>
           </li>
@@ -28,11 +23,6 @@
             </button>
           </li>
         </ul>
-
-
-
-
-
       </div>
       <div class="moringa-group gap">
         <ng-content select="[header-component]"></ng-content>
@@ -49,35 +39,45 @@
               <input type="text" class="moringa-input" placeholder="Search..." *ngIf="filterStyle.includes('keyword')"
                 [(ngModel)]="searchKeyword" (ngModelChange)="onSearchKeywordChange($event)" />
 
-              <input class="moringa-btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
-                style="min-width: 120px;" [value]="selectedDate | date: 'y, MMMM, d'" />
+              <!-- Calendar Toggle Button -->
+              <button class="moringa-btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
+                style="min-width: 120px;">
+                <svg fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16" width="16" height="16"
+                  style="margin-right: 6px;">
+                  <path
+                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                </svg>
+                <span>{{ selectedDate | date: 'y, MMMM, d' }}</span>
+              </button>
 
               <!-- Calendar Popup -->
               <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
-                <div class="moringa-group">
-                  <select class="moringa-select" [(ngModel)]="selectedMonth">
+                <div class="moringa-group align-justify">
+                  <select class="moringa-select" [(ngModel)]="selectedMonth" (change)="onMonthOrYearChange()">
                     <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
                   </select>
-                  <select class="moringa-select" [(ngModel)]="selectedYear">
+                  <select class="moringa-select" [(ngModel)]="selectedYear" (change)="onMonthOrYearChange()">
                     <option *ngFor="let y of years" [value]="y">{{ y }}</option>
                   </select>
                 </div>
 
                 <div class="d-grid" style="grid-template-columns: repeat(7, 1fr); gap: 4px;">
                   <div class="text-center fw-bold" *ngFor="let d of dayNames">{{ d }}</div>
-                  <div *ngFor="let day of calendarDays" class="text-center  border rounded"
-                    [class.bg-primary]="isSelected(day)" [class.text-white]="isSelected(day)" (click)="selectDate(day)"
-                    style="cursor: pointer;">
-                    {{ day.getDate() }}
-                  </div>
-                </div>
 
-                <div class="moringa-group">
-                  <button class="moringa-btn " (click)="cancel()">Cancel</button>
+                  <ng-container *ngFor="let day of calendarDays">
+                    <div *ngIf="day" class="moringa-btn" [class.active]="isSelected(day)"
+                      [class.text-white]="isSelected(day)" (click)="selectDate(day)"
+                      style="cursor: pointer; padding: 6px;">
+                      {{ day.getDate() }}
+                    </div>
+                    <div *ngIf="!day" style="height: 34px;"></div>
+                  </ng-container>
+                </div>
+                <div class="moringa-group footer align-right">
+                  <button class="moringa-btn" (click)="cancel()">Cancel</button>
                   <button class="moringa-btn primary" (click)="confirm()">Confirm</button>
                 </div>
               </div>
-
             </ng-container>
           </div>
 
@@ -102,14 +102,10 @@
                     d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8m7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0m-.5 11.707-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0z" />
                 </svg>
               </ng-container>
-
             </button>
           </div>
         </div>
-
       </div>
-
-
     </div>
     <div *ngIf="progressBy" class="progress">
       <div class="progress-bar" [ngClass]="getStatusStyles(selectedOption || progressBy).progressClass"
@@ -120,7 +116,6 @@
     </div>
   </div>
   <div class="moringa-body ">
-
     <div class="table-wrapper">
       <table>
         <thead>

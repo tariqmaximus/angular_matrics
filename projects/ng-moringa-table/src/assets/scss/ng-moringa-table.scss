@@ -6,7 +6,6 @@
   .moringa-group {
     display: flex;
     align-items: center;
-
     gap: 0;
     height: variables.$group-height;
     align-items: stretch;
@@ -22,6 +21,13 @@
 
     &.align-right {
       justify-content: flex-end;
+    }
+     &.align-justify {
+      justify-content:space-between;
+      >*{
+        width: 100%;
+
+      }
     }
 
     &.gap-sm {
@@ -167,6 +173,57 @@ td, th {
       border-top: 1px solid $bs-border;
     }
   }
+  .date-picker {
+  background-color: $table-bg;
+  border-radius: $dp-round;
+  box-shadow: $table-shadow;
+  padding: $table-spacing;
+  min-width: 350px;
+
+
+
+ 
+
+  .d-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-top: $table-spacing-sm;
+
+    .text-center {
+      padding: 8px 0;
+      border-radius: $btn-round;
+      font-size: 13px;
+      user-select: none;
+
+      &.fw-bold {
+        color: $dark-color;
+        font-weight: 600;
+      }
+
+      &.border {
+        border: 1px solid $bs-border;
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+          background-color: $active-color;
+        }
+      }
+
+   
+
+      &.text-white {
+        color: #fff !important;
+      }
+    }
+  }
+  .footer {
+    margin-top: variables.$table-spacing;
+  }
+
+
+}
+
   .media-tile {
     display: flex;
     align-items: center;
@@ -285,10 +342,12 @@ td, th {
     gap: variables.$btn-spacing;
     border: 1px solid variables.$bs-border;
     color: variables.$dark-color;
-
+svg {
+  width: 14px;
+}
 
     i {
-      font-size: 12px;
+      font-size: 14px;
       color: variables.$muted-color;
     }
 
