@@ -1,32 +1,60 @@
 .moringa-group {
   display: flex;
+  align-items: stretch;
+}
+
+.moringa-btn-group {
+  display: flex;
   align-items: center;
   gap: 0;
   height: 35px;
   align-items: stretch;
 }
-.moringa-group.align-center {
+.moringa-btn-group > * {
+  border-radius: 0;
+  transition: 0.4s;
+  border-right: none !important;
+}
+.moringa-btn-group > *:last-child {
+  border-right: 1px solid #e7e7e7 !important;
+}
+.moringa-btn-group > *:focus {
+  outline: none;
+  box-shadow: none;
+}
+.moringa-btn-group > *:active {
+  border-color: #e7e7e7;
+}
+.moringa-btn-group > *.active {
+  background-color: rgb(238, 238, 238);
+  color: #63634e;
+}
+.moringa-btn-group > *.active span {
+  color: #63634e;
+}
+.moringa-btn-group > *.active i {
+  color: #0173df;
+}
+
+.moringa-group.align-center, .moringa-btn-group.align-center {
   justify-content: center;
 }
-.moringa-group.align-left {
+.moringa-group.align-left, .moringa-btn-group.align-left {
   justify-content: flex-start;
 }
-.moringa-group.align-right {
+.moringa-group.align-right, .moringa-btn-group.align-right {
   justify-content: flex-end;
 }
-.moringa-group.align-justify {
+.moringa-group.align-justify, .moringa-btn-group.align-justify {
   justify-content: space-between;
 }
-.moringa-group.align-justify > * {
+.moringa-group.align-justify > *, .moringa-btn-group.align-justify > * {
   width: 100%;
 }
-.moringa-group.gap-sm {
-  gap: 5px;
-}
-.moringa-group.gap {
+.moringa-group.gap, .moringa-btn-group.gap {
   gap: 15px !important;
 }
-.moringa-group.sm {
+.moringa-group.sm, .moringa-btn-group.sm {
   height: 30px !important;
 }
 
@@ -120,6 +148,25 @@
 }
 .ng-moringa-table table tfoot {
   border-top: 1px solid #e7e7e7;
+}
+.ng-moringa-table .day-btn {
+  font-size: 12px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid #e7e7e7;
+  color: #63634e;
+  transition: 0.4s;
+}
+.ng-moringa-table .day-btn:hover {
+  background-color: rgb(238, 238, 238);
+}
+.ng-moringa-table .day-btn.active {
+  background-color: #0173df;
+  color: white;
+  border: 1px solid #0173df;
 }
 .ng-moringa-table .date-picker {
   background-color: #fff;
@@ -979,6 +1026,17 @@
   border-radius: 8px;
   background-color: #fff;
 }
+.ng-moringa-table.round-card .day-btn {
+  font-size: 12px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid #e7e7e7;
+  color: #63634e;
+  border-radius: 5px;
+}
 .ng-moringa-table.round-card .moringa-tabs .nav-item .nav-link {
   border-radius: 5px;
 }
@@ -991,37 +1049,37 @@
 .ng-moringa-table.round-card .moringa-header .moringa-container {
   padding: 0 15px;
 }
-.ng-moringa-table.round-card .moringa-group > * {
+.ng-moringa-table.round-card .moringa-btn-group > * {
   border-radius: 0;
   transition: 0.4s;
 }
-.ng-moringa-table.round-card .moringa-group > *:not(:last-child) {
+.ng-moringa-table.round-card .moringa-btn-group > *:not(:last-child) {
   border-right: none;
 }
-.ng-moringa-table.round-card .moringa-group > *:first-child {
+.ng-moringa-table.round-card .moringa-btn-group > *:first-child {
   border-radius: 5px 0 0 5px;
 }
-.ng-moringa-table.round-card .moringa-group > *:only-child {
+.ng-moringa-table.round-card .moringa-btn-group > *:only-child {
   border-radius: 5px !important;
 }
-.ng-moringa-table.round-card .moringa-group > *:last-child {
+.ng-moringa-table.round-card .moringa-btn-group > *:last-child {
   border-radius: 0 5px 5px 0;
 }
-.ng-moringa-table.round-card .moringa-group > *:focus {
+.ng-moringa-table.round-card .moringa-btn-group > *:focus {
   outline: none;
   box-shadow: none;
 }
-.ng-moringa-table.round-card .moringa-group > *:active {
+.ng-moringa-table.round-card .moringa-btn-group > *:active {
   border-color: #e7e7e7;
 }
-.ng-moringa-table.round-card .moringa-group > *.active {
+.ng-moringa-table.round-card .moringa-btn-group > *.active {
   background-color: rgb(238, 238, 238);
   color: #63634e;
 }
-.ng-moringa-table.round-card .moringa-group > *.active span {
+.ng-moringa-table.round-card .moringa-btn-group > *.active span {
   color: #63634e;
 }
-.ng-moringa-table.round-card .moringa-group > *.active i {
+.ng-moringa-table.round-card .moringa-btn-group > *.active i {
   color: #0173df;
 }
 .ng-moringa-table.round-card table th {
@@ -1118,7 +1176,7 @@
 .ng-moringa-table .moringa-dropdown .dropdown-menu li .dropdown-item {
   display: block;
   width: 100%;
-  padding: 15px 15px;
+  padding: 10px 15px;
   border: none;
   border-radius: 0;
   background: transparent;

@@ -3,15 +3,68 @@
 @use './variables' as variables;
 @use './variants' as variants;
 @use './index' as *;
-  .moringa-group {
+.moringa-group {
+  display: flex;
+
+  align-items: stretch;
+
+}
+
+  .moringa-btn-group {
     display: flex;
     align-items: center;
     gap: 0;
     height: variables.$group-height;
     align-items: stretch;
+   >* {
+      border-radius: 0;
+      transition: 0.4s;
 
+     border-right: none !important;
+
+      &:first-child {
+       
+      }
+
+      &:only-child {
+      
+      }
+
+      &:last-child {
+       border-right:1px solid variables.$bs-border !important ;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      &:active {
+        border-color: variables.$bs-border;
+      }
+
+      &.active {
+        background-color: variables.$active-color;
+        color: variables.$dark-color;
+
+        span {
+          color: variables.$dark-color;
+        }
+
+        i {
+          color: variables.$primary-color;
+        }
+      }
+    }
  
-    &.align-center {
+
+
+
+
+  
+  }
+.moringa-group, .moringa-btn-group {
+      &.align-center {
       justify-content: center;
     }
 
@@ -29,20 +82,14 @@
 
       }
     }
-
-    &.gap-sm {
-      gap: variables.$btn-spacing;
-    }
-
-    &.gap {
+      &.gap {
       gap: variables.$table-spacing !important;
     }
 
     &.sm {
       height: variables.$group-height-sm !important;
     }
-  }
-
+}
 .ng-moringa-table {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
@@ -173,6 +220,25 @@ td, th {
       border-top: 1px solid $bs-border;
     }
   }
+.day-btn {
+    font-size: 12px;
+    background-color: $table-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: variables.$btn-spacing;
+    border: 1px solid variables.$bs-border;
+    color: variables.$dark-color;
+    transition: 0.4s;
+    &:hover {
+      background-color: variables.$active-color;
+    }
+    &.active {
+      background-color: variables.$primary-color;
+      color: white;
+      border: 1px solid variables.$primary-color;
+    }
+}
   .date-picker {
   background-color: $table-bg;
   border-radius: $dp-round;
@@ -697,7 +763,17 @@ svg {
 
   &.round-card {
     border-radius: variables.$table-round;
-
+.day-btn {
+    font-size: 12px;
+    background-color: $table-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: variables.$btn-spacing;
+    border: 1px solid variables.$bs-border;
+    color: variables.$dark-color;
+    border-radius: variables.$btn-round;
+}
     .moringa-tabs {
 
 
@@ -747,7 +823,7 @@ svg {
         padding: 0 calc($table-spacing);
       }
     }
- .moringa-group {
+ .moringa-btn-group {
   
 
     >* {
@@ -943,7 +1019,7 @@ svg {
         .dropdown-item {
           display: block;
           width: 100%;
-          padding: variables.$table-spacing variables.$table-spacing;
+          padding: variables.$dropdown-spacing variables.$table-spacing;
           border: none;
           border-radius: 0;
           background: transparent;

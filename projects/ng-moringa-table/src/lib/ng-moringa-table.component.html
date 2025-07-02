@@ -27,7 +27,7 @@
       <div class="moringa-group gap">
         <ng-content select="[header-component]"></ng-content>
         <div class="moringa-group gap">
-          <div class="moringa-group ">
+          <div class="moringa-btn-group ">
 
             <ng-container>
               <ng-container *ngIf="filterStyle.includes('dropdown')">
@@ -52,7 +52,7 @@
 
               <!-- Calendar Popup -->
               <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
-                <div class="moringa-group align-justify">
+                <div class="moringa-btn-group align-justify">
                   <select class="moringa-select" [(ngModel)]="selectedMonth" (change)="onMonthOrYearChange()">
                     <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
                   </select>
@@ -65,7 +65,7 @@
                   <div class="text-center fw-bold" *ngFor="let d of dayNames">{{ d }}</div>
 
                   <ng-container *ngFor="let day of calendarDays">
-                    <div *ngIf="day" class="moringa-btn" [class.active]="isSelected(day)"
+                    <div *ngIf="day" class="day-btn" [class.active]="isSelected(day)"
                       [class.text-white]="isSelected(day)" (click)="selectDate(day)"
                       style="cursor: pointer; padding: 6px;">
                       {{ day.getDate() }}
@@ -73,7 +73,7 @@
                     <div *ngIf="!day" style="height: 34px;"></div>
                   </ng-container>
                 </div>
-                <div class="moringa-group footer align-right">
+                <div class="moringa-btn-group footer align-right">
                   <button class="moringa-btn" (click)="cancel()">Cancel</button>
                   <button class="moringa-btn primary" (click)="confirm()">Confirm</button>
                 </div>
@@ -81,7 +81,7 @@
             </ng-container>
           </div>
 
-          <div class="moringa-group">
+          <div class="moringa-btn-group">
             <button *ngFor="let button of headerButtons" type="button" class="moringa-btn " [id]="button.targetId"
               (click)="executeAction(button)">
               <i *ngIf="button.icon" [class]="button.icon"></i>
@@ -189,7 +189,7 @@
             <td *ngFor="let column of columns">
               <ng-container [ngSwitch]="column.key">
                 <ng-container *ngSwitchCase="'mediaTile'">
-                  <div class="moringa-group">
+                  <div class="moringa-btn-group">
                     <div class="checkbox-wrapper">
                       <input class="inp-cbx" [id]="prefix + '-cbx-' + i" type="checkbox"
                         (change)="toggleSelectRow(row, $event)" [checked]="selectedRows.includes(row)" />
@@ -231,7 +231,7 @@
                   </span>
                 </ng-container>
                 <ng-container *ngSwitchCase="'action'">
-                  <div class="moringa-group sm align-right ">
+                  <div class="moringa-btn-group sm align-right ">
                     <ng-container *ngFor="let btn of actionButtons">
                       <button *ngIf="!btn.isDropdown" class="moringa-btn" [ngClass]="btn.className"
                         [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
@@ -281,7 +281,7 @@
         <tfoot *ngIf="paginated">
           <tr>
             <td [attr.colspan]="columns.length + 1">
-              <div class="pagination moringa-group align-right ">
+              <div class="pagination moringa-btn-group align-right ">
                 <button class="moringa-btn" (click)="prevPage()" [disabled]="currentPage === 1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chevron-left" viewBox="0 0 16 16">
