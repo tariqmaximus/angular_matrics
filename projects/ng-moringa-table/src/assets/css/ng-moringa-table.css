@@ -1026,14 +1026,6 @@
   background-color: #fff;
 }
 .ng-moringa-table.round-card .day-btn {
-  font-size: 12px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border: 1px solid #e7e7e7;
-  color: #63634e;
   border-radius: 5px;
 }
 .ng-moringa-table.round-card .moringa-tabs .nav-item .nav-link {

@@ -770,14 +770,7 @@ svg {
   &.round-card {
     border-radius: variables.$table-round;
 .day-btn {
-    font-size: 12px;
-    background-color: $table-bg;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: variables.$btn-spacing;
-    border: 1px solid variables.$bs-border;
-    color: variables.$dark-color;
+ 
     border-radius: variables.$btn-round;
 }
     .moringa-tabs {
