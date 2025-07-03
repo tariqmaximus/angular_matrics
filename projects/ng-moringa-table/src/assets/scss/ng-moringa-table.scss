@@ -122,7 +122,10 @@ width: 100%;
 
 width: 100%;
 border-collapse: separate; 
-
+ .mobile-btn {
+        display: none;
+        border: none;
+      }
 td, th {
   min-width: 100px; 
 }
@@ -172,27 +175,19 @@ td, th {
 
 
 
-      .mobile-btn {
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 18px;
+     
+.transition-icon {
+  transition: transform 0.2s ease-in-out;
+}
 
-        .moringa-btn {
-          border: none !important;
-          background: none;
-
-          i {
-            color: variables.$muted-color;
-          }
-
-        }
-      }
+.rotate-90 {
+  transform: rotate(90deg);
+}
 
       td {
         padding: variables.$btn-spacing 0;
         font-size: 13px;
-border-bottom: 1px solid variables.$bs-border;
+border-top: 1px solid variables.$bs-border;
         .value-lenth {
           display: inline-block;
           max-width: 100px;
@@ -211,7 +206,7 @@ border-bottom: 1px solid variables.$bs-border;
 
       &:last-child {
         td {
-
+border-bottom:1px solid variables.$bs-border;
         }
         
       }
@@ -706,13 +701,6 @@ svg {
 
 
 
-    .mobile-btn {
-      display: none;
-
-      @include mobile-view {
-        display: block;
-      }
-    }
 
     .title-icon {
       color: variables.$muted-color;
@@ -915,11 +903,20 @@ svg {
 
 
     @media (max-width: 1024px) {
+
+
       table {
+              .media-tile {
+  width: 100%;
+}
+.mobile-btn {
+  display: flex;
+}
         tr {
           width: 100%;
           display: flex;
           flex-direction: column;
+                  height: 80px;
         }
 
         .key {
@@ -947,15 +944,17 @@ svg {
             }
 
 
-            .mobile-btn {
-              display: flex;
-
-            }
           }
 
           tr.dynamic-row {
             max-height: inherit;
             display: inline;
+          }
+        }
+        tfoot {
+          tr {
+            flex-direction: row;
+            justify-content: space-between;
           }
         }
       }

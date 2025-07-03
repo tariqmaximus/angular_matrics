@@ -82,6 +82,10 @@
   width: 100%;
   border-collapse: separate;
 }
+.ng-moringa-table table .mobile-btn {
+  display: none;
+  border: none;
+}
 .ng-moringa-table table td, .ng-moringa-table table th {
   min-width: 100px;
 }
@@ -112,23 +116,16 @@
 .ng-moringa-table table thead th:last-child > div {
   justify-content: flex-end;
 }
-.ng-moringa-table table tr .mobile-btn {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 18px;
+.ng-moringa-table table tr .transition-icon {
+  transition: transform 0.2s ease-in-out;
 }
-.ng-moringa-table table tr .mobile-btn .moringa-btn {
-  border: none !important;
-  background: none;
-}
-.ng-moringa-table table tr .mobile-btn .moringa-btn i {
-  color: #888888;
+.ng-moringa-table table tr .rotate-90 {
+  transform: rotate(90deg);
 }
 .ng-moringa-table table tr td {
   padding: 5px 0;
   font-size: 13px;
-  border-bottom: 1px solid #e7e7e7;
+  border-top: 1px solid #e7e7e7;
 }
 .ng-moringa-table table tr td .value-lenth {
   display: inline-block;
@@ -141,6 +138,9 @@
 }
 .ng-moringa-table table tr td .value-lenth:hover {
   text-decoration: underline dotted;
+}
+.ng-moringa-table table tr:last-child td {
+  border-bottom: 1px solid #e7e7e7;
 }
 .ng-moringa-table table tfoot {
   border-top: 1px solid #e7e7e7;
@@ -974,14 +974,6 @@
   align-items: center;
   justify-content: space-between;
 }
-.ng-moringa-table .moringa-header .mobile-btn {
-  display: none;
-}
-@media (max-width: 768px) {
-  .ng-moringa-table .moringa-header .mobile-btn {
-    display: block;
-  }
-}
 .ng-moringa-table .moringa-header .title-icon {
   color: #888888;
 }
@@ -1086,10 +1078,17 @@
   border: 1px solid #e7e7e7;
 }
 @media (max-width: 1024px) {
+  .ng-moringa-table.responsive table .media-tile {
+    width: 100%;
+  }
+  .ng-moringa-table.responsive table .mobile-btn {
+    display: flex;
+  }
   .ng-moringa-table.responsive table tr {
     width: 100%;
     display: flex;
     flex-direction: column;
+    height: 80px;
   }
   .ng-moringa-table.responsive table .key {
     display: block;
@@ -1108,12 +1107,13 @@
   .ng-moringa-table.responsive table tbody tr td:first-child {
     min-height: 80px;
   }
-  .ng-moringa-table.responsive table tbody tr .mobile-btn {
-    display: flex;
-  }
   .ng-moringa-table.responsive table tbody tr.dynamic-row {
     max-height: inherit;
     display: inline;
+  }
+  .ng-moringa-table.responsive table tfoot tr {
+    flex-direction: row;
+    justify-content: space-between;
   }
   .ng-moringa-table.responsive .moringa-tabs {
     display: none;

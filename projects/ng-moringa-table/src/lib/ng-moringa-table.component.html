@@ -28,7 +28,6 @@
         <ng-content select="[header-component]"></ng-content>
         <div class="moringa-group gap">
           <div class="moringa-btn-group ">
-
             <ng-container>
               <ng-container *ngIf="filterStyle.includes('dropdown')">
                 <select class="moringa-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
@@ -184,94 +183,87 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let row of pagedData; let i = index; trackBy: trackByIndex"
-            [ngClass]="{ 'dynamic-row': activeRowIndex === i }">
-            <td *ngFor="let column of columns">
-              <ng-container [ngSwitch]="column.key">
-                <ng-container *ngSwitchCase="'mediaTile'">
-                  <div class="moringa-group">
-                    <div class="checkbox-wrapper">
-                      <input class="inp-cbx" [id]="prefix + '-cbx-' + i" type="checkbox"
-                        (change)="toggleSelectRow(row, $event)" [checked]="selectedRows.includes(row)" />
-                      <label class="cbx" [for]="prefix + '-cbx-' + i">
-                        <div class="checkbox">
-                          <svg width="12px" height="10px" viewBox="0 0 12 10">
-                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                          </svg>
+          <ng-container *ngFor="let row of pagedData; let i = index; trackBy: trackByIndex">
+            <tr [ngClass]="{ 'dynamic-row': activeRowIndex === i }">
+              <td *ngFor="let column of columns">
+                <ng-container [ngSwitch]="column.key">
+                  <ng-container *ngSwitchCase="'mediaTile'">
+                    <div class="moringa-group">
+                      <div class="checkbox-wrapper">
+                        <input class="inp-cbx" [id]="prefix + '-cbx-' + i" type="checkbox"
+                          (change)="toggleSelectRow(row, $event)" [checked]="selectedRows.includes(row)" />
+                        <label class="cbx" [for]="prefix + '-cbx-' + i">
+                          <div class="checkbox">
+                            <svg width="12px" height="10px" viewBox="0 0 12 10">
+                              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </svg>
+                          </div>
+                          <p class=""></p>
+                        </label>
+                      </div>
+                      <div class="media-tile">
+                        <div class="media-img " [ngClass]="statusMap[row.status]">
+                          <img *ngIf="row.mediaTile && !imageLoadFailedMap[row?.id || row?.[searchKey] || row?.name]"
+                            class="img-fluid" [src]="row.mediaTile || mediaImage" alt="Media Image"
+                            (error)="handleImageError($event, row)" />
+                          <span *ngIf="!row.mediaTile || imageLoadFailedMap[row?.id || row?.[searchKey] || row?.name]"
+                            class="letter-fallback">
+                            {{ (row.name || '??').substring(0, 2).toUpperCase() }}
+                          </span>
                         </div>
-                        <p class=""></p>
-                      </label>
-                    </div>
-                    <div class="media-tile">
-                      <div class="media-img " [ngClass]="statusMap[row.status]">
-
-                        <!-- Show image only if not failed -->
-                        <img *ngIf="row.mediaTile && !imageLoadFailedMap[row?.id || row?.[searchKey] || row?.name]"
-                          class="img-fluid" [src]="row.mediaTile || mediaImage" alt="Media Image"
-                          (error)="handleImageError($event, row)" />
-
-                        <!-- Show fallback name letters if image failed or missing -->
-                        <span *ngIf="!row.mediaTile || imageLoadFailedMap[row?.id || row?.[searchKey] || row?.name]"
-                          class="letter-fallback">
-                          {{ (row.name || '??').substring(0, 2).toUpperCase() }}
-                        </span>
-
+                        <div class="media-details">
+                          <p class="name text-dark">{{ row.name || 'Unknown' }}</p>
+                          <p class="text-muted">{{ row.source || 'No Information' }}</p>
+                        </div>
                       </div>
-
-                      <div class="media-details">
-                        <p class=" name  text-dark">{{ row.name || 'Unknown' }}</p>
-                        <p class=" text-muted">{{ row.source || 'No Information' }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </ng-container>
-                <ng-container *ngSwitchCase="'status'">
-                  <span [ngClass]="getStatusStyles(row.status).tagClass">
-                    {{ getValue(row, column.key) }}
-                  </span>
-                </ng-container>
-                <ng-container *ngSwitchCase="'action'">
-                  <div class="moringa-btn-group sm align-right ">
-                    <ng-container *ngFor="let btn of actionButtons">
-                      <button *ngIf="!btn.isDropdown" class="moringa-btn" [ngClass]="btn.className"
-                        [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
-                        <i *ngIf="btn.icon" [class]="btn.icon"></i>
-                        {{ btn.label }}
+                      <button class="moringa-btn mobile-btn" (click)="toggleRowClass(i)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          viewBox="0 0 16 16" class="transition-icon" [ngClass]="{ 'rotate-90': activeRowIndex === i }">
+                          <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                        </svg>
                       </button>
-                      <div *ngIf="btn.isDropdown" class="moringa-dropdown moringa-btn">
-                        <button class="moringa-btn no-bg moringa-btn-toggle" (click)="toggleDropdown(i, $event)"
-                          [ngClass]="btn.className" [attr.title]="btn.tooltip">
+                    </div>
+
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'status'">
+                    <span [ngClass]="getStatusStyles(row.status).tagClass">
+                      {{ getValue(row, column.key) }}
+                    </span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'action'">
+                    <div class="moringa-btn-group sm align-right ">
+                      <ng-container *ngFor="let btn of actionButtons">
+                        <button *ngIf="!btn.isDropdown" class="moringa-btn" [ngClass]="btn.className"
+                          [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
+                          <i *ngIf="btn.icon" [class]="btn.icon"></i>
                           {{ btn.label }}
                         </button>
-                        <ul class="dropdown-menu" [class.show]="dropdownShownIndex === i">
-                          <li *ngFor="let option of btn.options">
-                            <button class="dropdown-item" (click)="handleDropdownClick(option, btn, row)">
-                              {{ option }}
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-
-                    </ng-container>
-                  </div>
+                        <div *ngIf="btn.isDropdown" class="moringa-dropdown moringa-btn">
+                          <button class="moringa-btn no-bg moringa-btn-toggle" (click)="toggleDropdown(i, $event)"
+                            [ngClass]="btn.className" [attr.title]="btn.tooltip">
+                            {{ btn.label }}
+                          </button>
+                          <ul class="dropdown-menu" [class.show]="dropdownShownIndex === i">
+                            <li *ngFor="let option of btn.options">
+                              <button class="dropdown-item" (click)="handleDropdownClick(option, btn, row)">
+                                {{ option }}
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                  <ng-container *ngSwitchDefault>
+                    <span class="value" [ngClass]="{ 'value-lenth': shouldApplyValueLenth(column.key) }"
+                      [attr.title]="shouldApplyValueLenth(column.key) ? getValue(row, column.key) : null">
+                      {{ getValue(row, column.key) }}
+                    </span>
+                  </ng-container>
                 </ng-container>
-                <ng-container *ngSwitchDefault>
-                  <span class="value" [ngClass]="{ 'value-lenth': shouldApplyValueLenth(column.key) }"
-                    [attr.title]="shouldApplyValueLenth(column.key) ? getValue(row, column.key) : null">
-                    {{ getValue(row, column.key) }}
-                  </span>
-                </ng-container>
-              </ng-container>
-            </td>
-            <td class="mobile-btn">
-              <button class="moringa-btn" (click)="toggleRowClass(i)">
-                <i [ngClass]="{
-                'bi bi-chevron-down': activeRowIndex === i,
-                'bi bi-chevron-right': activeRowIndex !== i
-              }"></i>
-              </button>
-            </td>
-          </tr>
+              </td>
+          </ng-container>
           <tr *ngIf="pagedData.length === 0">
             <td [attr.colspan]="columns.length + 2" class="text-center py-3">
               No records found.
@@ -280,11 +272,10 @@
         </tbody>
         <tfoot *ngIf="paginated">
           <tr>
-            <td >
+            <td>
               <ng-content select="[footer-component]"></ng-content>
             </td>
             <td [attr.colspan]="columns.length + 0">
-              
               <div class="pagination moringa-btn-group align-right ">
                 <button class="moringa-btn" (click)="prevPage()" [disabled]="currentPage === 1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
