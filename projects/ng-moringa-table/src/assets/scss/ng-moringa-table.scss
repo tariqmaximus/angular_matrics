@@ -724,12 +724,7 @@ svg {
 
 
 
-  @include mobile-view {
-    .moringa-body {
-      max-height: inherit;
-      height: auto;
-    }
-  }
+
 
   &.collapsed {
     padding-bottom: 0;
