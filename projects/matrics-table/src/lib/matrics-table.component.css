@@ -1,40 +1,82 @@
+:root {
+  --color-border: #e7e7e7;
+  --color-text: #63634e;
+  --color-muted: #888888;
+  --color-white: #fff;
+  --color-surface-alt: rgb(238 238 238);
+  --color-surface-muted: #eeeeee;
+  --color-primary: #0173df;
+  --color-success: #28a745;
+  --color-warning: #f1a10a;
+  --color-info: #17a2b8;
+  --color-danger: #dc3545;
+  --color-dark: #212529;
+  --color-light: #f1f3f5;
+  --color-muted-strong: #adb5bd;
+  --color-draft: #495057;
+
+  --status-success-bg: rgb(175.1304347826 235.8695652174 189);
+  --status-warning-bg: rgb(252.8087649402 235.2788844622 202.1912350598);
+  --status-info-bg: rgb(167 233.4782608696 244);
+  --status-danger-bg: rgb(250.1265822785 226.8734177215 229.1012658228);
+  --status-primary-bg: rgb(204 228.6 255);
+  --status-muted-bg: #eeeeee;
+  --status-light-bg: hsl(210 16.6666666667% 137.6470588235%);
+  --status-default-bg: hsl(210 10.8108108108% 110.9803921569%);
+  --status-archived-bg: hsl(210 10.8108108108% 110.9803921569%);
+  --status-suspended-bg: rgb(126.4594594595 139 151.5405405405);
+  --status-expired-bg: hsl(210 16.6666666667% 135.2941176471%);
+  --status-draft-bg: rgb(175.6125 182 188.3875);
+
+  --space-xxs: 4px;
+  --space-xs: 5px;
+  --space-sm: 8px;
+  --space-base: 10px;
+  --space-md: 15px;
+  --space-lg: 20px;
+
+  --size-btn-height: 35px;
+  --size-btn-height-sm: 30px;
+  --size-avatar: 35px;
+  --size-checkbox: 20px;
+  --size-badge: 20px;
+  --size-icon-lg: 40px;
+  --size-header: 60px;
+  --size-responsive-row: 80px;
+  --size-table-min-cell: 100px;
+  --size-date-picker-min: 350px;
+
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-base: 13px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-small: 0.8rem;
+  --font-size-tiny: 0.7rem;
+
+  --border-width: 1px;
+  --border-width-strong: 2px;
+  --border-radius-sm: 5px;
+  --border-radius-md: 8px;
+  --border-radius-full: 100%;
+  --border-default: var(--border-width) solid var(--color-border);
+  --border-muted: var(--border-width) solid var(--color-muted);
+  --border-primary: var(--border-width) solid var(--color-primary);
+
+  --shadow-card: 0 0px 16px rgba(0, 0, 0, 0.1);
+  --transition-default: 0.4s ease;
+  --transition-fast: 0.2s ease;
+  --focus-ring: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
 .matric-group {
   display: flex;
   align-items: stretch;
+  
 }
 
-.matric-btn-group {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  height: 35px;
-  align-items: stretch;
-}
-.matric-btn-group > * {
-  border-radius: 0;
-  transition: 0.4s;
-  border-right: none !important;
-}
-.matric-btn-group > *:last-child {
-  border-right: 1px solid #e7e7e7 !important;
-}
-.matric-btn-group > *:focus {
-  outline: none;
-  box-shadow: none;
-}
-.matric-btn-group > *:active {
-  border-color: #e7e7e7;
-}
-.matric-btn-group > *.active {
-  background-color: rgb(238, 238, 238);
-  color: #63634e;
-}
-.matric-btn-group > *.active span {
-  color: #63634e;
-}
-.matric-btn-group > *.active i {
-  color: #0173df;
-}
+/* Base table styles */
+
 
 .matric-group.align-center, .matric-btn-group.align-center {
   justify-content: center;
@@ -51,11 +93,9 @@
 .matric-group.align-justify > *, .matric-btn-group.align-justify > * {
   width: 100%;
 }
-.matric-group.gap, .matric-btn-group.gap {
-  gap: 15px !important;
-}
+
 .matric-group.sm, .matric-btn-group.sm {
-  height: 30px !important;
+  height: var(--size-btn-height-sm) !important;
 }
 
 .ng-matric-table {
@@ -67,6 +107,10 @@
   transition: 0.4s;
   width: 100%;
   -webkit-overflow-scrolling: touch;
+}
+
+.ng-matric-table .gap {
+  gap: 10px;
 }
 .ng-matric-table * {
   box-sizing: border-box;
@@ -97,10 +141,10 @@
   text-transform: capitalize;
 }
 .ng-matric-table table thead th {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   font-weight: bold;
-  color: #888888;
-  padding: 15px 0;
+  color: var(--color-muted);
+  padding: var(--space-md) 0;
   text-transform: uppercase;
 }
 .ng-matric-table table thead th .sorting-group {
@@ -109,7 +153,7 @@
   align-items: center;
 }
 .ng-matric-table table thead th .sorting-group svg {
-  fill: #63634e;
+  fill: var(--color-text);
   width: 13px;
   height: auto;
 }
@@ -123,8 +167,8 @@
   transform: rotate(90deg);
 }
 .ng-matric-table table tr td {
-  padding: 5px 0;
-  font-size: 13px;
+  padding: var(--space-xs) 0;
+  font-size: var(--font-size-base);
   border-top: 1px solid #e7e7e7;
 }
 .ng-matric-table table tr td .value-lenth {
@@ -149,45 +193,45 @@
   border: none;
 }
 .ng-matric-table .day-btn {
-  font-size: 12px;
-  background-color: #fff;
+  font-size: var(--font-size-sm);
+  background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: var(--space-xs);
   border: 1px solid #e7e7e7;
-  color: #63634e;
-  transition: 0.4s;
+  color: var(--color-text);
+  transition: var(--transition-default);
 }
 .ng-matric-table .day-btn:hover {
-  background-color: rgb(238, 238, 238);
+  background-color: var(--color-surface-alt);
 }
 .ng-matric-table .day-btn.active {
-  background-color: #0173df;
-  color: white;
-  border: 1px solid #0173df;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: var(--border-primary);
 }
 .ng-matric-table .date-picker {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  min-width: 350px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-md);
+  min-width: var(--size-date-picker-min);
 }
 .ng-matric-table .date-picker .d-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
-  margin-top: 5px;
+  gap: var(--space-xxs);
+  margin-top: var(--space-xs);
 }
 .ng-matric-table .date-picker .d-grid .text-center {
-  padding: 8px 0;
-  border-radius: 5px;
-  font-size: 13px;
+  padding: var(--space-sm) 0;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
   user-select: none;
 }
 .ng-matric-table .date-picker .d-grid .text-center.fw-bold {
-  color: #63634e;
+  color: var(--color-text);
   font-weight: 600;
 }
 .ng-matric-table .date-picker .d-grid .text-center.border {
@@ -195,13 +239,13 @@
   transition: background-color 0.2s, color 0.2s;
 }
 .ng-matric-table .date-picker .d-grid .text-center.border:hover {
-  background-color: rgb(238, 238, 238);
+  background-color: var(--color-surface-alt);
 }
 .ng-matric-table .date-picker .d-grid .text-center.text-white {
-  color: #fff !important;
+  color: var(--color-white) !important;
 }
 .ng-matric-table .date-picker .footer {
-  margin-top: 15px;
+  margin-top: var(--space-md);
 }
 .ng-matric-table .media-tile {
   display: flex;
@@ -336,7 +380,8 @@
   /* Remove native arrow in most browsers */
   -webkit-appearance: none;
   -moz-appearance: none;
-  color: #888888;
+  color: var(--color-muted);
+  background-color: var(--color-white);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20,40 70,90 120,40' stroke='%23333' stroke-width='15' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
@@ -346,8 +391,8 @@
 }
 .ng-matric-table .matric-select option {
   padding: 0.5rem;
-  background-color: #fff;
-  color: #63634e;
+  background-color: var(--color-white);
+  color: var(--color-text);
   border: 1px solid #e7e7e7;
 }
 .ng-matric-table .matric-select:focus {
@@ -981,8 +1026,10 @@
   margin: 0;
   font-size: 16px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
   text-transform: capitalize;
   color: #63634e;
 }
@@ -1007,62 +1054,30 @@
   padding: 0;
   margin-top: 45px;
 }
-.ng-matric-table.round-card {
+.ng-matric-table {
   border-radius: 8px;
   background-color: #fff;
 }
-.ng-matric-table.round-card .day-btn {
+.ng-matric-table .day-btn {
   border-radius: 5px;
 }
-.ng-matric-table.round-card .matric-tabs .nav-item .nav-link {
+.ng-matric-table .matric-tabs .nav-item .nav-link {
   border-radius: 5px;
 }
-.ng-matric-table.round-card .date-picker {
+.ng-matric-table .date-picker {
   border-radius: 8px !important;
 }
-.ng-matric-table.round-card .media-tile .media-img {
+.ng-matric-table .media-tile .media-img {
   border-radius: 10px !important;
 }
-.ng-matric-table.round-card .matric-header .matric-container {
+.ng-matric-table .matric-header .matric-container {
   padding: 0 15px;
 }
-.ng-matric-table.round-card .matric-btn-group > * {
-  border-radius: 0;
-  transition: 0.4s;
-}
-.ng-matric-table.round-card .matric-btn-group > *:not(:last-child) {
-  border-right: none;
-}
-.ng-matric-table.round-card .matric-btn-group > *:first-child {
-  border-radius: 5px 0 0 5px;
-}
-.ng-matric-table.round-card .matric-btn-group > *:only-child {
-  border-radius: 5px !important;
-}
-.ng-matric-table.round-card .matric-btn-group > *:last-child {
-  border-radius: 0 5px 5px 0;
-}
-.ng-matric-table.round-card .matric-btn-group > *:focus {
-  outline: none;
-  box-shadow: none;
-}
-.ng-matric-table.round-card .matric-btn-group > *:active {
-  border-color: #e7e7e7;
-}
-.ng-matric-table.round-card .matric-btn-group > *.active {
-  background-color: rgb(238, 238, 238);
-  color: #63634e;
-}
-.ng-matric-table.round-card .matric-btn-group > *.active span {
-  color: #63634e;
-}
-.ng-matric-table.round-card .matric-btn-group > *.active i {
-  color: #0173df;
-}
-.ng-matric-table.round-card table th {
+
+.ng-matric-table table th {
   padding: 15px !important;
 }
-.ng-matric-table.round-card table tr td {
+.ng-matric-table table tr td {
   padding: 15px;
 }
 .ng-matric-table.shadowed {
@@ -1070,6 +1085,44 @@
 }
 .ng-matric-table.bordered {
   border: 1px solid #e7e7e7;
+}
+.matric-btn-group {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  height: 30px;
+}
+.matric-btn-group > * {
+ border-left: none !important;
+  transition: var(--transition-default);
+
+}
+.matric-btn-group > *:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-left: 1px solid #e7e7e7 !important;
+}
+.matric-btn-group > *:last-child {
+ 
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.matric-btn-group > *:focus {
+  outline: none;
+  box-shadow: none;
+}
+.matric-btn-group > *:active {
+  border-color: #e7e7e7;
+}
+.matric-btn-group > *.active {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+}
+.matric-btn-group > *.active span {
+  color: var(--color-text);
+}
+.matric-btn-group > *.active i {
+  color: var(--color-primary);
 }
 @media (max-width: 1024px) {
   .ng-matric-table.responsive table .media-tile {

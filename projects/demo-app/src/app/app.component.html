@@ -4,21 +4,22 @@
   title="main Tilte"
   icon="bi bi-grid"
   [headerButtons]="[
-    {
-      icon: 'bi bi-plus',
-      label: 'Options',
-      tooltip: 'Dropdown for table',
-      className: 'success',
-      isDropdown: true,
-      targetId: 'header-dropdown-btn',
-      options: ['lead board', 'Actives', 'scheduled']
-    },
+ 
     {
       label: 'New',
       icon: 'bi bi-plus',
       tooltip: 'New Lead',
       className: 'danger',
       targetId: 'header-delete-btn'
+    },
+       {
+      icon: 'bi bi-three-dots-vertical',
+      label: 'Options',
+      tooltip: 'Dropdown for table',
+      className: 'success',
+      isDropdown: true,
+      targetId: 'header-dropdown-btn',
+      options: ['lead board', 'Actives', 'scheduled']
     },
 
   ]"
