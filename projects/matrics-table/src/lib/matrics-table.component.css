@@ -52,7 +52,9 @@
 }
 
 /* ─── Layout Utilities ─────────────────────────────────────── */
-
+@import './views/matrics-table.list.css';
+@import './views/matrics-table.grid.css';
+@import './views/matrics-table.pipeline.css';
 .matric-group {
   display: flex;
   align-items: stretch;
@@ -978,3 +980,35 @@
     display: none;
   }
 }
+
+/* ─── View Type Buttons ────────────────────────────────────── */
+
+.ng-matric-table .view-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.ng-matric-table .view-btn:not(.active) {
+  opacity: 0.6;
+}
+
+.ng-matric-table .view-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.ng-matric-table.view-list .view-btn-list.active,
+.ng-matric-table.view-grid .view-btn-grid.active,
+.ng-matric-table.view-pipeline .view-btn-pipeline.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.ng-matric-table.view-list .view-btn-list,
+.ng-matric-table.view-grid .view-btn-grid,
+.ng-matric-table.view-pipeline .view-btn-pipeline {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+

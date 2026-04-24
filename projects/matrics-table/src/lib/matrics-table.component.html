@@ -156,8 +156,9 @@
       </div>
     </div>
   </div>
-  <div class="matric-body ">
-    <div class="table-wrapper">
+  <div class="matric-body" [ngClass]="'view-' + currentViewType">
+    <!-- LIST VIEW -->
+    <div class="table-wrapper" *ngIf="currentViewType === 'list'">
       <table>
         <thead>
           <tr>
@@ -339,6 +340,91 @@
           </tr>
         </tfoot>
       </table>
+    </div>
+
+    <!-- GRID VIEW -->
+    <div class="grid-container" *ngIf="currentViewType === 'grid'">
+      <ng-container *ngIf="pagedData.length > 0; else gridEmpty">
+        <div class="grid-card" *ngFor="let row of pagedData; let i = index">
+          <div class="grid-card-header">
+            <div class="grid-card-avatar">{{ (row.name || '??').substring(0, 2).toUpperCase() }}</div>
+            <div class="grid-card-title">
+              <h3>{{ row.name || 'Unknown' }}</h3>
+              <p>{{ row.source || 'No Information' }}</p>
+            </div>
+            <span class="grid-card-status" [ngClass]="getStatusStyles(row.status).tagClass">
+              {{ row.status || 'N/A' }}
+            </span>
+          </div>
+
+          <div class="grid-card-body">
+            <div class="grid-card-row" *ngFor="let column of columns">
+              <ng-container [ngSwitch]="column.key">
+                <ng-container *ngSwitchCase="'name'"></ng-container>
+                <ng-container *ngSwitchCase="'status'"></ng-container>
+                <ng-container *ngSwitchCase="'action'"></ng-container>
+                <ng-container *ngSwitchCase="'mediaTile'"></ng-container>
+                <ng-container *ngSwitchDefault>
+                  <label>{{ column.label }}</label>
+                  <span class="value">{{ getValue(row, column.key) }}</span>
+                </ng-container>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="grid-card-footer">
+            <ng-container *ngFor="let btn of actionButtons">
+              <button *ngIf="!btn.isDropdown" class="matric-btn" [ngClass]="btn.className"
+                [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
+                <i *ngIf="btn.icon" [class]="btn.icon"></i>
+                {{ btn.label }}
+              </button>
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #gridEmpty>
+        <div class="grid-empty">No records found.</div>
+      </ng-template>
+    </div>
+
+    <!-- PIPELINE VIEW -->
+    <div class="pipeline-container" *ngIf="currentViewType === 'pipeline'">
+      <ng-container *ngFor="let status of searchOptions">
+        <div class="pipeline-column" [ngClass]="'status-' + status">
+          <div class="pipeline-column-title">
+            <h3>{{ status }}</h3>
+            <span class="pipeline-column-count">{{ getRowsByStatus(status).length }}</span>
+          </div>
+          <div class="pipeline-cards">
+            <ng-container *ngIf="getRowsByStatus(status) as columnData">
+              <ng-container *ngIf="columnData.length > 0; else pipelineEmpty">
+                <div class="pipeline-card" *ngFor="let row of columnData" [ngClass]="'status-' + row.status">
+                  <div class="pipeline-card-header">
+                    <h4 class="pipeline-card-title">{{ row.name || 'Unknown' }}</h4>
+                  </div>
+                  <span class="pipeline-card-subtitle">{{ row.source || 'No Information' }}</span>
+                  <div class="pipeline-card-details">
+                    <div class="pipeline-card-detail">{{ row.status || 'N/A' }}</div>
+                  </div>
+                  <div class="pipeline-card-footer">
+                    <ng-container *ngFor="let btn of actionButtons">
+                      <button *ngIf="!btn.isDropdown" class="matric-btn" [ngClass]="btn.className"
+                        [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
+                        <i *ngIf="btn.icon" [class]="btn.icon"></i>
+                        {{ btn.label }}
+                      </button>
+                    </ng-container>
+                  </div>
+                </div>
+              </ng-container>
+              <ng-template #pipelineEmpty>
+                <div class="pipeline-empty">No items</div>
+              </ng-template>
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

@@ -41,7 +41,12 @@ let uniqueCounter = 0;
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './matrics-table.component.html',
-  styleUrls: ['./matrics-table.component.css']
+  styleUrls: [
+    './matrics-table.component.css',
+    './views/matrics-table.list.css',
+    './views/matrics-table.grid.css',
+    './views/matrics-table.pipeline.css'
+  ]
 })
 export class MatricsTableComponent implements OnInit, OnChanges {
   @Input() data: any[] = [];
@@ -85,6 +90,7 @@ export class MatricsTableComponent implements OnInit, OnChanges {
   sortAsc: boolean = true;
   dropdownShownIndex: number | null = null;
   imageLoadFailedMap: Record<string, boolean> = {};
+  currentViewType: 'list' | 'grid' | 'pipeline' = 'list';
 
   // Calendar
   selectedDate: Date = new Date();
@@ -101,6 +107,7 @@ export class MatricsTableComponent implements OnInit, OnChanges {
     this.normalizeActionButtons();
     this.setColumns();
     this.filteredData = [...this.data];
+    this.initializeViewTypes();
     this.applyFilters();
   }
 
@@ -297,6 +304,57 @@ onOutsideClick(event: MouseEvent): void {
 
   executeAction(button: CardButton): void {
     button.action?.();
+  }
+
+  initializeViewTypes(): void {
+    // If viewTypes are already provided, don't override them
+    if (this.viewTypes && this.viewTypes.length > 0) {
+      return;
+    }
+
+    // Initialize default view type buttons
+    this.viewTypes = [
+      {
+        label: 'List',
+        icon: 'bi bi-list-ul',
+        targetId: `${this.internalIdPrefix}-view-list`,
+        action: () => this.switchToListView(),
+        tooltip: 'List View',
+        className: 'view-btn view-btn-list'
+      },
+      {
+        label: 'Grid',
+        icon: 'bi bi-grid-3x3-gap',
+        targetId: `${this.internalIdPrefix}-view-grid`,
+        action: () => this.switchToGridView(),
+        tooltip: 'Grid View',
+        className: 'view-btn view-btn-grid'
+      },
+      {
+        label: 'Pipeline',
+        icon: 'bi bi-kanban',
+        targetId: `${this.internalIdPrefix}-view-pipeline`,
+        action: () => this.switchToPipelineView(),
+        tooltip: 'Pipeline View',
+        className: 'view-btn view-btn-pipeline'
+      }
+    ];
+  }
+
+  switchToListView(): void {
+    this.currentViewType = 'list';
+  }
+
+  switchToGridView(): void {
+    this.currentViewType = 'grid';
+  }
+
+  switchToPipelineView(): void {
+    this.currentViewType = 'pipeline';
+  }
+
+  getRowsByStatus(status: string): any[] {
+    return this.pagedData.filter(row => row.status === status);
   }
 
   toLabel(key: string): string {
