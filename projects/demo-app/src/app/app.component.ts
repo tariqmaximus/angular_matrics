@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NgmatricTableModule } from '../../../ng-matric-table/src/public-api';
+import { MatricsTableModule } from '../../../matrics-table/src/public-api';
 
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [NgmatricTableModule],
+  imports: [MatricsTableModule],
   templateUrl: './app.component.html',
   styleUrls: ['./styles.css']
 

@@ -35,10 +35,10 @@ let uniqueCounter = 0;
   selector: 'ng-matric-table',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './ng-matric-table.component.html',
-  styleUrls: ['../assets/css/ng-matric-table.css']
+  templateUrl: './matrics-table.component.html',
+  styleUrls: ['./matrics-table.component.css']
 })
-export class NgmatricTableComponent implements OnInit, OnChanges {
+export class MatricsTableComponent implements OnInit, OnChanges {
   @Input() data: any[] = [];
   @Input() columns: { key: string; label: string }[] = [];
   @Input() autoGenerateColumns = true;

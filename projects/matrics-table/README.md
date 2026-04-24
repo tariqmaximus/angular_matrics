@@ -21,12 +21,12 @@ Import and use the component directly since it's standalone:
 ### In Your Component
 
 ```ts
-import { NgmatricTableComponent } from 'ng-matric-table';
+import { MatricsTableComponent } from 'ng-matric-table';
 
 @Component({
   selector: 'app-my-page',
   standalone: true,
-  imports: [NgmatricTableComponent],
+  imports: [MatricsTableComponent],
   template: `<ng-matric-table [data]="myData" [columns]="columns"></ng-matric-table>`
 })
 export class MyPageComponent {
