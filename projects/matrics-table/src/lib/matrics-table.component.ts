@@ -16,6 +16,11 @@ interface CardButton {
   icon?: string;
   targetId: string;
   action?: () => void;
+  tooltip?: string;
+  className?: string;
+  isDropdown?: boolean;
+  options?: string[];
+  dropdownAction?: (selected: string) => void;
 }
 
 interface ActionButton {
@@ -242,8 +247,11 @@ onOutsideClick(event: MouseEvent): void {
     this.rowAction.emit({ action: btn.label || '', row });
   }
 
-  handleDropdownClick(option: string, btn: ActionButton, row: any): void {
-    btn.dropdownAction?.(option, row);
+  handleDropdownClick(option: string, btn: ActionButton | CardButton, row: any): void {
+    if ('dropdownAction' in btn) {
+      const action = btn.dropdownAction as ((option: string, row?: any) => void);
+      action(option, row);
+    }
   }
 
   toggleRowClass(i: number): void {

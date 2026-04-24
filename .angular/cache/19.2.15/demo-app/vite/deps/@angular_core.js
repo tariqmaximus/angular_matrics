@@ -1,5 +1,4 @@
 import {
-  ALLOW_MULTIPLE_PLATFORMS,
   ANIMATION_MODULE_TYPE,
   APP_BOOTSTRAP_LISTENER,
   APP_ID,
@@ -502,10 +501,10 @@ import {
   ɵɵtwoWayBindingSet,
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
-  ɵɵvalidateIframeAttribute,
+  ɵɵvalidateAttribute,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
-} from "./chunk-PRRMQQJR.js";
+} from "./chunk-H7H6EZPC.js";
 export {
   ANIMATION_MODULE_TYPE,
   APP_BOOTSTRAP_LISTENER,
@@ -657,7 +656,6 @@ export {
   untracked,
   viewChild,
   viewChildren,
-  ALLOW_MULTIPLE_PLATFORMS as ɵALLOW_MULTIPLE_PLATFORMS,
   AfterRenderManager as ɵAfterRenderManager,
   CLIENT_RENDER_MODE_FLAG as ɵCLIENT_RENDER_MODE_FLAG,
   CONTAINER_HEADER_OFFSET as ɵCONTAINER_HEADER_OFFSET,
@@ -1012,7 +1010,7 @@ export {
   ɵɵtwoWayBindingSet,
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
-  ɵɵvalidateIframeAttribute,
+  ɵɵvalidateAttribute,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
 };

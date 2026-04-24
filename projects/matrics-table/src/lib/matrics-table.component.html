@@ -78,14 +78,32 @@
               </div>
             </ng-container>
           </div>
-
+         <div class="matric-btn-group">
+            <ng-container  *ngFor="let button of headerButtons">
+              <button *ngIf="!button.isDropdown" type="button" class="matric-btn" [id]="button.targetId"
+                [ngClass]="button.className" [attr.title]="button.tooltip"
+                (click)="executeAction(button)">
+                <i *ngIf="button.icon" [class]="button.icon" style="margin-right: 6px;"></i>
+                <span *ngIf="button.label">{{ button.label }}</span>
+              </button>
+              <div *ngIf="button.isDropdown" class="matric-dropdown matric-btn" [id]="button.targetId">
+                <button type="button" class="matric-btn no-bg matric-btn-toggle"
+                  [ngClass]="button.className" [attr.title]="button.tooltip"
+                  (click)="toggleDropdown(-1, $event)">
+                  <i *ngIf="button.icon" [class]="button.icon" style="margin-right: 6px;"></i>
+                  {{ button.label }}
+                </button>
+                <ul class="dropdown-menu" [class.show]="dropdownShownIndex === -1">
+                  <li *ngFor="let option of button.options">
+                    <button type="button" class="dropdown-item" (click)="handleDropdownClick(option, button, null)">
+                      {{ option }}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </ng-container>
+          </div>
           <div class="matric-btn-group">
-            <button *ngFor="let button of headerButtons" type="button" class="matric-btn " [id]="button.targetId"
-              (click)="executeAction(button)">
-              <i *ngIf="button.icon" [class]="button.icon"></i>
-              <span *ngIf="button.label">{{ button.label }}</span>
-            </button>
-
             <button *ngIf="collapsible" class="matric-btn " type="button" (click)="toggleCard()">
               <ng-container>
                 <svg *ngIf="isCollapsed" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

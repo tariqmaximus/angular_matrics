@@ -1,8 +1,26 @@
 
 
-<ng-matric-table 
+<ng-matric-table
   title="main Tilte"
   icon="bi bi-grid"
+  [headerButtons]="[
+    {
+      label: 'Dropdown',
+      tooltip: 'Dropdown for table',
+      className: 'success',
+      isDropdown: true,
+      targetId: 'header-dropdown-btn',
+      options: ['lead board', 'Actives', 'scheduled']
+    },
+    {
+      label: 'New',
+      icon: 'bi bi-plus',
+      tooltip: 'New Lead',
+      className: 'danger',
+      targetId: 'header-delete-btn'
+    },
+
+  ]"
   [data]="data"
   [statusMap]="statusMap"
   [variant]="'round-card bordered  responsive'"

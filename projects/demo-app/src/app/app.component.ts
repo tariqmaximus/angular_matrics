@@ -12,7 +12,15 @@ import { MatricsTableModule } from '../../../matrics-table/src/public-api';
 
 })
 export class AppComponent {
- statusMap = {
+  addLeadButtons = [
+    {
+      label: 'Add Lead',
+      icon: 'bi bi-plus',
+      targetId: 'add-lead-btn'
+    }
+  ];
+
+  statusMap = {
   scheduled: 'success',
   inprogress: 'info',
   converted: 'success',
