@@ -41,7 +41,7 @@
               <button class="matric-btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
                 style="min-width: 120px;">
                 <svg fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16" width="16" height="16"
-                  style="margin-right: 6px;">
+                >
                   <path
                     d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
                 </svg>
@@ -78,19 +78,44 @@
               </div>
             </ng-container>
           </div>
-         <div class="matric-btn-group">
-            <ng-container  *ngFor="let button of headerButtons">
+           <div class="matric-btn-group">
+            <ng-container  *ngFor="let button of viewTypes">
               <button *ngIf="!button.isDropdown" type="button" class="matric-btn" [id]="button.targetId"
                 [ngClass]="button.className" [attr.title]="button.tooltip"
                 (click)="executeAction(button)">
-                <i *ngIf="button.icon" [class]="button.icon" style="margin-right: 6px;"></i>
+                <i *ngIf="button.icon" [class]="button.icon"></i>
                 <span *ngIf="button.label">{{ button.label }}</span>
               </button>
               <div *ngIf="button.isDropdown" class="matric-dropdown matric-btn" [id]="button.targetId">
                 <button type="button" class="matric-btn no-bg matric-btn-toggle"
                   [ngClass]="button.className" [attr.title]="button.tooltip"
                   (click)="toggleDropdown(-1, $event)">
-                  <i *ngIf="button.icon" [class]="button.icon" style="margin-right: 6px;"></i>
+                  <i *ngIf="button.icon" [class]="button.icon"></i>
+                  {{ button.label }}
+                </button>
+                <ul class="dropdown-menu" [class.show]="dropdownShownIndex === -1">
+                  <li *ngFor="let option of button.options">
+                    <button type="button" class="dropdown-item" (click)="handleDropdownClick(option, button, null)">
+                      {{ option }}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </ng-container>
+          </div>
+         <div class="matric-btn-group">
+            <ng-container  *ngFor="let button of headerButtons">
+              <button *ngIf="!button.isDropdown" type="button" class="matric-btn" [id]="button.targetId"
+                [ngClass]="button.className" [attr.title]="button.tooltip"
+                (click)="executeAction(button)">
+                <i *ngIf="button.icon" [class]="button.icon"></i>
+                <span *ngIf="button.label">{{ button.label }}</span>
+              </button>
+              <div *ngIf="button.isDropdown" class="matric-dropdown matric-btn" [id]="button.targetId">
+                <button type="button" class="matric-btn no-bg matric-btn-toggle"
+                  [ngClass]="button.className" [attr.title]="button.tooltip"
+                  (click)="toggleDropdown(-1, $event)">
+                  <i *ngIf="button.icon" [class]="button.icon"></i>
                   {{ button.label }}
                 </button>
                 <ul class="dropdown-menu" [class.show]="dropdownShownIndex === -1">

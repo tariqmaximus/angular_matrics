@@ -57,6 +57,7 @@ export class MatricsTableComponent implements OnInit, OnChanges {
   @Input() showActions = true;
   @Input() actionButtons: ActionButton[] = [];
   @Input() headerButtons: CardButton[] = [];
+  @Input() viewTypes: CardButton[] = [];
   @Input() collapsible = false;
   @Input() variant = '';
   @Input() matricHeader = true;
