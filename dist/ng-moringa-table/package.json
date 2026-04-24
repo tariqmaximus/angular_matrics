@@ -1,0 +1,43 @@
+{
+  "name": "ng-moringa-table",
+  "version": "1.1.1",
+  "description": "Smart Angular table with filters, pagination, and actions",
+  "author": "Tariq Jarral",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@angular/core": "^17.0.0",
+    "@angular/common": "^17.0.0"
+  },
+  "files": [
+    "fesm2022/",
+    "fesm2015/",
+    "esm2022/",
+    "esm2015/",
+    "bundles/",
+    "*.js",
+    "*.d.ts",
+    "*.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "fesm2022/ng-moringa-table.mjs",
+  "module": "fesm2022/ng-moringa-table.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/ng-moringa-table.mjs",
+      "default": "./fesm2022/ng-moringa-table.mjs"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

@@ -66,9 +66,7 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   @Input() valueLenthColumns: string[] = [];
   @Input() progressBy?: string;
   @Input() statusMap: Record<string, string> = defaultStatusMap;
-
   @Output() rowAction = new EventEmitter<{ action: string; row: any }>();
-
   internalIdPrefix!: string;
   isCollapsed = false;
   activeRowIndex: number | null = null;
