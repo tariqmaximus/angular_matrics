@@ -16,7 +16,7 @@ interface ActionButton {
     action?: (row: any) => void;
     dropdownAction?: (selected: string, row: any) => void;
 }
-export declare class NgMoringaTableComponent implements OnInit, OnChanges {
+export declare class NgmatricTableComponent implements OnInit, OnChanges {
     data: any[];
     columns: {
         key: string;
@@ -35,7 +35,7 @@ export declare class NgMoringaTableComponent implements OnInit, OnChanges {
     headerButtons: CardButton[];
     collapsible: boolean;
     variant: string;
-    moringaHeader: boolean;
+    matricHeader: boolean;
     showFooter: boolean;
     icon?: string;
     title?: string;
@@ -120,7 +120,7 @@ export declare class NgMoringaTableComponent implements OnInit, OnChanges {
         progressClass: string;
     };
     getValue(row: any, key: string): string;
-    static ɵfac: i0.ɵɵFactoryDeclaration<NgMoringaTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgMoringaTableComponent, "ng-moringa-table", never, { "data": { "alias": "data"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "excludeColumns": { "alias": "excludeColumns"; "required": false; }; "actionButtons": { "alias": "actionButtons"; "required": false; }; "autoGenerateColumns": { "alias": "autoGenerateColumns"; "required": false; }; "filterBy": { "alias": "filterBy"; "required": false; }; "filterStyle": { "alias": "filterStyle"; "required": false; }; "searchButton": { "alias": "searchButton"; "required": false; }; "Sorting": { "alias": "Sorting"; "required": false; }; "pageSize": { "alias": "pageSize"; "required": false; }; "paginated": { "alias": "paginated"; "required": false; }; "showActions": { "alias": "showActions"; "required": false; }; "headerButtons": { "alias": "headerButtons"; "required": false; }; "collapsible": { "alias": "collapsible"; "required": false; }; "variant": { "alias": "variant"; "required": false; }; "moringaHeader": { "alias": "moringaHeader"; "required": false; }; "showFooter": { "alias": "showFooter"; "required": false; }; "icon": { "alias": "icon"; "required": false; }; "title": { "alias": "title"; "required": false; }; "sub": { "alias": "sub"; "required": false; }; "mediaImage": { "alias": "mediaImage"; "required": false; }; "nameLetters": { "alias": "nameLetters"; "required": false; }; "mediaStatus": { "alias": "mediaStatus"; "required": false; }; "idPrefix": { "alias": "idPrefix"; "required": false; }; "valueLenthColumns": { "alias": "valueLenthColumns"; "required": false; }; "progressBy": { "alias": "progressBy"; "required": false; }; "statusMap": { "alias": "statusMap"; "required": false; }; }, { "rowAction": "rowAction"; }, never, ["[header-component]", "[footer-component]"], true, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NgmatricTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgmatricTableComponent, "ng-matric-table", never, { "data": { "alias": "data"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "excludeColumns": { "alias": "excludeColumns"; "required": false; }; "actionButtons": { "alias": "actionButtons"; "required": false; }; "autoGenerateColumns": { "alias": "autoGenerateColumns"; "required": false; }; "filterBy": { "alias": "filterBy"; "required": false; }; "filterStyle": { "alias": "filterStyle"; "required": false; }; "searchButton": { "alias": "searchButton"; "required": false; }; "Sorting": { "alias": "Sorting"; "required": false; }; "pageSize": { "alias": "pageSize"; "required": false; }; "paginated": { "alias": "paginated"; "required": false; }; "showActions": { "alias": "showActions"; "required": false; }; "headerButtons": { "alias": "headerButtons"; "required": false; }; "collapsible": { "alias": "collapsible"; "required": false; }; "variant": { "alias": "variant"; "required": false; }; "matricHeader": { "alias": "matricHeader"; "required": false; }; "showFooter": { "alias": "showFooter"; "required": false; }; "icon": { "alias": "icon"; "required": false; }; "title": { "alias": "title"; "required": false; }; "sub": { "alias": "sub"; "required": false; }; "mediaImage": { "alias": "mediaImage"; "required": false; }; "nameLetters": { "alias": "nameLetters"; "required": false; }; "mediaStatus": { "alias": "mediaStatus"; "required": false; }; "idPrefix": { "alias": "idPrefix"; "required": false; }; "valueLenthColumns": { "alias": "valueLenthColumns"; "required": false; }; "progressBy": { "alias": "progressBy"; "required": false; }; "statusMap": { "alias": "statusMap"; "required": false; }; }, { "rowAction": "rowAction"; }, never, ["[header-component]", "[footer-component]"], true, never>;
 }
 export {};

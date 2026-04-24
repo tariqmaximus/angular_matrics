@@ -1,5 +1,5 @@
 /**
  * Generated bundle index. Do not edit.
  */
-/// <amd-module name="ng-moringa-table" />
+/// <amd-module name="ng-matric-table" />
 export * from './public-api';

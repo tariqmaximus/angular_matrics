@@ -3,14 +3,14 @@
 @use './variables' as variables;
 @use './variants' as variants;
 @use './index' as *;
-.moringa-group {
+.matric-group {
   display: flex;
 
   align-items: stretch;
 
 }
 
-  .moringa-btn-group {
+  .matric-btn-group {
     display: flex;
     align-items: center;
     gap: 0;
@@ -63,7 +63,7 @@
 
   
   }
-.moringa-group, .moringa-btn-group {
+.matric-group, .matric-btn-group {
       &.align-center {
       justify-content: center;
     }
@@ -90,11 +90,11 @@
       height: variables.$group-height-sm !important;
     }
 }
-.ng-moringa-table {
+.ng-matric-table {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: variables.$table-flate;
-  min-height: variables.$moringa-header-height;
+  min-height: variables.$matric-header-height;
   padding-bottom: 0;
   transition: 0.4s;
   width: 100%;
@@ -102,7 +102,7 @@
   box-sizing: border-box;
 }
   -webkit-overflow-scrolling: touch; 
-  .moringa-body {
+  .matric-body {
     transition: 0.4s;
 
 width: 100%;
@@ -355,7 +355,7 @@ border-bottom:1px solid variables.$bs-border;
 
   }
 
-  .moringa-select {
+  .matric-select {
     appearance: none;
     /* Remove native arrow in most browsers */
     -webkit-appearance: none;
@@ -383,9 +383,9 @@ border-bottom:1px solid variables.$bs-border;
 
 
 
-  .moringa-btn,
-  .moringa-select,
-  .moringa-input {
+  .matric-btn,
+  .matric-select,
+  .matric-input {
     border: 1px solid variables.$bs-border;
     color: variables.$muted-color;
     padding:0 10px;
@@ -400,7 +400,7 @@ border-bottom:1px solid variables.$bs-border;
   }
 
 
-  .moringa-btn {
+  .matric-btn {
     font-size: 12px;
     background-color: $table-bg;
     display: flex;
@@ -453,7 +453,7 @@ svg {
 
   }
 
-  .moringa-tag {
+  .matric-tag {
     border-radius: variables.$table-round;
     padding: 4px;
     background: white;
@@ -479,7 +479,7 @@ svg {
 
 
 
-  .moringa-tabs {
+  .matric-tabs {
     padding: 0;
     margin: 0;
 
@@ -506,7 +506,7 @@ svg {
 
 
 
-        .moringa-badge {
+        .matric-badge {
           border-radius: 100%;
           padding: 5px;
           background: white;
@@ -534,7 +534,7 @@ svg {
         &.active {
           background: variables.$active-color;
 
-          .moringa-badge {
+          .matric-badge {
             display: block;
 
           }
@@ -558,7 +558,7 @@ svg {
       min-width: 55px;
       cursor: pointer;
 
-      .moringa-btn {
+      .matric-btn {
         padding: 0;
         height: auto;
       }
@@ -633,7 +633,7 @@ svg {
       position: relative;
       overflow: inherit;
 
-      .moringa-tag {
+      .matric-tag {
         width: auto;
         height: auto;
         position: absolute;
@@ -652,7 +652,7 @@ svg {
           $fallback: map.get(variants.$variant-colors, $name);
           background-color: if($fallback !=null, color.adjust($fallback, $lightness: 40%), color.adjust($color, 10%));
 
-          .moringa-tag {
+          .matric-tag {
 
             color: $color;
             $fallback: map.get(variants.$variant-colors, $name);
@@ -675,11 +675,11 @@ svg {
 
   }
 
-  .moringa-header {
+  .matric-header {
     background: none;
     padding: 0;
     border-bottom: 1px solid variables.$bs-border;
-    height: variables.$moringa-header-height;
+    height: variables.$matric-header-height;
 
     border-radius: variables.$table-round variables.$table-round 0 0;
     justify-content: center;
@@ -690,8 +690,8 @@ svg {
       display: flex;
     }
 
-    .moringa-container {
-      height: $moringa-header-height;
+    .matric-container {
+      height: $matric-header-height;
       display: flex !important;
       align-items: center;
       justify-content: space-between;
@@ -728,10 +728,10 @@ svg {
 
   &.collapsed {
     padding-bottom: 0;
-    height: variables.$moringa-header-height;
+    height: variables.$matric-header-height;
     border-radius: variables.$table-flate 0 0 !important;
 
-    .moringa-header {
+    .matric-header {
       border-bottom: 1px solid transparent;
 
       .progress {
@@ -739,12 +739,12 @@ svg {
       }
     }
 
-    .moringa-body {
+    .matric-body {
       max-height: 0;
       opacity: 0;
       padding: 0;
 
-      margin-top: variables.$moringa-header-height - $table-spacing;
+      margin-top: variables.$matric-header-height - $table-spacing;
     }
   }
 
@@ -756,7 +756,7 @@ svg {
  
     border-radius: variables.$btn-round;
 }
-    .moringa-tabs {
+    .matric-tabs {
 
 
       .nav-item {
@@ -800,12 +800,12 @@ svg {
 
 
       }
-    .moringa-header {
-      .moringa-container {
+    .matric-header {
+      .matric-container {
         padding: 0 calc($table-spacing);
       }
     }
- .moringa-btn-group {
+ .matric-btn-group {
   
 
     >* {
@@ -954,7 +954,7 @@ svg {
         }
       }
 
-      .moringa-tabs {
+      .matric-tabs {
         display: none;
       }
 
@@ -962,13 +962,13 @@ svg {
   }
 
 
-  .moringa-dropdown {
+  .matric-dropdown {
     position: relative;
     padding: 0;
-    .moringa-btn {
+    .matric-btn {
       padding: variables.$btn-spacing;
     }
-    .moringa-btn-toggle {
+    .matric-btn-toggle {
     &:after {
       display: inline-block;
       margin-left: 0.255em;

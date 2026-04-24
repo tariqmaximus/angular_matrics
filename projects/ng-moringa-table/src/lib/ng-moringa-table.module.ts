@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgMoringaTableComponent } from './ng-moringa-table.component';
+import { NgmatricTableComponent } from './ng-matric-table.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    NgMoringaTableComponent // ✅ IMPORT instead of DECLARE
+    NgmatricTableComponent // ✅ IMPORT instead of DECLARE
   ],
-  exports: [NgMoringaTableComponent]
+  exports: [NgmatricTableComponent]
 })
-export class NgMoringaTableModule {}
+export class NgmatricTableModule {}

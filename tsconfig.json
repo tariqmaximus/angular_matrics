@@ -10,8 +10,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "ng-moringa-table": [
-        "./dist/ng-moringa-table"
+      "ng-matric-table": [
+        "./dist/ng-matric-table"
       ]
     },
     "skipLibCheck": true,

@@ -3,15 +3,15 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-"ng-moringa-table": {
+"ng-matric-table": {
   "projectType": "library",
-  "root": "projects/ng-moringa-table",
-  "sourceRoot": "projects/ng-moringa-table/src",
+  "root": "projects/ng-matric-table",
+  "sourceRoot": "projects/ng-matric-table/src",
   "architect": {
     "build": {
       "builder": "@angular-devkit/build-angular:ng-packagr",
       "options": {
-        "project": "projects/ng-moringa-table/ng-package.json"
+        "project": "projects/ng-matric-table/ng-package.json"
       }
     }
   }

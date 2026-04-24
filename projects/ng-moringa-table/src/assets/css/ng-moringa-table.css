@@ -1,64 +1,64 @@
-.moringa-group {
+.matric-group {
   display: flex;
   align-items: stretch;
 }
 
-.moringa-btn-group {
+.matric-btn-group {
   display: flex;
   align-items: center;
   gap: 0;
   height: 35px;
   align-items: stretch;
 }
-.moringa-btn-group > * {
+.matric-btn-group > * {
   border-radius: 0;
   transition: 0.4s;
   border-right: none !important;
 }
-.moringa-btn-group > *:last-child {
+.matric-btn-group > *:last-child {
   border-right: 1px solid #e7e7e7 !important;
 }
-.moringa-btn-group > *:focus {
+.matric-btn-group > *:focus {
   outline: none;
   box-shadow: none;
 }
-.moringa-btn-group > *:active {
+.matric-btn-group > *:active {
   border-color: #e7e7e7;
 }
-.moringa-btn-group > *.active {
+.matric-btn-group > *.active {
   background-color: rgb(238, 238, 238);
   color: #63634e;
 }
-.moringa-btn-group > *.active span {
+.matric-btn-group > *.active span {
   color: #63634e;
 }
-.moringa-btn-group > *.active i {
+.matric-btn-group > *.active i {
   color: #0173df;
 }
 
-.moringa-group.align-center, .moringa-btn-group.align-center {
+.matric-group.align-center, .matric-btn-group.align-center {
   justify-content: center;
 }
-.moringa-group.align-left, .moringa-btn-group.align-left {
+.matric-group.align-left, .matric-btn-group.align-left {
   justify-content: flex-start;
 }
-.moringa-group.align-right, .moringa-btn-group.align-right {
+.matric-group.align-right, .matric-btn-group.align-right {
   justify-content: flex-end;
 }
-.moringa-group.align-justify, .moringa-btn-group.align-justify {
+.matric-group.align-justify, .matric-btn-group.align-justify {
   justify-content: space-between;
 }
-.moringa-group.align-justify > *, .moringa-btn-group.align-justify > * {
+.matric-group.align-justify > *, .matric-btn-group.align-justify > * {
   width: 100%;
 }
-.moringa-group.gap, .moringa-btn-group.gap {
+.matric-group.gap, .matric-btn-group.gap {
   gap: 15px !important;
 }
-.moringa-group.sm, .moringa-btn-group.sm {
+.matric-group.sm, .matric-btn-group.sm {
   height: 30px !important;
 }
 
-.ng-moringa-table {
+.ng-matric-table {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 0px;
@@ -68,66 +68,66 @@
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
-.ng-moringa-table * {
+.ng-matric-table * {
   box-sizing: border-box;
 }
-.ng-moringa-table .moringa-body {
+.ng-matric-table .matric-body {
   transition: 0.4s;
   width: 100%;
 }
-.ng-moringa-table .moringa-body.no-header {
+.ng-matric-table .matric-body.no-header {
   margin-top: 0 !important;
 }
-.ng-moringa-table table {
+.ng-matric-table table {
   width: 100%;
   border-collapse: separate;
 }
-.ng-moringa-table table .mobile-btn {
+.ng-matric-table table .mobile-btn {
   display: none;
   border: none;
 }
-.ng-moringa-table table td, .ng-moringa-table table th {
+.ng-matric-table table td, .ng-matric-table table th {
   min-width: 100px;
 }
-.ng-moringa-table table .key {
+.ng-matric-table table .key {
   display: none;
 }
-.ng-moringa-table table thead {
+.ng-matric-table table thead {
   border-bottom: 1px solid #e7e7e7;
   text-transform: capitalize;
 }
-.ng-moringa-table table thead th {
+.ng-matric-table table thead th {
   font-size: 12px;
   font-weight: bold;
   color: #888888;
   padding: 15px 0;
   text-transform: uppercase;
 }
-.ng-moringa-table table thead th .sorting-group {
+.ng-matric-table table thead th .sorting-group {
   display: flex;
   gap: 5px;
   align-items: center;
 }
-.ng-moringa-table table thead th .sorting-group svg {
+.ng-matric-table table thead th .sorting-group svg {
   fill: #63634e;
   width: 13px;
   height: auto;
 }
-.ng-moringa-table table thead th:last-child > div {
+.ng-matric-table table thead th:last-child > div {
   justify-content: flex-end;
 }
-.ng-moringa-table table tr .transition-icon {
+.ng-matric-table table tr .transition-icon {
   transition: transform 0.2s ease-in-out;
 }
-.ng-moringa-table table tr .rotate-90 {
+.ng-matric-table table tr .rotate-90 {
   transform: rotate(90deg);
 }
-.ng-moringa-table table tr td {
+.ng-matric-table table tr td {
   padding: 5px 0;
   font-size: 13px;
   border-top: 1px solid #e7e7e7;
 }
-.ng-moringa-table table tr td .value-lenth {
+.ng-matric-table table tr td .value-lenth {
   display: inline-block;
   max-width: 100px;
   overflow: hidden;
@@ -136,19 +136,19 @@
   vertical-align: middle;
   cursor: pointer;
 }
-.ng-moringa-table table tr td .value-lenth:hover {
+.ng-matric-table table tr td .value-lenth:hover {
   text-decoration: underline dotted;
 }
-.ng-moringa-table table tr:last-child td {
+.ng-matric-table table tr:last-child td {
   border-bottom: 1px solid #e7e7e7;
 }
-.ng-moringa-table table tfoot {
+.ng-matric-table table tfoot {
   border-top: 1px solid #e7e7e7;
 }
-.ng-moringa-table table tfoot tr td {
+.ng-matric-table table tfoot tr td {
   border: none;
 }
-.ng-moringa-table .day-btn {
+.ng-matric-table .day-btn {
   font-size: 12px;
   background-color: #fff;
   display: flex;
@@ -159,58 +159,58 @@
   color: #63634e;
   transition: 0.4s;
 }
-.ng-moringa-table .day-btn:hover {
+.ng-matric-table .day-btn:hover {
   background-color: rgb(238, 238, 238);
 }
-.ng-moringa-table .day-btn.active {
+.ng-matric-table .day-btn.active {
   background-color: #0173df;
   color: white;
   border: 1px solid #0173df;
 }
-.ng-moringa-table .date-picker {
+.ng-matric-table .date-picker {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1);
   padding: 15px;
   min-width: 350px;
 }
-.ng-moringa-table .date-picker .d-grid {
+.ng-matric-table .date-picker .d-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 4px;
   margin-top: 5px;
 }
-.ng-moringa-table .date-picker .d-grid .text-center {
+.ng-matric-table .date-picker .d-grid .text-center {
   padding: 8px 0;
   border-radius: 5px;
   font-size: 13px;
   user-select: none;
 }
-.ng-moringa-table .date-picker .d-grid .text-center.fw-bold {
+.ng-matric-table .date-picker .d-grid .text-center.fw-bold {
   color: #63634e;
   font-weight: 600;
 }
-.ng-moringa-table .date-picker .d-grid .text-center.border {
+.ng-matric-table .date-picker .d-grid .text-center.border {
   border: 1px solid #e7e7e7;
   transition: background-color 0.2s, color 0.2s;
 }
-.ng-moringa-table .date-picker .d-grid .text-center.border:hover {
+.ng-matric-table .date-picker .d-grid .text-center.border:hover {
   background-color: rgb(238, 238, 238);
 }
-.ng-moringa-table .date-picker .d-grid .text-center.text-white {
+.ng-matric-table .date-picker .d-grid .text-center.text-white {
   color: #fff !important;
 }
-.ng-moringa-table .date-picker .footer {
+.ng-matric-table .date-picker .footer {
   margin-top: 15px;
 }
-.ng-moringa-table .media-tile {
+.ng-matric-table .media-tile {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   text-decoration: none;
   gap: 15px;
 }
-.ng-moringa-table .media-tile .media-img {
+.ng-matric-table .media-tile .media-img {
   background-color: #0173df;
   width: 35px;
   height: 35px;
@@ -223,102 +223,102 @@
   color: white;
   font-weight: bold;
 }
-.ng-moringa-table .media-tile .media-img i {
+.ng-matric-table .media-tile .media-img i {
   font-size: 40px;
 }
-.ng-moringa-table .media-tile .media-img img {
+.ng-matric-table .media-tile .media-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.ng-moringa-table .media-tile .media-img.success {
+.ng-matric-table .media-tile .media-img.success {
   background-color: var(--success-color, #28a745);
   border: 3px solid rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .media-tile .media-img.pending {
+.ng-matric-table .media-tile .media-img.pending {
   background-color: var(--warning-color, #f1a10a);
   border: 3px solid rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .media-tile .media-img.info {
+.ng-matric-table .media-tile .media-img.info {
   background-color: var(--info-color, #17a2b8);
   border: 3px solid rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .media-tile .media-img.danger {
+.ng-matric-table .media-tile .media-img.danger {
   background-color: var(--error-color, #dc3545);
   border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .media-tile .media-img.warning {
+.ng-matric-table .media-tile .media-img.warning {
   background-color: var(--warning-color, #f1a10a);
   border: 3px solid rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .media-tile .media-img.primary {
+.ng-matric-table .media-tile .media-img.primary {
   background-color: var(--prim-color, #007bff);
   border: 3px solid rgb(204, 228.6, 255);
 }
-.ng-moringa-table .media-tile .media-img.muted {
+.ng-matric-table .media-tile .media-img.muted {
   background-color: var(--muted-color, #888888);
   border: 3px solid #eeeeee;
 }
-.ng-moringa-table .media-tile .media-img.secondary {
+.ng-matric-table .media-tile .media-img.secondary {
   background-color: var(--muted-color, #888888);
   border: 3px solid #eeeeee;
 }
-.ng-moringa-table .media-tile .media-img.light {
+.ng-matric-table .media-tile .media-img.light {
   background-color: var(--prim-bg, #888888);
   border: 3px solid hsl(210, 16.6666666667%, 137.6470588235%);
 }
-.ng-moringa-table .media-tile .media-img.default {
+.ng-matric-table .media-tile .media-img.default {
   background-color: var(--bg-color, #adb5bd);
   border: 3px solid hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .media-tile .media-img.archived {
+.ng-matric-table .media-tile .media-img.archived {
   background-color: var(--archived-color, #888888);
   border: 3px solid hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .media-tile .media-img.processing {
+.ng-matric-table .media-tile .media-img.processing {
   background-color: var(--processing-color, var(--info-color, #17a2b8));
   border: 3px solid rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .media-tile .media-img.failed {
+.ng-matric-table .media-tile .media-img.failed {
   background-color: var(--error-color, #dc3545);
   border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .media-tile .media-img.queued {
+.ng-matric-table .media-tile .media-img.queued {
   background-color: var(--info-color, #17a2b8);
   border: 3px solid rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .media-tile .media-img.on-hold {
+.ng-matric-table .media-tile .media-img.on-hold {
   background-color: var(--muted-color, #888888);
   border: 3px solid #eeeeee;
 }
-.ng-moringa-table .media-tile .media-img.suspended {
+.ng-matric-table .media-tile .media-img.suspended {
   background-color: var(--dark-color, #212529);
   border: 3px solid rgb(126.4594594595, 139, 151.5405405405);
 }
-.ng-moringa-table .media-tile .media-img.expired {
+.ng-matric-table .media-tile .media-img.expired {
   background-color: var(--light-color, #f1f3f5);
   border: 3px solid hsl(210, 16.6666666667%, 135.2941176471%);
 }
-.ng-moringa-table .media-tile .media-img.rejected {
+.ng-matric-table .media-tile .media-img.rejected {
   background-color: var(--error-color, #dc3545);
   border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .media-tile .media-img.approved {
+.ng-matric-table .media-tile .media-img.approved {
   background-color: var(--success-color, #28a745);
   border: 3px solid rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .media-tile .media-img.active {
+.ng-matric-table .media-tile .media-img.active {
   background-color: var(--prim-color, #007bff);
   border: 3px solid rgb(204, 228.6, 255);
 }
-.ng-moringa-table .media-tile .media-img.draft {
+.ng-matric-table .media-tile .media-img.draft {
   background-color: var(--text-color, #888888);
   border: 3px solid rgb(175.6125, 182, 188.3875);
 }
-.ng-moringa-table .media-tile p {
+.ng-matric-table .media-tile p {
   margin: 0;
 }
-.ng-moringa-table .media-tile .name {
+.ng-matric-table .media-tile .name {
   font-size: 0.8rem;
   text-align: left;
   width: 100px;
@@ -327,11 +327,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.ng-moringa-table .media-tile .name p {
+.ng-matric-table .media-tile .name p {
   font-size: 0.7;
   color: #888888;
 }
-.ng-moringa-table .moringa-select {
+.ng-matric-table .matric-select {
   appearance: none;
   /* Remove native arrow in most browsers */
   -webkit-appearance: none;
@@ -344,31 +344,31 @@
   min-width: 150px;
   cursor: pointer;
 }
-.ng-moringa-table .moringa-select option {
+.ng-matric-table .matric-select option {
   padding: 0.5rem;
   background-color: #fff;
   color: #63634e;
   border: 1px solid #e7e7e7;
 }
-.ng-moringa-table .moringa-select:focus {
+.ng-matric-table .matric-select:focus {
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
-.ng-moringa-table .moringa-btn,
-.ng-moringa-table .moringa-select,
-.ng-moringa-table .moringa-input {
+.ng-matric-table .matric-btn,
+.ng-matric-table .matric-select,
+.ng-matric-table .matric-input {
   border: 1px solid #e7e7e7;
   color: #888888;
   padding: 0 10px;
   outline: none;
 }
-.ng-moringa-table .moringa-btn:focus,
-.ng-moringa-table .moringa-select:focus,
-.ng-moringa-table .moringa-input:focus {
+.ng-matric-table .matric-btn:focus,
+.ng-matric-table .matric-select:focus,
+.ng-matric-table .matric-input:focus {
   border-color: #e7e7e7;
   box-shadow: none;
   color: #63634e;
 }
-.ng-moringa-table .moringa-btn {
+.ng-matric-table .matric-btn {
   font-size: 12px;
   background-color: #fff;
   display: flex;
@@ -378,94 +378,94 @@
   border: 1px solid #e7e7e7;
   color: #63634e;
 }
-.ng-moringa-table .moringa-btn svg {
+.ng-matric-table .matric-btn svg {
   width: 14px;
 }
-.ng-moringa-table .moringa-btn i {
+.ng-matric-table .matric-btn i {
   font-size: 14px;
   color: #888888;
 }
-.ng-moringa-table .moringa-btn:focus {
+.ng-matric-table .matric-btn:focus {
   box-shadow: none;
   background-color: #f5f5f5;
 }
-.ng-moringa-table .moringa-btn:disabled {
+.ng-matric-table .matric-btn:disabled {
   border-color: #f5f5f5;
 }
-.ng-moringa-table .moringa-btn:hover {
+.ng-matric-table .matric-btn:hover {
   background-color: #f5f5f5;
 }
-.ng-moringa-table .moringa-btn.no-bg {
+.ng-matric-table .matric-btn.no-bg {
   border: none !important;
 }
-.ng-moringa-table .moringa-btn span {
+.ng-matric-table .matric-btn span {
   font-size: 12px;
   color: #888888;
 }
-.ng-moringa-table .moringa-btn.success {
+.ng-matric-table .matric-btn.success {
   color: #28a745;
 }
-.ng-moringa-table .moringa-btn.pending {
+.ng-matric-table .matric-btn.pending {
   color: #f1a10a;
 }
-.ng-moringa-table .moringa-btn.info {
+.ng-matric-table .matric-btn.info {
   color: #17a2b8;
 }
-.ng-moringa-table .moringa-btn.danger {
+.ng-matric-table .matric-btn.danger {
   color: #dc3545;
 }
-.ng-moringa-table .moringa-btn.warning {
+.ng-matric-table .matric-btn.warning {
   color: #f1a10a;
 }
-.ng-moringa-table .moringa-btn.primary {
+.ng-matric-table .matric-btn.primary {
   color: #007bff;
 }
-.ng-moringa-table .moringa-btn.muted {
+.ng-matric-table .matric-btn.muted {
   color: #888888;
 }
-.ng-moringa-table .moringa-btn.secondary {
+.ng-matric-table .matric-btn.secondary {
   color: #888888;
 }
-.ng-moringa-table .moringa-btn.light {
+.ng-matric-table .matric-btn.light {
   color: #f8f9fa;
 }
-.ng-moringa-table .moringa-btn.default {
+.ng-matric-table .matric-btn.default {
   color: #adb5bd;
 }
-.ng-moringa-table .moringa-btn.archived {
+.ng-matric-table .matric-btn.archived {
   color: #adb5bd;
 }
-.ng-moringa-table .moringa-btn.processing {
+.ng-matric-table .matric-btn.processing {
   color: #17a2b8;
 }
-.ng-moringa-table .moringa-btn.failed {
+.ng-matric-table .matric-btn.failed {
   color: #dc3545;
 }
-.ng-moringa-table .moringa-btn.queued {
+.ng-matric-table .matric-btn.queued {
   color: #17a2b8;
 }
-.ng-moringa-table .moringa-btn.on-hold {
+.ng-matric-table .matric-btn.on-hold {
   color: #888888;
 }
-.ng-moringa-table .moringa-btn.suspended {
+.ng-matric-table .matric-btn.suspended {
   color: #212529;
 }
-.ng-moringa-table .moringa-btn.expired {
+.ng-matric-table .matric-btn.expired {
   color: #f1f3f5;
 }
-.ng-moringa-table .moringa-btn.rejected {
+.ng-matric-table .matric-btn.rejected {
   color: #dc3545;
 }
-.ng-moringa-table .moringa-btn.approved {
+.ng-matric-table .matric-btn.approved {
   color: #28a745;
 }
-.ng-moringa-table .moringa-btn.active {
+.ng-matric-table .matric-btn.active {
   color: #007bff;
 }
-.ng-moringa-table .moringa-btn.draft {
+.ng-matric-table .matric-btn.draft {
   color: #495057;
 }
-.ng-moringa-table .moringa-tag {
+.ng-matric-table .matric-tag {
   border-radius: 8px;
   padding: 4px;
   background: white;
@@ -474,107 +474,107 @@
   text-transform: uppercase;
   height: auto;
 }
-.ng-moringa-table .moringa-tag.success {
+.ng-matric-table .matric-tag.success {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .moringa-tag.pending {
+.ng-matric-table .matric-tag.pending {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .moringa-tag.info {
+.ng-matric-table .matric-tag.info {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tag.danger {
+.ng-matric-table .matric-tag.danger {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tag.warning {
+.ng-matric-table .matric-tag.warning {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .moringa-tag.primary {
+.ng-matric-table .matric-tag.primary {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .moringa-tag.muted {
+.ng-matric-table .matric-tag.muted {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tag.secondary {
+.ng-matric-table .matric-tag.secondary {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tag.light {
+.ng-matric-table .matric-tag.light {
   color: var(--prim-bg, #888888);
   background-color: hsl(210, 16.6666666667%, 137.6470588235%);
 }
-.ng-moringa-table .moringa-tag.default {
+.ng-matric-table .matric-tag.default {
   color: var(--bg-color, #adb5bd);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .moringa-tag.archived {
+.ng-matric-table .matric-tag.archived {
   color: var(--archived-color, #888888);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .moringa-tag.processing {
+.ng-matric-table .matric-tag.processing {
   color: var(--processing-color, var(--info-color, #17a2b8));
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tag.failed {
+.ng-matric-table .matric-tag.failed {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tag.queued {
+.ng-matric-table .matric-tag.queued {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tag.on-hold {
+.ng-matric-table .matric-tag.on-hold {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tag.suspended {
+.ng-matric-table .matric-tag.suspended {
   color: var(--dark-color, #212529);
   background-color: rgb(126.4594594595, 139, 151.5405405405);
 }
-.ng-moringa-table .moringa-tag.expired {
+.ng-matric-table .matric-tag.expired {
   color: var(--light-color, #f1f3f5);
   background-color: hsl(210, 16.6666666667%, 135.2941176471%);
 }
-.ng-moringa-table .moringa-tag.rejected {
+.ng-matric-table .matric-tag.rejected {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tag.approved {
+.ng-matric-table .matric-tag.approved {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .moringa-tag.active {
+.ng-matric-table .matric-tag.active {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .moringa-tag.draft {
+.ng-matric-table .matric-tag.draft {
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
 }
-.ng-moringa-table .text-muted {
+.ng-matric-table .text-muted {
   color: #888888;
 }
-.ng-moringa-table .moringa-tabs {
+.ng-matric-table .matric-tabs {
   padding: 0;
   margin: 0;
   border: none;
   display: flex;
 }
-.ng-moringa-table .moringa-tabs .nav-item {
+.ng-matric-table .matric-tabs .nav-item {
   border: none !important;
   padding: 0;
   list-style: none;
   display: flex;
   align-items: center;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link {
+.ng-matric-table .matric-tabs .nav-item .nav-link {
   padding: 5px 15px;
   color: #888888;
   text-transform: capitalize;
@@ -585,7 +585,7 @@
   cursor: pointer;
   position: relative;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge {
   border-radius: 100%;
   padding: 5px;
   background: white;
@@ -601,102 +601,102 @@
   position: absolute;
   display: none;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.success {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.success {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.pending {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.pending {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.info {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.info {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.danger {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.danger {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.warning {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.warning {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.primary {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.primary {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.muted {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.muted {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.secondary {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.secondary {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.light {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.light {
   color: var(--prim-bg, #888888);
   background-color: hsl(210, 16.6666666667%, 137.6470588235%);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.default {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.default {
   color: var(--bg-color, #adb5bd);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.archived {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.archived {
   color: var(--archived-color, #888888);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.processing {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.processing {
   color: var(--processing-color, var(--info-color, #17a2b8));
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.failed {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.failed {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.queued {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.queued {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.on-hold {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.on-hold {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.suspended {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.suspended {
   color: var(--dark-color, #212529);
   background-color: rgb(126.4594594595, 139, 151.5405405405);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.expired {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.expired {
   color: var(--light-color, #f1f3f5);
   background-color: hsl(210, 16.6666666667%, 135.2941176471%);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.rejected {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.rejected {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.approved {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.approved {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.active {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.active {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link .moringa-badge.draft {
+.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.draft {
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link.active {
+.ng-matric-table .matric-tabs .nav-item .nav-link.active {
   background: rgb(238, 238, 238);
 }
-.ng-moringa-table .moringa-tabs .nav-item .nav-link.active .moringa-badge {
+.ng-matric-table .matric-tabs .nav-item .nav-link.active .matric-badge {
   display: block;
 }
-.ng-moringa-table .checkbox-wrapper {
+.ng-matric-table .checkbox-wrapper {
   padding: 0;
   display: flex;
   align-items: center;
 }
-.ng-moringa-table .checkbox-wrapper .cbx {
+.ng-matric-table .checkbox-wrapper .cbx {
   user-select: none;
   display: flex;
   gap: 15px;
@@ -705,11 +705,11 @@
   min-width: 55px;
   cursor: pointer;
 }
-.ng-moringa-table .checkbox-wrapper .cbx .moringa-btn {
+.ng-matric-table .checkbox-wrapper .cbx .matric-btn {
   padding: 0;
   height: auto;
 }
-.ng-moringa-table .checkbox-wrapper .cbx .checkbox {
+.ng-matric-table .checkbox-wrapper .cbx .checkbox {
   position: relative;
   width: 20px;
   height: 20px;
@@ -717,7 +717,7 @@
   border: 2px solid #e7e7e7;
   transition: all 0.2s ease;
 }
-.ng-moringa-table .checkbox-wrapper .cbx .checkbox svg {
+.ng-matric-table .checkbox-wrapper .cbx .checkbox svg {
   position: absolute;
   top: 4px;
   left: 2px;
@@ -731,7 +731,7 @@
   transition: all 0.3s ease;
   transition-delay: 0.1s;
 }
-.ng-moringa-table .checkbox-wrapper .cbx .checkbox:before {
+.ng-matric-table .checkbox-wrapper .cbx .checkbox:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -741,34 +741,34 @@
   border-radius: 50%;
   transition-delay: 0.2s;
 }
-.ng-moringa-table .checkbox-wrapper .inp-cbx {
+.ng-matric-table .checkbox-wrapper .inp-cbx {
   display: none;
 }
-.ng-moringa-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child {
+.ng-matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child {
   border-color: #0173df;
   background: #0173df;
   animation: check-15 0.3s ease;
 }
-.ng-moringa-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child svg {
+.ng-matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child svg {
   stroke-dashoffset: 0;
 }
-.ng-moringa-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child:before {
+.ng-matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child:before {
   transform: scale(2.2);
   opacity: 0;
   transition: all 0.3s ease;
 }
-.ng-moringa-table .progress {
+.ng-matric-table .progress {
   height: 2px;
   overflow: inherit;
   background-color: #e7e7e7;
   margin-top: 0px;
 }
-.ng-moringa-table .progress .progress-bar {
+.ng-matric-table .progress .progress-bar {
   height: 100%;
   position: relative;
   overflow: inherit;
 }
-.ng-moringa-table .progress .progress-bar .moringa-tag {
+.ng-matric-table .progress .progress-bar .matric-tag {
   width: auto;
   height: auto;
   position: absolute;
@@ -779,175 +779,175 @@
   margin: 0;
   transition: 0.4s;
 }
-.ng-moringa-table .progress .progress-bar.success {
+.ng-matric-table .progress .progress-bar.success {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .progress .progress-bar.success .moringa-tag {
+.ng-matric-table .progress .progress-bar.success .matric-tag {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .progress .progress-bar.pending {
+.ng-matric-table .progress .progress-bar.pending {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .progress .progress-bar.pending .moringa-tag {
+.ng-matric-table .progress .progress-bar.pending .matric-tag {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .progress .progress-bar.info {
+.ng-matric-table .progress .progress-bar.info {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.info .moringa-tag {
+.ng-matric-table .progress .progress-bar.info .matric-tag {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.danger {
+.ng-matric-table .progress .progress-bar.danger {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.danger .moringa-tag {
+.ng-matric-table .progress .progress-bar.danger .matric-tag {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.warning {
+.ng-matric-table .progress .progress-bar.warning {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .progress .progress-bar.warning .moringa-tag {
+.ng-matric-table .progress .progress-bar.warning .matric-tag {
   color: var(--warning-color, #f1a10a);
   background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598);
 }
-.ng-moringa-table .progress .progress-bar.primary {
+.ng-matric-table .progress .progress-bar.primary {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .progress .progress-bar.primary .moringa-tag {
+.ng-matric-table .progress .progress-bar.primary .matric-tag {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .progress .progress-bar.muted {
+.ng-matric-table .progress .progress-bar.muted {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.muted .moringa-tag {
+.ng-matric-table .progress .progress-bar.muted .matric-tag {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.secondary {
+.ng-matric-table .progress .progress-bar.secondary {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.secondary .moringa-tag {
+.ng-matric-table .progress .progress-bar.secondary .matric-tag {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.light {
+.ng-matric-table .progress .progress-bar.light {
   color: var(--prim-bg, #888888);
   background-color: hsl(210, 16.6666666667%, 137.6470588235%);
 }
-.ng-moringa-table .progress .progress-bar.light .moringa-tag {
+.ng-matric-table .progress .progress-bar.light .matric-tag {
   color: var(--prim-bg, #888888);
   background-color: hsl(210, 16.6666666667%, 137.6470588235%);
 }
-.ng-moringa-table .progress .progress-bar.default {
+.ng-matric-table .progress .progress-bar.default {
   color: var(--bg-color, #adb5bd);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .progress .progress-bar.default .moringa-tag {
+.ng-matric-table .progress .progress-bar.default .matric-tag {
   color: var(--bg-color, #adb5bd);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .progress .progress-bar.archived {
+.ng-matric-table .progress .progress-bar.archived {
   color: var(--archived-color, #888888);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .progress .progress-bar.archived .moringa-tag {
+.ng-matric-table .progress .progress-bar.archived .matric-tag {
   color: var(--archived-color, #888888);
   background-color: hsl(210, 10.8108108108%, 110.9803921569%);
 }
-.ng-moringa-table .progress .progress-bar.processing {
+.ng-matric-table .progress .progress-bar.processing {
   color: var(--processing-color, var(--info-color, #17a2b8));
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.processing .moringa-tag {
+.ng-matric-table .progress .progress-bar.processing .matric-tag {
   color: var(--processing-color, var(--info-color, #17a2b8));
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.failed {
+.ng-matric-table .progress .progress-bar.failed {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.failed .moringa-tag {
+.ng-matric-table .progress .progress-bar.failed .matric-tag {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.queued {
+.ng-matric-table .progress .progress-bar.queued {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.queued .moringa-tag {
+.ng-matric-table .progress .progress-bar.queued .matric-tag {
   color: var(--info-color, #17a2b8);
   background-color: rgb(167, 233.4782608696, 244);
 }
-.ng-moringa-table .progress .progress-bar.on-hold {
+.ng-matric-table .progress .progress-bar.on-hold {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.on-hold .moringa-tag {
+.ng-matric-table .progress .progress-bar.on-hold .matric-tag {
   color: var(--muted-color, #888888);
   background-color: #eeeeee;
 }
-.ng-moringa-table .progress .progress-bar.suspended {
+.ng-matric-table .progress .progress-bar.suspended {
   color: var(--dark-color, #212529);
   background-color: rgb(126.4594594595, 139, 151.5405405405);
 }
-.ng-moringa-table .progress .progress-bar.suspended .moringa-tag {
+.ng-matric-table .progress .progress-bar.suspended .matric-tag {
   color: var(--dark-color, #212529);
   background-color: rgb(126.4594594595, 139, 151.5405405405);
 }
-.ng-moringa-table .progress .progress-bar.expired {
+.ng-matric-table .progress .progress-bar.expired {
   color: var(--light-color, #f1f3f5);
   background-color: hsl(210, 16.6666666667%, 135.2941176471%);
 }
-.ng-moringa-table .progress .progress-bar.expired .moringa-tag {
+.ng-matric-table .progress .progress-bar.expired .matric-tag {
   color: var(--light-color, #f1f3f5);
   background-color: hsl(210, 16.6666666667%, 135.2941176471%);
 }
-.ng-moringa-table .progress .progress-bar.rejected {
+.ng-matric-table .progress .progress-bar.rejected {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.rejected .moringa-tag {
+.ng-matric-table .progress .progress-bar.rejected .matric-tag {
   color: var(--error-color, #dc3545);
   background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228);
 }
-.ng-moringa-table .progress .progress-bar.approved {
+.ng-matric-table .progress .progress-bar.approved {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .progress .progress-bar.approved .moringa-tag {
+.ng-matric-table .progress .progress-bar.approved .matric-tag {
   color: var(--success-color, #28a745);
   background-color: rgb(175.1304347826, 235.8695652174, 189);
 }
-.ng-moringa-table .progress .progress-bar.active {
+.ng-matric-table .progress .progress-bar.active {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .progress .progress-bar.active .moringa-tag {
+.ng-matric-table .progress .progress-bar.active .matric-tag {
   color: var(--prim-color, #007bff);
   background-color: rgb(204, 228.6, 255);
 }
-.ng-moringa-table .progress .progress-bar.draft {
+.ng-matric-table .progress .progress-bar.draft {
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
 }
-.ng-moringa-table .progress .progress-bar.draft .moringa-tag {
+.ng-matric-table .progress .progress-bar.draft .matric-tag {
   color: var(--text-color, #888888);
   background-color: rgb(175.6125, 182, 188.3875);
 }
-.ng-moringa-table .date-picker {
+.ng-matric-table .date-picker {
   position: absolute;
   padding: 15px;
   box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1);
@@ -955,7 +955,7 @@
   top: 0;
   z-index: 9;
 }
-.ng-moringa-table .moringa-header {
+.ng-matric-table .matric-header {
   background: none;
   padding: 0;
   border-bottom: 1px solid #e7e7e7;
@@ -965,19 +965,19 @@
   align-items: center;
   flex-direction: column;
 }
-.ng-moringa-table .moringa-header .left-side {
+.ng-matric-table .matric-header .left-side {
   display: flex;
 }
-.ng-moringa-table .moringa-header .moringa-container {
+.ng-matric-table .matric-header .matric-container {
   height: 60px;
   display: flex !important;
   align-items: center;
   justify-content: space-between;
 }
-.ng-moringa-table .moringa-header .title-icon {
+.ng-matric-table .matric-header .title-icon {
   color: #888888;
 }
-.ng-moringa-table .moringa-header .table-title {
+.ng-matric-table .matric-header .table-title {
   margin: 0;
   font-size: 16px;
   display: flex;
@@ -986,141 +986,141 @@
   text-transform: capitalize;
   color: #63634e;
 }
-.ng-moringa-table .moringa-header .table-title i {
+.ng-matric-table .matric-header .table-title i {
   color: #888888;
   font-size: 18px;
 }
-.ng-moringa-table.collapsed {
+.ng-matric-table.collapsed {
   padding-bottom: 0;
   height: 60px;
   border-radius: 0px 0 0 !important;
 }
-.ng-moringa-table.collapsed .moringa-header {
+.ng-matric-table.collapsed .matric-header {
   border-bottom: 1px solid transparent;
 }
-.ng-moringa-table.collapsed .moringa-header .progress {
+.ng-matric-table.collapsed .matric-header .progress {
   margin-top: 0px;
 }
-.ng-moringa-table.collapsed .moringa-body {
+.ng-matric-table.collapsed .matric-body {
   max-height: 0;
   opacity: 0;
   padding: 0;
   margin-top: 45px;
 }
-.ng-moringa-table.round-card {
+.ng-matric-table.round-card {
   border-radius: 8px;
   background-color: #fff;
 }
-.ng-moringa-table.round-card .day-btn {
+.ng-matric-table.round-card .day-btn {
   border-radius: 5px;
 }
-.ng-moringa-table.round-card .moringa-tabs .nav-item .nav-link {
+.ng-matric-table.round-card .matric-tabs .nav-item .nav-link {
   border-radius: 5px;
 }
-.ng-moringa-table.round-card .date-picker {
+.ng-matric-table.round-card .date-picker {
   border-radius: 8px !important;
 }
-.ng-moringa-table.round-card .media-tile .media-img {
+.ng-matric-table.round-card .media-tile .media-img {
   border-radius: 10px !important;
 }
-.ng-moringa-table.round-card .moringa-header .moringa-container {
+.ng-matric-table.round-card .matric-header .matric-container {
   padding: 0 15px;
 }
-.ng-moringa-table.round-card .moringa-btn-group > * {
+.ng-matric-table.round-card .matric-btn-group > * {
   border-radius: 0;
   transition: 0.4s;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *:not(:last-child) {
+.ng-matric-table.round-card .matric-btn-group > *:not(:last-child) {
   border-right: none;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *:first-child {
+.ng-matric-table.round-card .matric-btn-group > *:first-child {
   border-radius: 5px 0 0 5px;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *:only-child {
+.ng-matric-table.round-card .matric-btn-group > *:only-child {
   border-radius: 5px !important;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *:last-child {
+.ng-matric-table.round-card .matric-btn-group > *:last-child {
   border-radius: 0 5px 5px 0;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *:focus {
+.ng-matric-table.round-card .matric-btn-group > *:focus {
   outline: none;
   box-shadow: none;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *:active {
+.ng-matric-table.round-card .matric-btn-group > *:active {
   border-color: #e7e7e7;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *.active {
+.ng-matric-table.round-card .matric-btn-group > *.active {
   background-color: rgb(238, 238, 238);
   color: #63634e;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *.active span {
+.ng-matric-table.round-card .matric-btn-group > *.active span {
   color: #63634e;
 }
-.ng-moringa-table.round-card .moringa-btn-group > *.active i {
+.ng-matric-table.round-card .matric-btn-group > *.active i {
   color: #0173df;
 }
-.ng-moringa-table.round-card table th {
+.ng-matric-table.round-card table th {
   padding: 15px !important;
 }
-.ng-moringa-table.round-card table tr td {
+.ng-matric-table.round-card table tr td {
   padding: 15px;
 }
-.ng-moringa-table.shadowed {
+.ng-matric-table.shadowed {
   box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1);
 }
-.ng-moringa-table.bordered {
+.ng-matric-table.bordered {
   border: 1px solid #e7e7e7;
 }
 @media (max-width: 1024px) {
-  .ng-moringa-table.responsive table .media-tile {
+  .ng-matric-table.responsive table .media-tile {
     width: 100%;
   }
-  .ng-moringa-table.responsive table .mobile-btn {
+  .ng-matric-table.responsive table .mobile-btn {
     display: flex;
   }
-  .ng-moringa-table.responsive table tr {
+  .ng-matric-table.responsive table tr {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: 80px;
   }
-  .ng-moringa-table.responsive table .key {
+  .ng-matric-table.responsive table .key {
     display: block;
   }
-  .ng-moringa-table.responsive table thead {
+  .ng-matric-table.responsive table thead {
     display: none;
   }
-  .ng-moringa-table.responsive table tbody tr {
+  .ng-matric-table.responsive table tbody tr {
     overflow: hidden;
   }
-  .ng-moringa-table.responsive table tbody tr td {
+  .ng-matric-table.responsive table tbody tr td {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .ng-moringa-table.responsive table tbody tr td:first-child {
+  .ng-matric-table.responsive table tbody tr td:first-child {
     min-height: 80px;
   }
-  .ng-moringa-table.responsive table tbody tr.dynamic-row {
+  .ng-matric-table.responsive table tbody tr.dynamic-row {
     max-height: inherit;
     display: inline;
   }
-  .ng-moringa-table.responsive table tfoot tr {
+  .ng-matric-table.responsive table tfoot tr {
     flex-direction: row;
     justify-content: space-between;
   }
-  .ng-moringa-table.responsive .moringa-tabs {
+  .ng-matric-table.responsive .matric-tabs {
     display: none;
   }
 }
-.ng-moringa-table .moringa-dropdown {
+.ng-matric-table .matric-dropdown {
   position: relative;
   padding: 0;
 }
-.ng-moringa-table .moringa-dropdown .moringa-btn {
+.ng-matric-table .matric-dropdown .matric-btn {
   padding: 5px;
 }
-.ng-moringa-table .moringa-dropdown .moringa-btn-toggle:after {
+.ng-matric-table .matric-dropdown .matric-btn-toggle:after {
   display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
@@ -1130,7 +1130,7 @@
   border-bottom: 0;
   border-left: 0.3em solid transparent;
 }
-.ng-moringa-table .moringa-dropdown .dropdown-menu {
+.ng-matric-table .matric-dropdown .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
@@ -1148,16 +1148,16 @@
   transform: translateY(5px);
   pointer-events: none;
 }
-.ng-moringa-table .moringa-dropdown .dropdown-menu.show {
+.ng-matric-table .matric-dropdown .dropdown-menu.show {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
-.ng-moringa-table .moringa-dropdown .dropdown-menu li {
+.ng-matric-table .matric-dropdown .dropdown-menu li {
   list-style: none;
   text-align: left;
 }
-.ng-moringa-table .moringa-dropdown .dropdown-menu li .dropdown-item {
+.ng-matric-table .matric-dropdown .dropdown-menu li .dropdown-item {
   display: block;
   width: 100%;
   padding: 10px 15px;
@@ -1170,15 +1170,15 @@
   transition: 0.4s;
   cursor: pointer;
 }
-.ng-moringa-table .moringa-dropdown .dropdown-menu li .dropdown-item:hover {
+.ng-matric-table .matric-dropdown .dropdown-menu li .dropdown-item:hover {
   background-color: #0173df;
   color: white;
 }
-.ng-moringa-table .moringa-dropdown .dropdown-menu li:first-child .dropdown-item {
+.ng-matric-table .matric-dropdown .dropdown-menu li:first-child .dropdown-item {
   border-radius: 5px 5px 0 0;
 }
-.ng-moringa-table .moringa-dropdown .dropdown-menu li:last-child .dropdown-item {
+.ng-matric-table .matric-dropdown .dropdown-menu li:last-child .dropdown-item {
   border-radius: 0 0 5px 5px;
 }
 
-/*# sourceMappingURL=ng-moringa-table.css.map */
+/*# sourceMappingURL=ng-matric-table.css.map */

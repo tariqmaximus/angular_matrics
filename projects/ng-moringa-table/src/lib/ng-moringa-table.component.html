@@ -1,13 +1,13 @@
-<div class="ng-moringa-table" [class.collapsed]="isCollapsed" [ngClass]="variant">
-  <div class="moringa-header" *ngIf="moringaHeader">
-    <div class="moringa-container ">
-      <div class="moringa-group gap">
+<div class="ng-matric-table" [class.collapsed]="isCollapsed" [ngClass]="variant">
+  <div class="matric-header" *ngIf="matricHeader">
+    <div class="matric-container ">
+      <div class="matric-group gap">
         <h6 class="table-title">
           <i class="title-icon" *ngIf="icon" [class]="icon"></i>
           {{ title }}
           <span class="text-muted">{{ sub }}</span>
         </h6>
-        <ul *ngIf="filterStyle.includes('tabs')" class="nav moringa-tabs" id="myTab" role="tablist">
+        <ul *ngIf="filterStyle.includes('tabs')" class="nav matric-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link" [ngClass]="{ active: selectedOption === '' }" (click)="selectTabOption('')"
               type="button" role="tab">
@@ -17,28 +17,28 @@
           <li class="nav-item" role="presentation" *ngFor="let option of searchOptions">
             <button class="nav-link" [ngClass]="{ active: selectedOption === option }" (click)="selectTabOption(option)"
               type="button" role="tab">
-              <span class="moringa-badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
+              <span class="matric-badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
               {{ option }}
             </button>
           </li>
         </ul>
       </div>
-      <div class="moringa-group gap">
+      <div class="matric-group gap">
         <ng-content select="[header-component]"></ng-content>
-        <div class="moringa-group gap">
-          <div class="moringa-btn-group ">
+        <div class="matric-group gap">
+          <div class="matric-btn-group ">
             <ng-container>
               <ng-container *ngIf="filterStyle.includes('dropdown')">
-                <select class="moringa-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
+                <select class="matric-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
                   <option value="">All</option>
                   <option *ngFor="let option of searchOptions" [value]="option">{{ option }}</option>
                 </select>
               </ng-container>
-              <input type="text" class="moringa-input" placeholder="Search..." *ngIf="filterStyle.includes('keyword')"
+              <input type="text" class="matric-input" placeholder="Search..." *ngIf="filterStyle.includes('keyword')"
                 [(ngModel)]="searchKeyword" (ngModelChange)="onSearchKeywordChange($event)" />
 
               <!-- Calendar Toggle Button -->
-              <button class="moringa-btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
+              <button class="matric-btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
                 style="min-width: 120px;">
                 <svg fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16" width="16" height="16"
                   style="margin-right: 6px;">
@@ -50,11 +50,11 @@
 
               <!-- Calendar Popup -->
               <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
-                <div class="moringa-btn-group align-justify">
-                  <select class="moringa-select" [(ngModel)]="selectedMonth" (change)="onMonthOrYearChange()">
+                <div class="matric-btn-group align-justify">
+                  <select class="matric-select" [(ngModel)]="selectedMonth" (change)="onMonthOrYearChange()">
                     <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
                   </select>
-                  <select class="moringa-select" [(ngModel)]="selectedYear" (change)="onMonthOrYearChange()">
+                  <select class="matric-select" [(ngModel)]="selectedYear" (change)="onMonthOrYearChange()">
                     <option *ngFor="let y of years" [value]="y">{{ y }}</option>
                   </select>
                 </div>
@@ -71,22 +71,22 @@
                     <div *ngIf="!day" style="height: 34px;"></div>
                   </ng-container>
                 </div>
-                <div class="moringa-btn-group footer align-right">
-                  <button class="moringa-btn" (click)="cancel()">Cancel</button>
-                  <button class="moringa-btn primary" (click)="confirm()">Confirm</button>
+                <div class="matric-btn-group footer align-right">
+                  <button class="matric-btn" (click)="cancel()">Cancel</button>
+                  <button class="matric-btn primary" (click)="confirm()">Confirm</button>
                 </div>
               </div>
             </ng-container>
           </div>
 
-          <div class="moringa-btn-group">
-            <button *ngFor="let button of headerButtons" type="button" class="moringa-btn " [id]="button.targetId"
+          <div class="matric-btn-group">
+            <button *ngFor="let button of headerButtons" type="button" class="matric-btn " [id]="button.targetId"
               (click)="executeAction(button)">
               <i *ngIf="button.icon" [class]="button.icon"></i>
               <span *ngIf="button.label">{{ button.label }}</span>
             </button>
 
-            <button *ngIf="collapsible" class="moringa-btn " type="button" (click)="toggleCard()">
+            <button *ngIf="collapsible" class="matric-btn " type="button" (click)="toggleCard()">
               <ng-container>
                 <svg *ngIf="isCollapsed" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   viewBox="0 0 16 16">
@@ -109,11 +109,11 @@
       <div class="progress-bar" [ngClass]="getStatusStyles(selectedOption || progressBy).progressClass"
         role="progressbar" [style.width.%]="progressValue" [attr.aria-valuenow]="progressValue" aria-valuemin="0"
         aria-valuemax="100">
-        <p class="moringa-tag">{{ progressValue }}%</p>
+        <p class="matric-tag">{{ progressValue }}%</p>
       </div>
     </div>
   </div>
-  <div class="moringa-body ">
+  <div class="matric-body ">
     <div class="table-wrapper">
       <table>
         <thead>
@@ -133,8 +133,8 @@
                           <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                         </svg>
                       </div>
-                      <div *ngIf="selectedRows.length > 1" class="moringa-dropdown">
-                        <button class="moringa-btn no-bg " (click)="toggleDropdown(-1, $event)">
+                      <div *ngIf="selectedRows.length > 1" class="matric-dropdown">
+                        <button class="matric-btn no-bg " (click)="toggleDropdown(-1, $event)">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                             <path
@@ -187,7 +187,7 @@
               <td *ngFor="let column of columns">
                 <ng-container [ngSwitch]="column.key">
                   <ng-container *ngSwitchCase="'mediaTile'">
-                    <div class="moringa-group">
+                    <div class="matric-group">
                       <div class="checkbox-wrapper">
                         <input class="inp-cbx" [id]="prefix + '-cbx-' + i" type="checkbox"
                           (change)="toggleSelectRow(row, $event)" [checked]="selectedRows.includes(row)" />
@@ -215,7 +215,7 @@
                           <p class="text-muted">{{ row.source || 'No Information' }}</p>
                         </div>
                       </div>
-                      <button class="moringa-btn mobile-btn" (click)="toggleRowClass(i)">
+                      <button class="matric-btn mobile-btn" (click)="toggleRowClass(i)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           viewBox="0 0 16 16" class="transition-icon" [ngClass]="{ 'rotate-90': activeRowIndex === i }">
                           <path fill-rule="evenodd"
@@ -231,15 +231,15 @@
                     </span>
                   </ng-container>
                   <ng-container *ngSwitchCase="'action'">
-                    <div class="moringa-btn-group sm align-right ">
+                    <div class="matric-btn-group sm align-right ">
                       <ng-container *ngFor="let btn of actionButtons">
-                        <button *ngIf="!btn.isDropdown" class="moringa-btn" [ngClass]="btn.className"
+                        <button *ngIf="!btn.isDropdown" class="matric-btn" [ngClass]="btn.className"
                           [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
                           <i *ngIf="btn.icon" [class]="btn.icon"></i>
                           {{ btn.label }}
                         </button>
-                        <div *ngIf="btn.isDropdown" class="moringa-dropdown moringa-btn">
-                          <button class="moringa-btn no-bg moringa-btn-toggle" (click)="toggleDropdown(i, $event)"
+                        <div *ngIf="btn.isDropdown" class="matric-dropdown matric-btn">
+                          <button class="matric-btn no-bg matric-btn-toggle" (click)="toggleDropdown(i, $event)"
                             [ngClass]="btn.className" [attr.title]="btn.tooltip">
                             {{ btn.label }}
                           </button>
@@ -275,16 +275,16 @@
               <ng-content select="[footer-component]"></ng-content>
             </td>
             <td [attr.colspan]="columns.length + 0">
-              <div class="pagination moringa-btn-group align-right ">
-                <button class="moringa-btn" (click)="prevPage()" [disabled]="currentPage === 1">
+              <div class="pagination matric-btn-group align-right ">
+                <button class="matric-btn" (click)="prevPage()" [disabled]="currentPage === 1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chevron-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                       d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                   </svg>
                 </button>
-                <span class="moringa-btn">Page {{ currentPage }} of {{ totalPages }}</span>
-                <button class="moringa-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
+                <span class="matric-btn">Page {{ currentPage }} of {{ totalPages }}</span>
+                <button class="matric-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chevron-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NgMoringaTableModule } from '../../../ng-moringa-table/src/public-api';
+import { NgmatricTableModule } from '../../../ng-matric-table/src/public-api';
 
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [NgMoringaTableModule],
+  imports: [NgmatricTableModule],
   templateUrl: './app.component.html',
   styleUrls: ['./styles.css']
 

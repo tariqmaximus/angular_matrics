@@ -32,13 +32,13 @@ interface ActionButton {
 let uniqueCounter = 0;
 
 @Component({
-  selector: 'ng-moringa-table',
+  selector: 'ng-matric-table',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './ng-moringa-table.component.html',
-  styleUrls: ['../assets/css/ng-moringa-table.css']
+  templateUrl: './ng-matric-table.component.html',
+  styleUrls: ['../assets/css/ng-matric-table.css']
 })
-export class NgMoringaTableComponent implements OnInit, OnChanges {
+export class NgmatricTableComponent implements OnInit, OnChanges {
   @Input() data: any[] = [];
   @Input() columns: { key: string; label: string }[] = [];
   @Input() autoGenerateColumns = true;
@@ -54,7 +54,7 @@ export class NgMoringaTableComponent implements OnInit, OnChanges {
   @Input() headerButtons: CardButton[] = [];
   @Input() collapsible = false;
   @Input() variant = '';
-  @Input() moringaHeader = true;
+  @Input() matricHeader = true;
   @Input() showFooter = false;
   @Input() icon?: string;
   @Input() title?: string;
@@ -213,7 +213,7 @@ onOutsideClick(event: MouseEvent): void {
 
   // Check if clicked element is inside the date-picker or the toggle button
   const clickedInsideDatePicker = target.closest('.date-picker');
-  const clickedCalendarButton = target.closest('.moringa-btn');
+  const clickedCalendarButton = target.closest('.matric-btn');
 
   if (!clickedInsideDatePicker && !clickedCalendarButton) {
     this.datePicker = false;
@@ -315,7 +315,7 @@ onOutsideClick(event: MouseEvent): void {
     getStatusStyles(status: string): { tagClass: string; progressClass: string } {
     const color = this.statusMap?.[status?.toLowerCase()] || 'info';
     return {
-      tagClass: `moringa-tag ${color}`,
+      tagClass: `matric-tag ${color}`,
       progressClass: `progress-bar ${color}`
     };
   }
