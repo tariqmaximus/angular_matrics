@@ -43,7 +43,7 @@ let uniqueCounter = 0;
   templateUrl: './metrics-data.component.html',
   styleUrls: [
     './metrics-data.component.css',
-    './views/metrics-data.list.css',
+    './views/metrics-data.table.css',
     './views/metrics-data.grid.css',
     './views/metrics-data.pipeline.css'
   ]
@@ -117,7 +117,7 @@ export class MetricsDataComponent implements OnInit, OnChanges {
   sortAsc: boolean = true;
   dropdownShownIndex: number | null = null;
   imageLoadFailedMap: Record<string, boolean> = {};
-  currentViewType: 'list' | 'grid' | 'pipeline' = 'list';
+  currentViewType: 'table' | 'grid' | 'pipeline' = 'table';
 
   // Calendar
   selectedDate: Date = new Date();
@@ -348,12 +348,12 @@ onOutsideClick(event: MouseEvent): void {
     // Initialize default view type buttons
     this.viewTypes = [
       {
-        label: 'List',
-        icon: 'bi bi-list-ul',
-        targetId: `${this.internalIdPrefix}-view-list`,
-        action: () => this.switchToListView(),
-        tooltip: 'List View',
-        className: 'view-btn view-btn-list'
+        label: 'table',
+        icon: 'bi bi-table-ul',
+        targetId: `${this.internalIdPrefix}-view-table`,
+        action: () => this.switchTotableView(),
+        tooltip: 'table View',
+        className: 'view-btn view-btn-table'
       },
       {
         label: 'Grid',
@@ -374,8 +374,8 @@ onOutsideClick(event: MouseEvent): void {
     ];
   }
 
-  switchToListView(): void {
-    this.currentViewType = 'list';
+  switchTotableView(): void {
+    this.currentViewType = 'table';
   }
 
   switchToGridView(): void {
@@ -388,7 +388,7 @@ onOutsideClick(event: MouseEvent): void {
 
   getIconForViewType(viewType: string): string {
     switch (viewType.toLowerCase()) {
-      case 'list': return 'bi bi-list-ul';
+      case 'table': return 'bi bi-table';
       case 'grid': return 'bi bi-grid-3x3-gap';
       case 'pipeline': return 'bi bi-kanban';
       default: return 'bi bi-view-list';
@@ -397,10 +397,10 @@ onOutsideClick(event: MouseEvent): void {
 
   getActionForViewType(viewType: string): () => void {
     switch (viewType.toLowerCase()) {
-      case 'list': return () => this.switchToListView();
+      case 'table': return () => this.switchTotableView();
       case 'grid': return () => this.switchToGridView();
       case 'pipeline': return () => this.switchToPipelineView();
-      default: return () => this.switchToListView();
+      default: return () => this.switchTotableView();
     }
   }
 
