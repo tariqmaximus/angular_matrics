@@ -1,0 +1,55 @@
+<!-- PIPELINE VIEW -->
+<div class="pipeline-container" *ngIf="currentViewType === 'pipeline'">
+  <ng-container *ngFor="let status of searchOptions">
+    <div class="pipeline-column" [ngClass]="'status-' + status">
+      <div class="pipeline-column-title">
+        <h3>{{ status }}</h3>
+        <span class="pipeline-column-count">{{ getRowsByStatus(status).length }}</span>
+      </div>
+      <div class="pipeline-cards">
+        <ng-container *ngIf="getRowsByStatus(status) as columnData">
+          <ng-container *ngIf="columnData.length > 0; else pipelineEmpty">
+            <div class="pipeline-card" *ngFor="let data of columnData" [ngClass]="'status-' + data.status">
+              <div class="pipeline-card-header">
+                <div class="media-tile">
+                  <div class="media-img" [ngClass]="statusMap[data.status]">
+                    <img *ngIf="data.mediaTile && !imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
+                      class="img-fluid" [src]="data.mediaTile || mediaImage" alt="Media Image"
+                      (error)="handleImageError($event, data)" />
+                    <span *ngIf="!data.mediaTile || imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
+                      class="letter-fallback">
+                      {{ (data.name || '??').substring(0, 2).toUpperCase() }}
+                    </span>
+                  </div>
+                  <div class="media-details">
+                    <p class="name text-dark">{{ data.name || 'Unknown' }}</p>
+                    <p class="text-muted">{{ data.source || 'No Information' }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pipeline-card-details">
+                <div class="pipeline-card-detail">
+                  <span [ngClass]="getStatusStyles(data.status).tagClass">{{ data.status || 'N/A' }}</span>
+                </div>
+              </div>
+              <div class="pipeline-card-footer">
+                <div class="metrics-btn-group sm align-right">
+                  <ng-container *ngFor="let btn of actionButtons">
+                    <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
+                        [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, data)">
+                      <i *ngIf="btn.icon" [class]="btn.icon"></i>
+                      {{ btn.label }}
+                    </button>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #pipelineEmpty>
+            <div class="pipeline-empty">No items</div>
+          </ng-template>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -11,8 +11,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "metrics-table": [
-        "./dist/metrics-table"
+      "metrics-data": [
+        "./dist/metrics-data"
       ]
     },
     "skipLibCheck": true,

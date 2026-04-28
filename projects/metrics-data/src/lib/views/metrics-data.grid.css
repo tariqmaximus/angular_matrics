@@ -3,9 +3,10 @@
 .view-grid {
   display: flex;
   flex-direction: column;
-  padding: var(--space-lg);
+  padding: 20px;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   min-height: 100%;
+
 }
 
 .view-grid .grid-container {
@@ -66,20 +67,7 @@
   background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
 }
 
-.view-grid .grid-card-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0056b3 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 18px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(1, 115, 223, 0.25);
-}
+
 
 .view-grid .grid-card-title {
   flex: 1;

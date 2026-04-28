@@ -349,7 +349,7 @@ onOutsideClick(event: MouseEvent): void {
     this.viewTypes = [
       {
         label: 'table',
-        icon: 'bi bi-table-ul',
+        icon: 'bi bi-list-ul',
         targetId: `${this.internalIdPrefix}-view-table`,
         action: () => this.switchTotableView(),
         tooltip: 'table View',
@@ -388,7 +388,7 @@ onOutsideClick(event: MouseEvent): void {
 
   getIconForViewType(viewType: string): string {
     switch (viewType.toLowerCase()) {
-      case 'table': return 'bi bi-table';
+      case 'table': return 'bi bi-list-ul';
       case 'grid': return 'bi bi-grid-3x3-gap';
       case 'pipeline': return 'bi bi-kanban';
       default: return 'bi bi-view-list';

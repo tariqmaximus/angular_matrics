@@ -1,4 +1,4 @@
-# metrics-table
+# metrics-data
 
 A powerful, reusable Angular smart table component designed with flexibility and interactivity in mind. Easily integrate search filters, sorting, pagination, status tags, actions, and progress indicators — all without relying on Bootstrap or external icon libraries.
 
@@ -7,7 +7,7 @@ A powerful, reusable Angular smart table component designed with flexibility and
 ## 📦 Installation
 
 ```bash
-npm install metrics-table
+npm install metrics-data
 ```
 
 Make sure your project is using Angular v15+.
@@ -21,13 +21,13 @@ Import and use the component directly since it's standalone:
 ### In Your Component
 
 ```ts
-import { metricssTableComponent } from 'metrics-table';
+import { metricssTableComponent } from 'metrics-data';
 
 @Component({
   selector: 'app-my-page',
   standalone: true,
   imports: [metricssTableComponent],
-  template: `<metrics-table [data]="myData" [columns]="columns"></metrics-table>`
+  template: `<metrics-data [data]="myData" [columns]="columns"></metrics-data>`
 })
 export class MyPageComponent {
   columns = [
