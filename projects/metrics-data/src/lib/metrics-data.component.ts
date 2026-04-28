@@ -37,18 +37,18 @@ interface ActionButton {
 let uniqueCounter = 0;
 
 @Component({
-  selector: 'matric-table',
+  selector: 'metrics-data',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './matrics-table.component.html',
+  templateUrl: './metrics-data.component.html',
   styleUrls: [
-    './matrics-table.component.css',
-    './views/matrics-table.list.css',
-    './views/matrics-table.grid.css',
-    './views/matrics-table.pipeline.css'
+    './metrics-data.component.css',
+    './views/metrics-data.list.css',
+    './views/metrics-data.grid.css',
+    './views/metrics-data.pipeline.css'
   ]
 })
-export class MatricsTableComponent implements OnInit, OnChanges {
+export class MetricsDataComponent implements OnInit, OnChanges {
   @Input() data: any[] = [];
   @Input() columns: { key: string; label: string }[] = [];
   @Input() autoGenerateColumns = true;
@@ -64,6 +64,10 @@ export class MatricsTableComponent implements OnInit, OnChanges {
   @Input() headerButtons: CardButton[] = [];
   private _viewTypes: CardButton[] = [];
   @Input() set viewTypes(value: (string | CardButton)[]) {
+    // Auto-enable viewTypes display when provided
+    if (value && value.length > 0) {
+      this.showViewTypes = true;
+    }
     this._viewTypes = value.map(vt => {
       if (typeof vt === 'string') {
         const label = vt;
@@ -85,7 +89,7 @@ export class MatricsTableComponent implements OnInit, OnChanges {
   get viewTypes(): CardButton[] {
     return this._viewTypes;
   }
-  @Input() showViewTypes = true;
+  @Input() showViewTypes = false;
   @Input() collapsible = false;
   @Input() variant = '';
   @Input() matricHeader = true;

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatricsTableComponent } from './matrics-table.component';
+import { MetricsDataComponent } from './metrics-data.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    MatricsTableComponent // ✅ IMPORT instead of DECLARE
+    MetricsDataComponent // ✅ IMPORT instead of DECLARE
   ],
-  exports: [MatricsTableComponent]
+  exports: [MetricsDataComponent]
 })
-export class MatricsTableModule {}
+export class MetricsDataModule {}

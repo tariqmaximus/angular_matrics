@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatricsTableComponent } from './matric-table.component';
+import { MetricsDataComponent } from './metrics-data.component';
 
-describe('MatricsTableComponent', () => {
-  let component: MatricsTableComponent;
-  let fixture: ComponentFixture<MatricsTableComponent>;
+describe('MetricsDataComponent', () => {
+  let component: MetricsDataComponent;
+  let fixture: ComponentFixture<MetricsDataComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatricsTableComponent]
+      imports: [MetricsDataComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MatricsTableComponent);
+    fixture = TestBed.createComponent(MetricsDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

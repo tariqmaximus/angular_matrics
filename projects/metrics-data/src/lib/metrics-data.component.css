@@ -1,3 +1,8 @@
+/* ─── IMPORTS ─────────────────────────────────────────────── */
+@import './views/metrics-data.list.css';
+@import './views/metrics-data.grid.css';
+@import './views/metrics-data.pipeline.css';
+
 :root {
   --color-border: #e7e7e7;
   --color-text: #63634e;
@@ -52,9 +57,6 @@
 }
 
 /* ─── Layout Utilities ─────────────────────────────────────── */
-@import './views/matrics-table.list.css';
-@import './views/matrics-table.grid.css';
-@import './views/matrics-table.pipeline.css';
 .matric-group {
   display: flex;
   align-items: stretch;

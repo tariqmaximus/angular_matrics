@@ -21,13 +21,13 @@ Import and use the component directly since it's standalone:
 ### In Your Component
 
 ```ts
-import { MatricsTableComponent } from 'matric-table';
+import { MetricsDataComponent } from 'matric-table';
 
 @Component({
   selector: 'app-my-page',
   standalone: true,
-  imports: [MatricsTableComponent],
-  template: `<matric-table [data]="myData" [columns]="columns"></matric-table>`
+  imports: [MetricsDataComponent],
+  template: `<metrics-data [data]="myData" [columns]="columns"></metrics-data>`
 })
 export class MyPageComponent {
   columns = [
