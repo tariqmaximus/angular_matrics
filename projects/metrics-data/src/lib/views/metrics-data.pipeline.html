@@ -2,7 +2,7 @@
 <div class="pipeline-container" *ngIf="currentViewType === 'pipeline'">
   <ng-container *ngFor="let status of searchOptions">
     <div class="pipeline-column" [ngClass]="'status-' + status">
-      <div class="pipeline-column-title">
+      <div class="pipeline-header">
         <h3>{{ status }}</h3>
         <span class="pipeline-column-count">{{ getRowsByStatus(status).length }}</span>
       </div>
@@ -10,7 +10,7 @@
         <ng-container *ngIf="getRowsByStatus(status) as columnData">
           <ng-container *ngIf="columnData.length > 0; else pipelineEmpty">
             <div class="pipeline-card" *ngFor="let data of columnData" [ngClass]="'status-' + data.status">
-              <div class="pipeline-card-header">
+              <div class="pipeline-card-header metrics-group gap">
                 <div class="media-tile">
                   <div class="media-img" [ngClass]="statusMap[data.status]">
                     <img *ngIf="data.mediaTile && !imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
@@ -26,11 +26,7 @@
                     <p class="text-muted">{{ data.source || 'No Information' }}</p>
                   </div>
                 </div>
-              </div>
-              <div class="pipeline-card-details">
-                <div class="pipeline-card-detail">
-                  <span [ngClass]="getStatusStyles(data.status).tagClass">{{ data.status || 'N/A' }}</span>
-                </div>
+                <span [ngClass]="getStatusStyles(data.status).tagClass">{{ data.status || 'N/A' }}</span>
               </div>
               <div class="pipeline-card-footer">
                 <div class="metrics-btn-group sm align-right">
@@ -40,6 +36,19 @@
                       <i *ngIf="btn.icon" [class]="btn.icon"></i>
                       {{ btn.label }}
                     </button>
+                    <div *ngIf="btn.isDropdown" class="metrics-dropdown metrics-btn">
+                      <button class="metrics-btn no-bg metrics-btn-toggle" (click)="toggleDropdown(i, $event)"
+                        [ngClass]="btn.className" [attr.title]="btn.tooltip">
+                        {{ btn.label }}
+                      </button>
+                      <ul class="dropdown-menu" [class.show]="dropdownShownIndex === i">
+                        <li *ngFor="let option of btn.options">
+                          <button class="dropdown-item" (click)="handleDropdownClick(option, btn, data)">
+                            {{ option }}
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
                   </ng-container>
                 </div>
               </div>

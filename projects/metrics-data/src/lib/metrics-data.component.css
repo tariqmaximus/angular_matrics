@@ -93,7 +93,7 @@
 
 .metrics-group.sm,
 .metrics-btn-group.sm {
-  height: var(--size-btn-height-sm) !important;
+  height: 30px !important;
 }
 
 /* ─── Button Group ─────────────────────────────────────────── */
@@ -237,6 +237,7 @@
 .metrics-data .metrics-body {
   transition: 0.4s;
   width: 100%;
+
 }
 
 
@@ -780,7 +781,7 @@
 
 .metrics-data .metrics-dropdown .dropdown-menu {
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 0;
   z-index: 10;
   background-color: #fff;

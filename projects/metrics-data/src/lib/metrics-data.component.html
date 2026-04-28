@@ -354,40 +354,50 @@
   <div class="grid-container">
     <ng-container *ngIf="pagedData.length > 0; else gridEmpty">
       <div class="grid-card" *ngFor="let data of pagedData; let i = index">
-        <div class="grid-card-header">
-          <div class="media-img">{{ (data.name || '??').substring(0, 2).toUpperCase() }}</div>
-          <div class="grid-card-title">
-            <h3>{{ data.name || 'Unknown' }}</h3>
-            <p>{{ data.source || 'No Information' }}</p>
+        <div class="grid-card-header metrics-group gap">
+          <div class="media-tile">
+            <div class="media-img" [ngClass]="statusMap[data.status]">
+              <img *ngIf="data.mediaTile && !imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
+                class="img-fluid" [src]="data.mediaTile || mediaImage" alt="Media Image"
+                (error)="handleImageError($event, data)" />
+              <span *ngIf="!data.mediaTile || imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
+                class="letter-fallback">
+                {{ (data.name || '??').substring(0, 2).toUpperCase() }}
+              </span>
+            </div>
+            <div class="media-details">
+              <p class="name text-dark">{{ data.name || 'Unknown' }}</p>
+              <p class="text-muted">{{ data.source || 'No Information' }}</p>
+            </div>
           </div>
-          <span class="grid-card-status" [ngClass]="getStatusStyles(data.status).tagClass">
+          <span [ngClass]="getStatusStyles(data.status).tagClass">
             {{ data.status || 'N/A' }}
           </span>
         </div>
 
-
-
         <div class="grid-card-footer">
-          <ng-container *ngFor="let btn of actionButtons">
-            <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
-              [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, data)">
-              <i *ngIf="btn.icon" [class]="btn.icon"></i>
-              {{ btn.label }}
-            </button>
-            <div *ngIf="btn.isDropdown" class="metrics-dropdown metrics-btn">
-              <button class="metrics-btn no-bg metrics-btn-toggle" (click)="toggleDropdown(i, $event)"
-                [ngClass]="btn.className" [attr.title]="btn.tooltip">
+          <div class="metrics-btn-group sm align-right">
+            <ng-container *ngFor="let btn of actionButtons">
+              <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
+                [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, data)">
+                <i *ngIf="btn.icon" [class]="btn.icon"></i>
                 {{ btn.label }}
               </button>
-              <ul class="dropdown-menu" [class.show]="dropdownShownIndex === i">
-                <li *ngFor="let option of btn.options">
-                  <button class="dropdown-item" (click)="handleDropdownClick(option, btn, data)">
-                    {{ option }}
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </ng-container>
+              <div *ngIf="btn.isDropdown" class="metrics-dropdown metrics-btn">
+                <button class="metrics-btn no-bg metrics-btn-toggle" (click)="toggleDropdown(i, $event)"
+                  [ngClass]="btn.className" [attr.title]="btn.tooltip">
+                  {{ btn.label }}
+                </button>
+                <ul class="dropdown-menu" [class.show]="dropdownShownIndex === i">
+                  <li *ngFor="let option of btn.options">
+                    <button class="dropdown-item" (click)="handleDropdownClick(option, btn, data)">
+                      {{ option }}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </ng-container>
+          </div>
         </div>
       </div>
     </ng-container>
@@ -402,29 +412,55 @@
   <div class="pipeline-container">
     <ng-container *ngFor="let status of searchOptions">
       <div class="pipeline-column" [ngClass]="'status-' + status">
-        <div class="pipeline-column-title">
+        <div class="pipeline-header">
           <h3>{{ status }}</h3>
           <span class="pipeline-column-count">{{ getRowsByStatus(status).length }}</span>
         </div>
         <div class="pipeline-cards">
           <ng-container *ngIf="getRowsByStatus(status) as columnData">
             <ng-container *ngIf="columnData.length > 0; else pipelineEmpty">
-              <div class="pipeline-card" *ngFor="let data of columnData" [ngClass]="'status-' + data.status">
-                <div class="pipeline-card-header">
-                  <h4 class="pipeline-card-title">{{ data.name || 'Unknown' }}</h4>
-                </div>
-                <span class="pipeline-card-subtitle">{{ data.source || 'No Information' }}</span>
-                <div class="pipeline-card-details">
-                  <div class="pipeline-card-detail">{{ data.status || 'N/A' }}</div>
+              <div class="pipeline-card" *ngFor="let data of columnData; let i = index" [ngClass]="'status-' + data.status">
+                <div class="pipeline-card-header metrics-group gap">
+                  <div class="media-tile">
+                    <div class="media-img" [ngClass]="statusMap[data.status]">
+                      <img *ngIf="data.mediaTile && !imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
+                        class="img-fluid" [src]="data.mediaTile || mediaImage" alt="Media Image"
+                        (error)="handleImageError($event, data)" />
+                      <span *ngIf="!data.mediaTile || imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
+                        class="letter-fallback">
+                        {{ (data.name || '??').substring(0, 2).toUpperCase() }}
+                      </span>
+                    </div>
+                    <div class="media-details">
+                      <p class="name text-dark">{{ data.name || 'Unknown' }}</p>
+                      <p class="text-muted">{{ data.source || 'No Information' }}</p>
+                    </div>
+                  </div>
+                  <span [ngClass]="getStatusStyles(data.status).tagClass">{{ data.status || 'N/A' }}</span>
                 </div>
                 <div class="pipeline-card-footer">
-                  <ng-container *ngFor="let btn of actionButtons">
-                    <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
-                      [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, data)">
-                      <i *ngIf="btn.icon" [class]="btn.icon"></i>
-                      {{ btn.label }}
-                    </button>
-                  </ng-container>
+                  <div class="metrics-btn-group sm align-right">
+                    <ng-container *ngFor="let btn of actionButtons">
+                      <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
+                        [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, data)">
+                        <i *ngIf="btn.icon" [class]="btn.icon"></i>
+                        {{ btn.label }}
+                      </button>
+                      <div *ngIf="btn.isDropdown" class="metrics-dropdown metrics-btn">
+                        <button class="metrics-btn no-bg metrics-btn-toggle" (click)="toggleDropdown(i, $event)"
+                          [ngClass]="btn.className" [attr.title]="btn.tooltip">
+                          {{ btn.label }}
+                        </button>
+                        <ul class="dropdown-menu" [class.show]="dropdownShownIndex === i">
+                          <li *ngFor="let option of btn.options">
+                            <button class="dropdown-item" (click)="handleDropdownClick(option, btn, data)">
+                              {{ option }}
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </ng-container>
+                  </div>
                 </div>
               </div>
             </ng-container>
