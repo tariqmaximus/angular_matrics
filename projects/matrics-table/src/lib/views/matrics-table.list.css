@@ -1,93 +1,93 @@
 /* List View Styles */
-.ng-matric-table.view-list .table-wrapper {
+.matric-table.view-list .table-wrapper {
   display: block;
 }
 
-.ng-matric-table.view-list table {
+.matric-table.view-list table {
   width: 100%;
   background: var(--color-white);
 }
 
-.ng-matric-table.view-list table thead {
+.matric-table.view-list table thead {
   background-color: var(--color-surface-alt);
 }
 
-.ng-matric-table.view-list table thead th {
+.matric-table.view-list table thead th {
   padding: var(--space-md);
   font-weight: 600;
   text-align: left;
   border-bottom: var(--border-default);
 }
 
-.ng-matric-table.view-list table tbody tr {
+.matric-table.view-list table tbody tr {
   border-bottom: var(--border-default);
   transition: background-color var(--transition-fast);
 }
 
-.ng-matric-table.view-list table tbody tr:hover {
+.matric-table.view-list table tbody tr:hover {
   background-color: var(--color-surface-alt);
 }
 
-.ng-matric-table.view-list table tbody td {
+.matric-table.view-list table tbody td {
   padding: var(--space-md);
   vertical-align: middle;
   font-size: var(--font-size-base);
 }
 
-.ng-matric-table.view-list .media-tile {
+.matric-table.view-list .media-tile {
   display: flex;
   align-items: center;
   gap: var(--space-md);
 }
 
-.ng-matric-table.view-list .media-tile .media-img {
+.matric-table.view-list .media-tile .media-img {
   width: var(--size-avatar);
   height: var(--size-avatar);
   min-width: var(--size-avatar);
   border-radius: var(--border-radius-sm);
 }
 
-.ng-matric-table.view-list .media-tile .media-details {
+.matric-table.view-list .media-tile .media-details {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
-.ng-matric-table.view-list .media-tile .name {
+.matric-table.view-list .media-tile .name {
   margin: 0;
   font-weight: 500;
   color: var(--color-text);
 }
 
-.ng-matric-table.view-list .matric-tag {
+.matric-table.view-list .matric-tag {
   display: inline-block;
   padding: 4px 8px;
   border-radius: var(--border-radius-sm);
 }
 
-.ng-matric-table.view-list .matric-btn-group.sm {
+.matric-table.view-list .matric-btn-group.sm {
   gap: var(--space-xs);
 }
 
-.ng-matric-table.view-list .matric-btn-group.sm .matric-btn {
+.matric-table.view-list .matric-btn-group.sm .matric-btn {
   padding: 4px 8px;
   font-size: var(--font-size-sm);
 }
 
 @media (max-width: 768px) {
-  .ng-matric-table.view-list table {
+  .matric-table.view-list table {
     font-size: var(--font-size-sm);
   }
 
-  .ng-matric-table.view-list table thead th {
+  .matric-table.view-list table thead th {
     padding: var(--space-sm);
   }
 
-  .ng-matric-table.view-list table tbody td {
+  .matric-table.view-list table tbody td {
     padding: var(--space-sm);
   }
 
-  .ng-matric-table.view-list .media-tile .name {
+  .matric-table.view-list .media-tile .name {
     font-size: var(--font-size-sm);
   }
 }

@@ -3,15 +3,15 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-"ng-matric-table": {
+"matric-table": {
   "projectType": "library",
-  "root": "projects/ng-matric-table",
-  "sourceRoot": "projects/ng-matric-table/src",
+  "root": "projects/matric-table",
+  "sourceRoot": "projects/matric-table/src",
   "architect": {
     "build": {
       "builder": "@angular-devkit/build-angular:ng-packagr",
       "options": {
-        "project": "projects/ng-matric-table/ng-package.json"
+        "project": "projects/matric-table/ng-package.json"
       }
     }
   }

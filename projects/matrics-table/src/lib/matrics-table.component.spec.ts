@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatricsTableComponent } from './ng-matric-table.component';
+import { MatricsTableComponent } from './matric-table.component';
 
 describe('MatricsTableComponent', () => {
   let component: MatricsTableComponent;

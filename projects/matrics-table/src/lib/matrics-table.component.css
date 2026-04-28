@@ -143,7 +143,7 @@
 
 /* ─── Root Table Component ─────────────────────────────────── */
 
-.ng-matric-table {
+.matric-table {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 8px;
@@ -155,33 +155,33 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.ng-matric-table * {
+.matric-table * {
   box-sizing: border-box;
 }
 
-.ng-matric-table.shadowed {
+.matric-table.shadowed {
   box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1);
 }
 
-.ng-matric-table.bordered {
+.matric-table.bordered {
   border: 1px solid #e7e7e7;
 }
 
-.ng-matric-table.collapsed {
+.matric-table.collapsed {
   padding-bottom: 0;
   height: 60px;
   border-radius: 0px 0 0 !important;
 }
 
-.ng-matric-table.collapsed .matric-header {
+.matric-table.collapsed .matric-header {
   border-bottom: 1px solid transparent;
 }
 
-.ng-matric-table.collapsed .matric-header .progress {
+.matric-table.collapsed .matric-header .progress {
   margin-top: 0px;
 }
 
-.ng-matric-table.collapsed .matric-body {
+.matric-table.collapsed .matric-body {
   max-height: 0;
   opacity: 0;
   padding: 0;
@@ -190,7 +190,7 @@
 
 /* ─── Header ───────────────────────────────────────────────── */
 
-.ng-matric-table .matric-header {
+.matric-table .matric-header {
   background: none;
   padding: 0;
   border-bottom: 1px solid #e7e7e7;
@@ -201,7 +201,7 @@
   flex-direction: column;
 }
 
-.ng-matric-table .matric-header .matric-container {
+.matric-table .matric-header .matric-container {
   height: 60px;
   padding: 0 15px;
   display: flex !important;
@@ -209,11 +209,11 @@
   justify-content: space-between;
 }
 
-.ng-matric-table .matric-header .title-icon {
+.matric-table .matric-header .title-icon {
   color: #888888;
 }
 
-.ng-matric-table .matric-header .table-title {
+.matric-table .matric-header .table-title {
   margin: 0;
   font-size: 16px;
   display: flex;
@@ -225,45 +225,45 @@
   color: #63634e;
 }
 
-.ng-matric-table .matric-header .table-title i {
+.matric-table .matric-header .table-title i {
   color: #888888;
   font-size: 18px;
 }
 
 /* ─── Body ─────────────────────────────────────────────────── */
 
-.ng-matric-table .matric-body {
+.matric-table .matric-body {
   transition: 0.4s;
   width: 100%;
 }
 
 /* ─── Table ────────────────────────────────────────────────── */
 
-.ng-matric-table table {
+.matric-table table {
   width: 100%;
   border-collapse: separate;
 }
 
-.ng-matric-table table td,
-.ng-matric-table table th {
+.matric-table table td,
+.matric-table table th {
   min-width: 100px;
 }
 
-.ng-matric-table table .key {
+.matric-table table .key {
   display: none;
 }
 
-.ng-matric-table table .mobile-btn {
+.matric-table table .mobile-btn {
   display: none;
   border: none;
 }
 
-.ng-matric-table table thead {
+.matric-table table thead {
   border-bottom: 1px solid #e7e7e7;
   text-transform: capitalize;
 }
 
-.ng-matric-table table thead th {
+.matric-table table thead th {
   font-size: var(--font-size-sm);
   font-weight: bold;
   color: var(--color-muted);
@@ -271,29 +271,29 @@
   text-transform: uppercase;
 }
 
-.ng-matric-table table thead th .sorting-group {
+.matric-table table thead th .sorting-group {
   display: flex;
   gap: 5px;
   align-items: center;
 }
 
-.ng-matric-table table thead th .sorting-group svg {
+.matric-table table thead th .sorting-group svg {
   fill: var(--color-text);
   width: 13px;
   height: auto;
 }
 
-.ng-matric-table table thead th:last-child > div {
+.matric-table table thead th:last-child > div {
   justify-content: flex-end;
 }
 
-.ng-matric-table table tr td {
+.matric-table table tr td {
   padding: 15px;
   font-size: var(--font-size-base);
   border-top: 1px solid #e7e7e7;
 }
 
-.ng-matric-table table tr td .value-lenth {
+.matric-table table tr td .value-lenth {
   display: inline-block;
   max-width: 100px;
   overflow: hidden;
@@ -303,54 +303,54 @@
   cursor: pointer;
 }
 
-.ng-matric-table table tr td .value-lenth:hover {
+.matric-table table tr td .value-lenth:hover {
   text-decoration: underline dotted;
 }
 
-.ng-matric-table table tr:last-child td {
+.matric-table table tr:last-child td {
   border-bottom: 1px solid #e7e7e7;
 }
 
-.ng-matric-table table tr .transition-icon {
+.matric-table table tr .transition-icon {
   transition: transform 0.2s ease-in-out;
 }
 
-.ng-matric-table table tr .rotate-90 {
+.matric-table table tr .rotate-90 {
   transform: rotate(90deg);
 }
 
-.ng-matric-table table tr.dynamic-row {
+.matric-table table tr.dynamic-row {
   /* toggled via activeRowIndex */
 }
 
-.ng-matric-table table tfoot {
+.matric-table table tfoot {
   border-top: 1px solid #e7e7e7;
 }
 
-.ng-matric-table table tfoot tr td {
+.matric-table table tfoot tr td {
   border: none;
 }
 
 /* ─── Form Controls ────────────────────────────────────────── */
 
-.ng-matric-table .matric-btn,
-.ng-matric-table .matric-select,
-.ng-matric-table .matric-input {
+.matric-table .matric-btn,
+.matric-table .matric-select,
+.matric-table .matric-input {
   border: 1px solid #e7e7e7;
   color: #888888;
   padding: 0 10px;
   outline: none;
 }
 
-.ng-matric-table .matric-btn:focus,
-.ng-matric-table .matric-select:focus,
-.ng-matric-table .matric-input:focus {
+.matric-table .matric-btn:focus,
+.matric-table .matric-select:focus,
+.matric-table .matric-input:focus {
   border-color: #e7e7e7;
   box-shadow: none;
   color: #63634e;
 }
 
-.ng-matric-table .matric-select {
+.matric-table .matric-select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -364,20 +364,20 @@
   cursor: pointer;
 }
 
-.ng-matric-table .matric-select option {
+.matric-table .matric-select option {
   padding: 0.5rem;
   background-color: var(--color-white);
   color: var(--color-text);
   border: 1px solid #e7e7e7;
 }
 
-.ng-matric-table .matric-select:focus {
+.matric-table .matric-select:focus {
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 /* ─── Button ───────────────────────────────────────────────── */
 
-.ng-matric-table .matric-btn {
+.matric-table .matric-btn {
   font-size: 12px;
   background-color: #fff;
   display: flex;
@@ -388,60 +388,60 @@
   color: #63634e;
 }
 
-.ng-matric-table .matric-btn svg {
+.matric-table .matric-btn svg {
   width: 14px;
 }
 
-.ng-matric-table .matric-btn i {
+.matric-table .matric-btn i {
   font-size: 14px;
   color: #888888;
 }
 
-.ng-matric-table .matric-btn span {
+.matric-table .matric-btn span {
   font-size: 12px;
   color: #888888;
 }
 
-.ng-matric-table .matric-btn:focus {
+.matric-table .matric-btn:focus {
   box-shadow: none;
   background-color: #f5f5f5;
 }
 
-.ng-matric-table .matric-btn:disabled {
+.matric-table .matric-btn:disabled {
   border-color: #f5f5f5;
 }
 
-.ng-matric-table .matric-btn:hover {
+.matric-table .matric-btn:hover {
   background-color: #f5f5f5;
 }
 
-.ng-matric-table .matric-btn.no-bg {
+.matric-table .matric-btn.no-bg {
   border: none !important;
 }
 
 /* Button status color modifiers */
-.ng-matric-table .matric-btn.primary   { color: #007bff; }
-.ng-matric-table .matric-btn.success   { color: #28a745; }
-.ng-matric-table .matric-btn.warning,
-.ng-matric-table .matric-btn.pending   { color: #f1a10a; }
-.ng-matric-table .matric-btn.info,
-.ng-matric-table .matric-btn.queued,
-.ng-matric-table .matric-btn.processing { color: #17a2b8; }
-.ng-matric-table .matric-btn.danger,
-.ng-matric-table .matric-btn.failed,
-.ng-matric-table .matric-btn.rejected  { color: #dc3545; }
-.ng-matric-table .matric-btn.muted,
-.ng-matric-table .matric-btn.secondary,
-.ng-matric-table .matric-btn.on-hold,
-.ng-matric-table .matric-btn.archived  { color: #888888; }
-.ng-matric-table .matric-btn.suspended { color: #212529; }
-.ng-matric-table .matric-btn.active    { color: #007bff; }
-.ng-matric-table .matric-btn.draft     { color: #495057; }
-.ng-matric-table .matric-btn.expired   { color: #f1f3f5; }
+.matric-table .matric-btn.primary   { color: #007bff; }
+.matric-table .matric-btn.success   { color: #28a745; }
+.matric-table .matric-btn.warning,
+.matric-table .matric-btn.pending   { color: #f1a10a; }
+.matric-table .matric-btn.info,
+.matric-table .matric-btn.queued,
+.matric-table .matric-btn.processing { color: #17a2b8; }
+.matric-table .matric-btn.danger,
+.matric-table .matric-btn.failed,
+.matric-table .matric-btn.rejected  { color: #dc3545; }
+.matric-table .matric-btn.muted,
+.matric-table .matric-btn.secondary,
+.matric-table .matric-btn.on-hold,
+.matric-table .matric-btn.archived  { color: #888888; }
+.matric-table .matric-btn.suspended { color: #212529; }
+.matric-table .matric-btn.active    { color: #007bff; }
+.matric-table .matric-btn.draft     { color: #495057; }
+.matric-table .matric-btn.expired   { color: #f1f3f5; }
 
 /* ─── Tags ─────────────────────────────────────────────────── */
 
-.ng-matric-table .matric-tag {
+.matric-table .matric-tag {
   border-radius: 8px;
   padding: 4px;
   background: white;
@@ -451,44 +451,44 @@
   height: auto;
 }
 
-.ng-matric-table .matric-tag.success,
-.ng-matric-table .matric-tag.approved  { color: #28a745;  background-color: rgb(175.1304347826, 235.8695652174, 189); }
-.ng-matric-table .matric-tag.warning,
-.ng-matric-table .matric-tag.pending   { color: #f1a10a;  background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598); }
-.ng-matric-table .matric-tag.info,
-.ng-matric-table .matric-tag.queued,
-.ng-matric-table .matric-tag.processing { color: #17a2b8; background-color: rgb(167, 233.4782608696, 244); }
-.ng-matric-table .matric-tag.danger,
-.ng-matric-table .matric-tag.failed,
-.ng-matric-table .matric-tag.rejected  { color: #dc3545;  background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228); }
-.ng-matric-table .matric-tag.primary,
-.ng-matric-table .matric-tag.active    { color: #007bff;  background-color: rgb(204, 228.6, 255); }
-.ng-matric-table .matric-tag.muted,
-.ng-matric-table .matric-tag.secondary,
-.ng-matric-table .matric-tag.on-hold   { color: #888888;  background-color: #eeeeee; }
-.ng-matric-table .matric-tag.archived,
-.ng-matric-table .matric-tag.default   { color: #adb5bd;  background-color: hsl(210, 10.8108108108%, 110.9803921569%); }
-.ng-matric-table .matric-tag.suspended { color: #212529;  background-color: rgb(126.4594594595, 139, 151.5405405405); }
-.ng-matric-table .matric-tag.expired   { color: #f1f3f5;  background-color: hsl(210, 16.6666666667%, 135.2941176471%); }
-.ng-matric-table .matric-tag.draft     { color: #888888;  background-color: rgb(175.6125, 182, 188.3875); }
-.ng-matric-table .matric-tag.light     { color: #888888;  background-color: hsl(210, 16.6666666667%, 137.6470588235%); }
+.matric-table .matric-tag.success,
+.matric-table .matric-tag.approved  { color: #28a745;  background-color: rgb(175.1304347826, 235.8695652174, 189); }
+.matric-table .matric-tag.warning,
+.matric-table .matric-tag.pending   { color: #f1a10a;  background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598); }
+.matric-table .matric-tag.info,
+.matric-table .matric-tag.queued,
+.matric-table .matric-tag.processing { color: #17a2b8; background-color: rgb(167, 233.4782608696, 244); }
+.matric-table .matric-tag.danger,
+.matric-table .matric-tag.failed,
+.matric-table .matric-tag.rejected  { color: #dc3545;  background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228); }
+.matric-table .matric-tag.primary,
+.matric-table .matric-tag.active    { color: #007bff;  background-color: rgb(204, 228.6, 255); }
+.matric-table .matric-tag.muted,
+.matric-table .matric-tag.secondary,
+.matric-table .matric-tag.on-hold   { color: #888888;  background-color: #eeeeee; }
+.matric-table .matric-tag.archived,
+.matric-table .matric-tag.default   { color: #adb5bd;  background-color: hsl(210, 10.8108108108%, 110.9803921569%); }
+.matric-table .matric-tag.suspended { color: #212529;  background-color: rgb(126.4594594595, 139, 151.5405405405); }
+.matric-table .matric-tag.expired   { color: #f1f3f5;  background-color: hsl(210, 16.6666666667%, 135.2941176471%); }
+.matric-table .matric-tag.draft     { color: #888888;  background-color: rgb(175.6125, 182, 188.3875); }
+.matric-table .matric-tag.light     { color: #888888;  background-color: hsl(210, 16.6666666667%, 137.6470588235%); }
 
 /* ─── Text Utilities ───────────────────────────────────────── */
 
-.ng-matric-table .text-muted {
+.matric-table .text-muted {
   color: #888888;
 }
 
 /* ─── Tabs ─────────────────────────────────────────────────── */
 
-.ng-matric-table .matric-tabs {
+.matric-table .matric-tabs {
   padding: 0;
   margin: 0;
   border: none;
   display: flex;
 }
 
-.ng-matric-table .matric-tabs .nav-item {
+.matric-table .matric-tabs .nav-item {
   border: none !important;
   padding: 0;
   list-style: none;
@@ -496,7 +496,7 @@
   align-items: center;
 }
 
-.ng-matric-table .matric-tabs .nav-item .nav-link {
+.matric-table .matric-tabs .nav-item .nav-link {
   padding: 5px 15px;
   color: #888888;
   text-transform: capitalize;
@@ -508,11 +508,11 @@
   position: relative;
 }
 
-.ng-matric-table .matric-tabs .nav-item .nav-link.active {
+.matric-table .matric-tabs .nav-item .nav-link.active {
   background: rgb(238, 238, 238);
 }
 
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge {
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge {
   border-radius: 100%;
   padding: 5px;
   background: white;
@@ -528,42 +528,42 @@
   display: none;
 }
 
-.ng-matric-table .matric-tabs .nav-item .nav-link.active .matric-badge {
+.matric-table .matric-tabs .nav-item .nav-link.active .matric-badge {
   display: block;
 }
 
 /* Badge status color modifiers */
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.success,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.approved  { color: #28a745;  background-color: rgb(175.1304347826, 235.8695652174, 189); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.warning,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.pending   { color: #f1a10a;  background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.info,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.queued,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.processing { color: #17a2b8; background-color: rgb(167, 233.4782608696, 244); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.danger,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.failed,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.rejected  { color: #dc3545;  background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.primary,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.active    { color: #007bff;  background-color: rgb(204, 228.6, 255); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.muted,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.secondary,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.on-hold   { color: #888888;  background-color: #eeeeee; }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.archived,
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.default   { color: #adb5bd;  background-color: hsl(210, 10.8108108108%, 110.9803921569%); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.suspended { color: #212529;  background-color: rgb(126.4594594595, 139, 151.5405405405); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.expired   { color: #f1f3f5;  background-color: hsl(210, 16.6666666667%, 135.2941176471%); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.draft     { color: #888888;  background-color: rgb(175.6125, 182, 188.3875); }
-.ng-matric-table .matric-tabs .nav-item .nav-link .matric-badge.light     { color: #888888;  background-color: hsl(210, 16.6666666667%, 137.6470588235%); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.success,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.approved  { color: #28a745;  background-color: rgb(175.1304347826, 235.8695652174, 189); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.warning,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.pending   { color: #f1a10a;  background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.info,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.queued,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.processing { color: #17a2b8; background-color: rgb(167, 233.4782608696, 244); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.danger,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.failed,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.rejected  { color: #dc3545;  background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.primary,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.active    { color: #007bff;  background-color: rgb(204, 228.6, 255); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.muted,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.secondary,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.on-hold   { color: #888888;  background-color: #eeeeee; }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.archived,
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.default   { color: #adb5bd;  background-color: hsl(210, 10.8108108108%, 110.9803921569%); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.suspended { color: #212529;  background-color: rgb(126.4594594595, 139, 151.5405405405); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.expired   { color: #f1f3f5;  background-color: hsl(210, 16.6666666667%, 135.2941176471%); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.draft     { color: #888888;  background-color: rgb(175.6125, 182, 188.3875); }
+.matric-table .matric-tabs .nav-item .nav-link .matric-badge.light     { color: #888888;  background-color: hsl(210, 16.6666666667%, 137.6470588235%); }
 
 /* ─── Checkbox ─────────────────────────────────────────────── */
 
-.ng-matric-table .checkbox-wrapper {
+.matric-table .checkbox-wrapper {
   padding: 0;
   display: flex;
   align-items: center;
 }
 
-.ng-matric-table .checkbox-wrapper .cbx {
+.matric-table .checkbox-wrapper .cbx {
   user-select: none;
   display: flex;
   gap: 15px;
@@ -573,12 +573,12 @@
   cursor: pointer;
 }
 
-.ng-matric-table .checkbox-wrapper .cbx .matric-btn {
+.matric-table .checkbox-wrapper .cbx .matric-btn {
   padding: 0;
   height: auto;
 }
 
-.ng-matric-table .checkbox-wrapper .cbx .checkbox {
+.matric-table .checkbox-wrapper .cbx .checkbox {
   position: relative;
   width: 20px;
   height: 20px;
@@ -587,7 +587,7 @@
   transition: all 0.2s ease;
 }
 
-.ng-matric-table .checkbox-wrapper .cbx .checkbox svg {
+.matric-table .checkbox-wrapper .cbx .checkbox svg {
   position: absolute;
   top: 4px;
   left: 2px;
@@ -602,7 +602,7 @@
   transition-delay: 0.1s;
 }
 
-.ng-matric-table .checkbox-wrapper .cbx .checkbox:before {
+.matric-table .checkbox-wrapper .cbx .checkbox:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -612,21 +612,21 @@
   transition-delay: 0.2s;
 }
 
-.ng-matric-table .checkbox-wrapper .inp-cbx {
+.matric-table .checkbox-wrapper .inp-cbx {
   display: none;
 }
 
-.ng-matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child {
+.matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child {
   border-color: #0173df;
   background: #0173df;
   animation: check-15 0.3s ease;
 }
 
-.ng-matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child svg {
+.matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child svg {
   stroke-dashoffset: 0;
 }
 
-.ng-matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child:before {
+.matric-table .checkbox-wrapper .inp-cbx:checked + .cbx .checkbox:first-child:before {
   transform: scale(2.2);
   opacity: 0;
   transition: all 0.3s ease;
@@ -634,7 +634,7 @@
 
 /* ─── Media Tile ───────────────────────────────────────────── */
 
-.ng-matric-table .media-tile {
+.matric-table .media-tile {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -642,7 +642,7 @@
   gap: 15px;
 }
 
-.ng-matric-table .media-tile .media-img {
+.matric-table .media-tile .media-img {
   background-color: #0173df;
   width: 35px;
   height: 35px;
@@ -656,44 +656,44 @@
   font-weight: bold;
 }
 
-.ng-matric-table .media-tile .media-img i {
+.matric-table .media-tile .media-img i {
   font-size: 40px;
 }
 
-.ng-matric-table .media-tile .media-img img {
+.matric-table .media-tile .media-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 /* Media img status border/background modifiers */
-.ng-matric-table .media-tile .media-img.success,
-.ng-matric-table .media-tile .media-img.approved  { background-color: #28a745; border: 3px solid rgb(175.1304347826, 235.8695652174, 189); }
-.ng-matric-table .media-tile .media-img.warning,
-.ng-matric-table .media-tile .media-img.pending   { background-color: #f1a10a; border: 3px solid rgb(252.8087649402, 235.2788844622, 202.1912350598); }
-.ng-matric-table .media-tile .media-img.info,
-.ng-matric-table .media-tile .media-img.queued,
-.ng-matric-table .media-tile .media-img.processing { background-color: #17a2b8; border: 3px solid rgb(167, 233.4782608696, 244); }
-.ng-matric-table .media-tile .media-img.danger,
-.ng-matric-table .media-tile .media-img.failed,
-.ng-matric-table .media-tile .media-img.rejected  { background-color: #dc3545; border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228); }
-.ng-matric-table .media-tile .media-img.primary,
-.ng-matric-table .media-tile .media-img.active    { background-color: #007bff; border: 3px solid rgb(204, 228.6, 255); }
-.ng-matric-table .media-tile .media-img.muted,
-.ng-matric-table .media-tile .media-img.secondary,
-.ng-matric-table .media-tile .media-img.on-hold,
-.ng-matric-table .media-tile .media-img.archived,
-.ng-matric-table .media-tile .media-img.draft     { background-color: #888888; border: 3px solid #eeeeee; }
-.ng-matric-table .media-tile .media-img.suspended { background-color: #212529; border: 3px solid rgb(126.4594594595, 139, 151.5405405405); }
-.ng-matric-table .media-tile .media-img.expired   { background-color: #f1f3f5; border: 3px solid hsl(210, 16.6666666667%, 135.2941176471%); }
-.ng-matric-table .media-tile .media-img.default   { background-color: #adb5bd; border: 3px solid hsl(210, 10.8108108108%, 110.9803921569%); }
-.ng-matric-table .media-tile .media-img.light     { background-color: #888888; border: 3px solid hsl(210, 16.6666666667%, 137.6470588235%); }
+.matric-table .media-tile .media-img.success,
+.matric-table .media-tile .media-img.approved  { background-color: #28a745; border: 3px solid rgb(175.1304347826, 235.8695652174, 189); }
+.matric-table .media-tile .media-img.warning,
+.matric-table .media-tile .media-img.pending   { background-color: #f1a10a; border: 3px solid rgb(252.8087649402, 235.2788844622, 202.1912350598); }
+.matric-table .media-tile .media-img.info,
+.matric-table .media-tile .media-img.queued,
+.matric-table .media-tile .media-img.processing { background-color: #17a2b8; border: 3px solid rgb(167, 233.4782608696, 244); }
+.matric-table .media-tile .media-img.danger,
+.matric-table .media-tile .media-img.failed,
+.matric-table .media-tile .media-img.rejected  { background-color: #dc3545; border: 3px solid rgb(250.1265822785, 226.8734177215, 229.1012658228); }
+.matric-table .media-tile .media-img.primary,
+.matric-table .media-tile .media-img.active    { background-color: #007bff; border: 3px solid rgb(204, 228.6, 255); }
+.matric-table .media-tile .media-img.muted,
+.matric-table .media-tile .media-img.secondary,
+.matric-table .media-tile .media-img.on-hold,
+.matric-table .media-tile .media-img.archived,
+.matric-table .media-tile .media-img.draft     { background-color: #888888; border: 3px solid #eeeeee; }
+.matric-table .media-tile .media-img.suspended { background-color: #212529; border: 3px solid rgb(126.4594594595, 139, 151.5405405405); }
+.matric-table .media-tile .media-img.expired   { background-color: #f1f3f5; border: 3px solid hsl(210, 16.6666666667%, 135.2941176471%); }
+.matric-table .media-tile .media-img.default   { background-color: #adb5bd; border: 3px solid hsl(210, 10.8108108108%, 110.9803921569%); }
+.matric-table .media-tile .media-img.light     { background-color: #888888; border: 3px solid hsl(210, 16.6666666667%, 137.6470588235%); }
 
-.ng-matric-table .media-tile p {
+.matric-table .media-tile p {
   margin: 0;
 }
 
-.ng-matric-table .media-tile .name {
+.matric-table .media-tile .name {
   font-size: 0.8rem;
   text-align: left;
   width: 100px;
@@ -705,7 +705,7 @@
 
 /* ─── Date Picker ──────────────────────────────────────────── */
 
-.ng-matric-table .date-picker {
+.matric-table .date-picker {
   position: absolute;
   padding: 15px;
   box-shadow: var(--shadow-card);
@@ -716,34 +716,34 @@
   min-width: var(--size-date-picker-min);
 }
 
-.ng-matric-table .date-picker .d-grid {
+.matric-table .date-picker .d-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: var(--space-xxs);
   margin-top: var(--space-xs);
 }
 
-.ng-matric-table .date-picker .d-grid .text-center {
+.matric-table .date-picker .d-grid .text-center {
   padding: var(--space-sm) 0;
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-base);
   user-select: none;
 }
 
-.ng-matric-table .date-picker .d-grid .text-center.fw-bold {
+.matric-table .date-picker .d-grid .text-center.fw-bold {
   color: var(--color-text);
   font-weight: 600;
 }
 
-.ng-matric-table .date-picker .d-grid .text-center.text-white {
+.matric-table .date-picker .d-grid .text-center.text-white {
   color: var(--color-white) !important;
 }
 
-.ng-matric-table .date-picker .footer {
+.matric-table .date-picker .footer {
   margin-top: var(--space-md);
 }
 
-.ng-matric-table .day-btn {
+.matric-table .day-btn {
   font-size: var(--font-size-sm);
   background-color: var(--color-white);
   display: flex;
@@ -756,11 +756,11 @@
   transition: var(--transition-default);
 }
 
-.ng-matric-table .day-btn:hover {
+.matric-table .day-btn:hover {
   background-color: var(--color-surface-alt);
 }
 
-.ng-matric-table .day-btn.active {
+.matric-table .day-btn.active {
   background-color: var(--color-primary);
   color: #fff;
   border: var(--border-primary);
@@ -768,20 +768,20 @@
 
 /* ─── Progress Bar ─────────────────────────────────────────── */
 
-.ng-matric-table .progress {
+.matric-table .progress {
   height: 2px;
   overflow: inherit;
   background-color: #e7e7e7;
   margin-top: 0px;
 }
 
-.ng-matric-table .progress .progress-bar {
+.matric-table .progress .progress-bar {
   height: 100%;
   position: relative;
   overflow: inherit;
 }
 
-.ng-matric-table .progress .progress-bar .matric-tag {
+.matric-table .progress .progress-bar .matric-tag {
   width: auto;
   height: auto;
   position: absolute;
@@ -794,71 +794,71 @@
 }
 
 /* Progress bar status modifiers */
-.ng-matric-table .progress .progress-bar.success,
-.ng-matric-table .progress .progress-bar.approved  { color: #28a745; background-color: rgb(175.1304347826, 235.8695652174, 189); }
-.ng-matric-table .progress .progress-bar.success .matric-tag,
-.ng-matric-table .progress .progress-bar.approved .matric-tag { color: #28a745; background-color: rgb(175.1304347826, 235.8695652174, 189); }
+.matric-table .progress .progress-bar.success,
+.matric-table .progress .progress-bar.approved  { color: #28a745; background-color: rgb(175.1304347826, 235.8695652174, 189); }
+.matric-table .progress .progress-bar.success .matric-tag,
+.matric-table .progress .progress-bar.approved .matric-tag { color: #28a745; background-color: rgb(175.1304347826, 235.8695652174, 189); }
 
-.ng-matric-table .progress .progress-bar.warning,
-.ng-matric-table .progress .progress-bar.pending   { color: #f1a10a; background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598); }
-.ng-matric-table .progress .progress-bar.warning .matric-tag,
-.ng-matric-table .progress .progress-bar.pending .matric-tag { color: #f1a10a; background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598); }
+.matric-table .progress .progress-bar.warning,
+.matric-table .progress .progress-bar.pending   { color: #f1a10a; background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598); }
+.matric-table .progress .progress-bar.warning .matric-tag,
+.matric-table .progress .progress-bar.pending .matric-tag { color: #f1a10a; background-color: rgb(252.8087649402, 235.2788844622, 202.1912350598); }
 
-.ng-matric-table .progress .progress-bar.info,
-.ng-matric-table .progress .progress-bar.queued,
-.ng-matric-table .progress .progress-bar.processing { color: #17a2b8; background-color: rgb(167, 233.4782608696, 244); }
-.ng-matric-table .progress .progress-bar.info .matric-tag,
-.ng-matric-table .progress .progress-bar.queued .matric-tag,
-.ng-matric-table .progress .progress-bar.processing .matric-tag { color: #17a2b8; background-color: rgb(167, 233.4782608696, 244); }
+.matric-table .progress .progress-bar.info,
+.matric-table .progress .progress-bar.queued,
+.matric-table .progress .progress-bar.processing { color: #17a2b8; background-color: rgb(167, 233.4782608696, 244); }
+.matric-table .progress .progress-bar.info .matric-tag,
+.matric-table .progress .progress-bar.queued .matric-tag,
+.matric-table .progress .progress-bar.processing .matric-tag { color: #17a2b8; background-color: rgb(167, 233.4782608696, 244); }
 
-.ng-matric-table .progress .progress-bar.danger,
-.ng-matric-table .progress .progress-bar.failed,
-.ng-matric-table .progress .progress-bar.rejected  { color: #dc3545; background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228); }
-.ng-matric-table .progress .progress-bar.danger .matric-tag,
-.ng-matric-table .progress .progress-bar.failed .matric-tag,
-.ng-matric-table .progress .progress-bar.rejected .matric-tag { color: #dc3545; background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228); }
+.matric-table .progress .progress-bar.danger,
+.matric-table .progress .progress-bar.failed,
+.matric-table .progress .progress-bar.rejected  { color: #dc3545; background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228); }
+.matric-table .progress .progress-bar.danger .matric-tag,
+.matric-table .progress .progress-bar.failed .matric-tag,
+.matric-table .progress .progress-bar.rejected .matric-tag { color: #dc3545; background-color: rgb(250.1265822785, 226.8734177215, 229.1012658228); }
 
-.ng-matric-table .progress .progress-bar.primary,
-.ng-matric-table .progress .progress-bar.active    { color: #007bff; background-color: rgb(204, 228.6, 255); }
-.ng-matric-table .progress .progress-bar.primary .matric-tag,
-.ng-matric-table .progress .progress-bar.active .matric-tag { color: #007bff; background-color: rgb(204, 228.6, 255); }
+.matric-table .progress .progress-bar.primary,
+.matric-table .progress .progress-bar.active    { color: #007bff; background-color: rgb(204, 228.6, 255); }
+.matric-table .progress .progress-bar.primary .matric-tag,
+.matric-table .progress .progress-bar.active .matric-tag { color: #007bff; background-color: rgb(204, 228.6, 255); }
 
-.ng-matric-table .progress .progress-bar.muted,
-.ng-matric-table .progress .progress-bar.secondary,
-.ng-matric-table .progress .progress-bar.on-hold   { color: #888888; background-color: #eeeeee; }
-.ng-matric-table .progress .progress-bar.muted .matric-tag,
-.ng-matric-table .progress .progress-bar.secondary .matric-tag,
-.ng-matric-table .progress .progress-bar.on-hold .matric-tag { color: #888888; background-color: #eeeeee; }
+.matric-table .progress .progress-bar.muted,
+.matric-table .progress .progress-bar.secondary,
+.matric-table .progress .progress-bar.on-hold   { color: #888888; background-color: #eeeeee; }
+.matric-table .progress .progress-bar.muted .matric-tag,
+.matric-table .progress .progress-bar.secondary .matric-tag,
+.matric-table .progress .progress-bar.on-hold .matric-tag { color: #888888; background-color: #eeeeee; }
 
-.ng-matric-table .progress .progress-bar.archived,
-.ng-matric-table .progress .progress-bar.default   { color: #adb5bd; background-color: hsl(210, 10.8108108108%, 110.9803921569%); }
-.ng-matric-table .progress .progress-bar.archived .matric-tag,
-.ng-matric-table .progress .progress-bar.default .matric-tag { color: #adb5bd; background-color: hsl(210, 10.8108108108%, 110.9803921569%); }
+.matric-table .progress .progress-bar.archived,
+.matric-table .progress .progress-bar.default   { color: #adb5bd; background-color: hsl(210, 10.8108108108%, 110.9803921569%); }
+.matric-table .progress .progress-bar.archived .matric-tag,
+.matric-table .progress .progress-bar.default .matric-tag { color: #adb5bd; background-color: hsl(210, 10.8108108108%, 110.9803921569%); }
 
-.ng-matric-table .progress .progress-bar.suspended { color: #212529; background-color: rgb(126.4594594595, 139, 151.5405405405); }
-.ng-matric-table .progress .progress-bar.suspended .matric-tag { color: #212529; background-color: rgb(126.4594594595, 139, 151.5405405405); }
+.matric-table .progress .progress-bar.suspended { color: #212529; background-color: rgb(126.4594594595, 139, 151.5405405405); }
+.matric-table .progress .progress-bar.suspended .matric-tag { color: #212529; background-color: rgb(126.4594594595, 139, 151.5405405405); }
 
-.ng-matric-table .progress .progress-bar.expired   { color: #f1f3f5; background-color: hsl(210, 16.6666666667%, 135.2941176471%); }
-.ng-matric-table .progress .progress-bar.expired .matric-tag { color: #f1f3f5; background-color: hsl(210, 16.6666666667%, 135.2941176471%); }
+.matric-table .progress .progress-bar.expired   { color: #f1f3f5; background-color: hsl(210, 16.6666666667%, 135.2941176471%); }
+.matric-table .progress .progress-bar.expired .matric-tag { color: #f1f3f5; background-color: hsl(210, 16.6666666667%, 135.2941176471%); }
 
-.ng-matric-table .progress .progress-bar.draft     { color: #888888; background-color: rgb(175.6125, 182, 188.3875); }
-.ng-matric-table .progress .progress-bar.draft .matric-tag { color: #888888; background-color: rgb(175.6125, 182, 188.3875); }
+.matric-table .progress .progress-bar.draft     { color: #888888; background-color: rgb(175.6125, 182, 188.3875); }
+.matric-table .progress .progress-bar.draft .matric-tag { color: #888888; background-color: rgb(175.6125, 182, 188.3875); }
 
-.ng-matric-table .progress .progress-bar.light     { color: #888888; background-color: hsl(210, 16.6666666667%, 137.6470588235%); }
-.ng-matric-table .progress .progress-bar.light .matric-tag { color: #888888; background-color: hsl(210, 16.6666666667%, 137.6470588235%); }
+.matric-table .progress .progress-bar.light     { color: #888888; background-color: hsl(210, 16.6666666667%, 137.6470588235%); }
+.matric-table .progress .progress-bar.light .matric-tag { color: #888888; background-color: hsl(210, 16.6666666667%, 137.6470588235%); }
 
 /* ─── Dropdown ─────────────────────────────────────────────── */
 
-.ng-matric-table .matric-dropdown {
+.matric-table .matric-dropdown {
   position: relative;
   padding: 0;
 }
 
-.ng-matric-table .matric-dropdown .matric-btn {
+.matric-table .matric-dropdown .matric-btn {
   padding: 5px;
 }
 
-.ng-matric-table .matric-dropdown .matric-btn-toggle:after {
+.matric-table .matric-dropdown .matric-btn-toggle:after {
   display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
@@ -869,7 +869,7 @@
   border-left: 0.3em solid transparent;
 }
 
-.ng-matric-table .matric-dropdown .dropdown-menu {
+.matric-table .matric-dropdown .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
@@ -888,18 +888,18 @@
   pointer-events: none;
 }
 
-.ng-matric-table .matric-dropdown .dropdown-menu.show {
+.matric-table .matric-dropdown .dropdown-menu.show {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-.ng-matric-table .matric-dropdown .dropdown-menu li {
+.matric-table .matric-dropdown .dropdown-menu li {
   list-style: none;
   text-align: left;
 }
 
-.ng-matric-table .matric-dropdown .dropdown-menu li .dropdown-item {
+.matric-table .matric-dropdown .dropdown-menu li .dropdown-item {
   display: block;
   width: 100%;
   padding: 10px 15px;
@@ -913,101 +913,101 @@
   cursor: pointer;
 }
 
-.ng-matric-table .matric-dropdown .dropdown-menu li .dropdown-item:hover {
+.matric-table .matric-dropdown .dropdown-menu li .dropdown-item:hover {
   background-color: #0173df;
   color: white;
 }
 
-.ng-matric-table .matric-dropdown .dropdown-menu li:first-child .dropdown-item {
+.matric-table .matric-dropdown .dropdown-menu li:first-child .dropdown-item {
   border-radius: 5px 5px 0 0;
 }
 
-.ng-matric-table .matric-dropdown .dropdown-menu li:last-child .dropdown-item {
+.matric-table .matric-dropdown .dropdown-menu li:last-child .dropdown-item {
   border-radius: 0 0 5px 5px;
 }
 
 /* ─── Responsive ───────────────────────────────────────────── */
 
 @media (max-width: 1024px) {
-  .ng-matric-table.responsive table .media-tile {
+  .matric-table.responsive table .media-tile {
     width: 100%;
   }
 
-  .ng-matric-table.responsive table .mobile-btn {
+  .matric-table.responsive table .mobile-btn {
     display: flex;
   }
 
-  .ng-matric-table.responsive table tr {
+  .matric-table.responsive table tr {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: 80px;
   }
 
-  .ng-matric-table.responsive table .key {
+  .matric-table.responsive table .key {
     display: block;
   }
 
-  .ng-matric-table.responsive table thead {
+  .matric-table.responsive table thead {
     display: none;
   }
 
-  .ng-matric-table.responsive table tbody tr {
+  .matric-table.responsive table tbody tr {
     overflow: hidden;
   }
 
-  .ng-matric-table.responsive table tbody tr td {
+  .matric-table.responsive table tbody tr td {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .ng-matric-table.responsive table tbody tr td:first-child {
+  .matric-table.responsive table tbody tr td:first-child {
     min-height: 80px;
   }
 
-  .ng-matric-table.responsive table tbody tr.dynamic-row {
+  .matric-table.responsive table tbody tr.dynamic-row {
     max-height: inherit;
     display: inline;
   }
 
-  .ng-matric-table.responsive table tfoot tr {
+  .matric-table.responsive table tfoot tr {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .ng-matric-table.responsive .matric-tabs {
+  .matric-table.responsive .matric-tabs {
     display: none;
   }
 }
 
 /* ─── View Type Buttons ────────────────────────────────────── */
 
-.ng-matric-table .view-btn {
+.matric-table .view-btn {
   position: relative;
   overflow: hidden;
   transition: all var(--transition-fast);
 }
 
-.ng-matric-table .view-btn:not(.active) {
+.matric-table .view-btn:not(.active) {
   opacity: 0.6;
 }
 
-.ng-matric-table .view-btn.active {
+.matric-table .view-btn.active {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
 
-.ng-matric-table.view-list .view-btn-list.active,
-.ng-matric-table.view-grid .view-btn-grid.active,
-.ng-matric-table.view-pipeline .view-btn-pipeline.active {
+.matric-table.view-list .view-btn-list.active,
+.matric-table.view-grid .view-btn-grid.active,
+.matric-table.view-pipeline .view-btn-pipeline.active {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
 
-.ng-matric-table.view-list .view-btn-list,
-.ng-matric-table.view-grid .view-btn-grid,
-.ng-matric-table.view-pipeline .view-btn-pipeline {
+.matric-table.view-list .view-btn-list,
+.matric-table.view-grid .view-btn-grid,
+.matric-table.view-pipeline .view-btn-pipeline {
   background-color: var(--color-primary);
   color: var(--color-white);
 }

@@ -37,7 +37,7 @@ interface ActionButton {
 let uniqueCounter = 0;
 
 @Component({
-  selector: 'ng-matric-table',
+  selector: 'matric-table',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './matrics-table.component.html',

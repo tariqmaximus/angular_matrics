@@ -1,20 +1,20 @@
 /* Grid View Styles */
-.ng-matric-table.view-grid {
+.matric-table.view-grid {
   display: block;
 }
 
-.ng-matric-table.view-grid .table-wrapper {
+.matric-table.view-grid .table-wrapper {
   display: none;
 }
 
-.ng-matric-table.view-grid .grid-container {
+.matric-table.view-grid .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--space-lg);
   padding: var(--space-md);
 }
 
-.ng-matric-table.view-grid .grid-card {
+.matric-table.view-grid .grid-card {
   background: var(--color-white);
   border: var(--border-default);
   border-radius: var(--border-radius-md);
@@ -23,12 +23,12 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.ng-matric-table.view-grid .grid-card:hover {
+.matric-table.view-grid .grid-card:hover {
   box-shadow: var(--shadow-card);
   transform: translateY(-2px);
 }
 
-.ng-matric-table.view-grid .grid-card-header {
+.matric-table.view-grid .grid-card-header {
   display: flex;
   align-items: flex-start;
   gap: var(--space-md);
@@ -37,7 +37,7 @@
   border-bottom: var(--border-default);
 }
 
-.ng-matric-table.view-grid .grid-card-avatar {
+.matric-table.view-grid .grid-card-avatar {
   width: 48px;
   height: 48px;
   min-width: 48px;
@@ -51,11 +51,11 @@
   font-size: var(--font-size-md);
 }
 
-.ng-matric-table.view-grid .grid-card-title {
+.matric-table.view-grid .grid-card-title {
   flex: 1;
 }
 
-.ng-matric-table.view-grid .grid-card-title h3 {
+.matric-table.view-grid .grid-card-title h3 {
   margin: 0 0 4px 0;
   font-size: var(--font-size-base);
   font-weight: 600;
@@ -65,13 +65,13 @@
   white-space: nowrap;
 }
 
-.ng-matric-table.view-grid .grid-card-title p {
+.matric-table.view-grid .grid-card-title p {
   margin: 0;
   font-size: var(--font-size-sm);
   color: var(--color-muted);
 }
 
-.ng-matric-table.view-grid .grid-card-status {
+.matric-table.view-grid .grid-card-status {
   display: inline-block;
   padding: 4px 8px;
   border-radius: var(--border-radius-sm);
@@ -80,11 +80,11 @@
   text-transform: uppercase;
 }
 
-.ng-matric-table.view-grid .grid-card-body {
+.matric-table.view-grid .grid-card-body {
   margin-bottom: var(--space-md);
 }
 
-.ng-matric-table.view-grid .grid-card-row {
+.matric-table.view-grid .grid-card-row {
   display: flex;
   justify-content: space-between;
   gap: var(--space-md);
@@ -92,29 +92,29 @@
   font-size: var(--font-size-sm);
 }
 
-.ng-matric-table.view-grid .grid-card-row label {
+.matric-table.view-grid .grid-card-row label {
   font-weight: 500;
   color: var(--color-muted);
 }
 
-.ng-matric-table.view-grid .grid-card-row .value {
+.matric-table.view-grid .grid-card-row .value {
   color: var(--color-text);
 }
 
-.ng-matric-table.view-grid .grid-card-footer {
+.matric-table.view-grid .grid-card-footer {
   display: flex;
   gap: var(--space-xs);
   padding-top: var(--space-md);
   border-top: var(--border-default);
 }
 
-.ng-matric-table.view-grid .grid-card-footer .matric-btn {
+.matric-table.view-grid .grid-card-footer .matric-btn {
   flex: 1;
   padding: 6px 12px;
   font-size: var(--font-size-sm);
 }
 
-.ng-matric-table.view-grid .grid-empty {
+.matric-table.view-grid .grid-empty {
   grid-column: 1 / -1;
   text-align: center;
   padding: var(--space-lg);
@@ -122,22 +122,22 @@
 }
 
 @media (max-width: 1024px) {
-  .ng-matric-table.view-grid .grid-container {
+  .matric-table.view-grid .grid-container {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .ng-matric-table.view-grid .grid-container {
+  .matric-table.view-grid .grid-container {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--space-md);
   }
 
-  .ng-matric-table.view-grid .grid-card {
+  .matric-table.view-grid .grid-card {
     padding: var(--space-sm);
   }
 
-  .ng-matric-table.view-grid .grid-card-avatar {
+  .matric-table.view-grid .grid-card-avatar {
     width: 40px;
     height: 40px;
   }

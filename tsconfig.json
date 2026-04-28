@@ -11,8 +11,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "ng-matric-table": [
-        "./dist/ng-matric-table"
+      "matric-table": [
+        "./dist/matric-table"
       ]
     },
     "skipLibCheck": true,

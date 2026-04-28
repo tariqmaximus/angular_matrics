@@ -1,4 +1,4 @@
-# ng-matric-table
+# matric-table
 
 A powerful, reusable Angular smart table component designed with flexibility and interactivity in mind. Easily integrate search filters, sorting, pagination, status tags, actions, and progress indicators — all without relying on Bootstrap or external icon libraries.
 
@@ -7,7 +7,7 @@ A powerful, reusable Angular smart table component designed with flexibility and
 ## 📦 Installation
 
 ```bash
-npm install ng-matric-table
+npm install matric-table
 ```
 
 Make sure your project is using Angular v15+.
@@ -21,13 +21,13 @@ Import and use the component directly since it's standalone:
 ### In Your Component
 
 ```ts
-import { MatricsTableComponent } from 'ng-matric-table';
+import { MatricsTableComponent } from 'matric-table';
 
 @Component({
   selector: 'app-my-page',
   standalone: true,
   imports: [MatricsTableComponent],
-  template: `<ng-matric-table [data]="myData" [columns]="columns"></ng-matric-table>`
+  template: `<matric-table [data]="myData" [columns]="columns"></matric-table>`
 })
 export class MyPageComponent {
   columns = [
