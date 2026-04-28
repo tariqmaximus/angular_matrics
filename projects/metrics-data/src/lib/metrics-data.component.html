@@ -355,7 +355,7 @@
     <ng-container *ngIf="pagedData.length > 0; else gridEmpty">
       <div class="grid-card" *ngFor="let data of pagedData; let i = index">
         <div class="grid-card-header">
-          <div class="grid-card-avatar">{{ (data.name || '??').substring(0, 2).toUpperCase() }}</div>
+          <div class="media-img">{{ (data.name || '??').substring(0, 2).toUpperCase() }}</div>
           <div class="grid-card-title">
             <h3>{{ data.name || 'Unknown' }}</h3>
             <p>{{ data.source || 'No Information' }}</p>

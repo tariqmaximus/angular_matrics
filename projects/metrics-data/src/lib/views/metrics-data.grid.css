@@ -95,41 +95,6 @@
   font-weight: 500;
 }
 
-.view-grid .grid-card-status {
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.view-grid .grid-card-status.success {
-  background-color: var(--status-success-bg);
-  color: #155724;
-}
-
-.view-grid .grid-card-status.warning {
-  background-color: var(--status-warning-bg);
-  color: #856404;
-}
-
-.view-grid .grid-card-status.danger {
-  background-color: var(--status-danger-bg);
-  color: #721c24;
-}
-
-.view-grid .grid-card-status.info {
-  background-color: var(--status-info-bg);
-  color: #0c5460;
-}
-
-.view-grid .grid-card-status.primary {
-  background-color: var(--status-primary-bg);
-  color: #004085;
-}
 
 /* Grid Card Body */
 .view-grid .grid-card-body {
@@ -297,12 +262,6 @@
   .view-grid .grid-card-header {
     padding: var(--space-sm);
     gap: var(--space-sm);
-  }
-
-  .view-grid .grid-card-avatar {
-    width: 40px;
-    height: 40px;
-    font-size: var(--font-size-base);
   }
 
   .view-grid .grid-card-title h3 {
