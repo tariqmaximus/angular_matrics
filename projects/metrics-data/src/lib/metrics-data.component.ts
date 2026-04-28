@@ -405,7 +405,7 @@ onOutsideClick(event: MouseEvent): void {
   }
 
   getRowsByStatus(status: string): any[] {
-    return this.pagedData.filter(row => row.status === status);
+    return this.filteredData.filter(row => row.status === status);
   }
 
   toLabel(key: string): string {
@@ -441,5 +441,23 @@ onOutsideClick(event: MouseEvent): void {
   getValue(row: any, key: string): string {
     const val = row?.[key];
     return val !== undefined && val !== null ? String(val) : '-';
+  }
+
+  getShortValue(row: any, key: string, maxLength = 40): string {
+    const value = this.getValue(row, key);
+    return value.length > maxLength ? `${value.slice(0, maxLength - 1)}…` : value;
+  }
+
+  getRowProgress(row: any): number | null {
+    if (!row) return null;
+    const value = row.progress ?? row.percentage ?? row.percent;
+    const num = Number(value);
+    return Number.isFinite(num) ? Math.min(Math.max(num, 0), 100) : null;
+  }
+
+  getDataKeys(row: any): string[] {
+    if (!row || typeof row !== 'object') return [];
+    const exclude = ['status', 'mediaTile', 'description'];
+    return Object.keys(row).filter(key => !exclude.includes(key));
   }
 }

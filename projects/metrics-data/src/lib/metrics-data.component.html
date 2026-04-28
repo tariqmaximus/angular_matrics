@@ -352,9 +352,9 @@
 <!-- Grid View Template -->
 <ng-template #gridTemplate>
   <div class="grid-container">
-    <ng-container *ngIf="pagedData.length > 0; else gridEmpty">
-      <div class="grid-card" *ngFor="let data of pagedData; let i = index">
-        <div class="grid-card-header metrics-group gap">
+    <ng-container *ngIf="filteredData.length > 0; else gridEmpty">
+      <div class="metrics-card" *ngFor="let data of filteredData; let i = index">
+        <div class="metrics-card-header ">
           <div class="media-tile">
             <div class="media-img" [ngClass]="statusMap[data.status]">
               <img *ngIf="data.mediaTile && !imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
@@ -374,7 +374,22 @@
             {{ data.status || 'N/A' }}
           </span>
         </div>
-
+<div class="card-body">
+          <div class="metrics-card-meta">
+            <div *ngIf="getRowProgress(data) !== null" class="pipeline-progress">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" [style.width.%]="getRowProgress(data)"
+                  [attr.aria-valuenow]="getRowProgress(data)" aria-valuemin="0" aria-valuemax="100">
+                  {{ getRowProgress(data) }}%
+                </div>
+              </div>
+            </div>
+            <div *ngIf="data.date" class="pipeline-date">
+              {{ data.date | date: 'mediumDate' }}
+            </div>
+          </div>
+          <p *ngIf="data.description" class="description">{{ data.description }}</p>
+</div>
         <div class="grid-card-footer">
           <div class="metrics-btn-group sm align-right">
             <ng-container *ngFor="let btn of actionButtons">
@@ -411,17 +426,17 @@
 <ng-template #pipelineTemplate>
   <div class="pipeline-container">
     <ng-container *ngFor="let status of searchOptions">
-      <div class="pipeline-column" [ngClass]="'status-' + status">
-        <div class="pipeline-header">
+      <div class="pipeline-column" >
+        <div class="metrics-headers" [ngClass]="status">
           <h3>{{ status }}</h3>
-          <span class="pipeline-column-count">{{ getRowsByStatus(status).length }}</span>
+          <span class="metrics-tag" [ngClass]="status">{{ getRowsByStatus(status).length }}</span>
         </div>
         <div class="pipeline-body">
         
           <ng-container *ngIf="getRowsByStatus(status) as columnData">
             <ng-container *ngIf="columnData.length > 0; else pipelineEmpty">
-              <div class="pipeline-card" *ngFor="let data of columnData; let i = index" [ngClass]="'status-' + data.status">
-                <div class="pipeline-card-header metrics-group gap">
+              <div class="metrics-card" *ngFor="let data of columnData; let i = index" [ngClass]="'status-' + data.status">
+                <div class="metrics-card-header ">
                   <div class="media-tile">
                     <div class="media-img" [ngClass]="statusMap[data.status]">
                       <img *ngIf="data.mediaTile && !imageLoadFailedMap[data?.id || data?.[searchKey] || data?.name]"
@@ -439,7 +454,23 @@
                   </div>
                   <span [ngClass]="getStatusStyles(data.status).tagClass">{{ data.status || 'N/A' }}</span>
                 </div>
-                <div class="pipeline-card-footer">
+                <div class="card-body">
+                  <div class="metrics-card-meta">
+                    <div *ngIf="getRowProgress(data) !== null" class="pipeline-progress">
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" [style.width.%]="getRowProgress(data)"
+                          [attr.aria-valuenow]="getRowProgress(data)" aria-valuemin="0" aria-valuemax="100">
+                          {{ getRowProgress(data) }}%
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="data.date" class="pipeline-date">
+                      {{ data.date | date: 'mediumDate' }}
+                    </div>
+                  </div>
+                  <p *ngIf="data.description" class="description">{{ data.description }}</p>
+                </div>
+                <div class="metrics-card-footer">
                   <div class="metrics-btn-group sm align-right">
                     <ng-container *ngFor="let btn of actionButtons">
                       <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
