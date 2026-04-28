@@ -84,7 +84,7 @@
                 [ngClass]="button.className" [attr.title]="button.tooltip"
                 (click)="executeAction(button)">
                 <i *ngIf="button.icon" [class]="button.icon"></i>
-                <span *ngIf="button.label">{{ button.label }}</span>
+               
               </button>
               <div *ngIf="button.isDropdown" class="matric-dropdown matric-btn" [id]="button.targetId">
                 <button type="button" class="matric-btn no-bg matric-btn-toggle"

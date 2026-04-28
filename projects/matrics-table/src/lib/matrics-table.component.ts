@@ -62,7 +62,30 @@ export class MatricsTableComponent implements OnInit, OnChanges {
   @Input() showActions = true;
   @Input() actionButtons: ActionButton[] = [];
   @Input() headerButtons: CardButton[] = [];
-  @Input() viewTypes: CardButton[] = [];
+  private _viewTypes: CardButton[] = [];
+  @Input() set viewTypes(value: (string | CardButton)[]) {
+    this._viewTypes = value.map(vt => {
+      if (typeof vt === 'string') {
+        const label = vt;
+        const icon = this.getIconForViewType(label);
+        const action = this.getActionForViewType(label);
+        return {
+          label,
+          icon,
+          targetId: `${this.internalIdPrefix}-view-${label.toLowerCase()}`,
+          action,
+          tooltip: `${label} View`,
+          className: `view-btn view-btn-${label.toLowerCase()}`
+        };
+      } else {
+        return vt;
+      }
+    });
+  }
+  get viewTypes(): CardButton[] {
+    return this._viewTypes;
+  }
+  @Input() showViewTypes = true;
   @Input() collapsible = false;
   @Input() variant = '';
   @Input() matricHeader = true;
@@ -307,8 +330,14 @@ onOutsideClick(event: MouseEvent): void {
   }
 
   initializeViewTypes(): void {
-    // If viewTypes are already provided, don't override them
+    // If viewTypes are already provided, they are already normalized
     if (this.viewTypes && this.viewTypes.length > 0) {
+      return;
+    }
+
+    // If showViewTypes is false, don't initialize defaults
+    if (!this.showViewTypes) {
+      this.viewTypes = [];
       return;
     }
 
@@ -351,6 +380,24 @@ onOutsideClick(event: MouseEvent): void {
 
   switchToPipelineView(): void {
     this.currentViewType = 'pipeline';
+  }
+
+  getIconForViewType(viewType: string): string {
+    switch (viewType.toLowerCase()) {
+      case 'list': return 'bi bi-list-ul';
+      case 'grid': return 'bi bi-grid-3x3-gap';
+      case 'pipeline': return 'bi bi-kanban';
+      default: return 'bi bi-view-list';
+    }
+  }
+
+  getActionForViewType(viewType: string): () => void {
+    switch (viewType.toLowerCase()) {
+      case 'list': return () => this.switchToListView();
+      case 'grid': return () => this.switchToGridView();
+      case 'pipeline': return () => this.switchToPipelineView();
+      default: return () => this.switchToListView();
+    }
   }
 
   getRowsByStatus(status: string): any[] {
