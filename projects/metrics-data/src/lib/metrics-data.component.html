@@ -416,7 +416,8 @@
           <h3>{{ status }}</h3>
           <span class="pipeline-column-count">{{ getRowsByStatus(status).length }}</span>
         </div>
-        <div class="pipeline-cards">
+        <div class="pipeline-body">
+        
           <ng-container *ngIf="getRowsByStatus(status) as columnData">
             <ng-container *ngIf="columnData.length > 0; else pipelineEmpty">
               <div class="pipeline-card" *ngFor="let data of columnData; let i = index" [ngClass]="'status-' + data.status">
@@ -468,6 +469,7 @@
               <div class="pipeline-empty">No items</div>
             </ng-template>
           </ng-container>
+        
         </div>
       </div>
     </ng-container>
