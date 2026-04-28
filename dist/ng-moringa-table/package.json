@@ -1,5 +1,5 @@
 {
-  "name": "matric-table",
+  "name": "metrics-table",
   "version": "1.1.1",
   "description": "Smart Angular table with filters, pagination, and actions",
   "author": "Tariq Jarral",
@@ -23,14 +23,14 @@
     "README.md",
     "LICENSE"
   ],
-  "main": "fesm2022/matric-table.mjs",
-  "module": "fesm2022/matric-table.mjs",
+  "main": "fesm2022/metrics-table.mjs",
+  "module": "fesm2022/metrics-table.mjs",
   "typings": "index.d.ts",
   "exports": {
     ".": {
       "types": "./index.d.ts",
-      "esm2022": "./esm2022/matric-table.mjs",
-      "default": "./fesm2022/matric-table.mjs"
+      "esm2022": "./esm2022/metrics-table.mjs",
+      "default": "./fesm2022/metrics-table.mjs"
     },
     "./package.json": {
       "default": "./package.json"

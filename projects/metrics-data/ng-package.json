@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/matric-table",
+  "dest": "../../dist/metrics-table",
   "lib": {
     "entryFile": "src/public-api.ts",
     "styleIncludePaths": [

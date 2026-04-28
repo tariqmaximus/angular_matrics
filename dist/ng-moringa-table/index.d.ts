@@ -1,5 +1,5 @@
 /**
  * Generated bundle index. Do not edit.
  */
-/// <amd-module name="matric-table" />
+/// <amd-module name="metrics-table" />
 export * from './public-api';

@@ -1,5 +1,5 @@
 {
-  "name": "matric-table",
+  "name": "metrics-table",
   "version": "1.0.1",
   "description": "Smart Angular table with filters, pagination, and actions",
   "author": "Tariq Jarral",
@@ -13,7 +13,7 @@
   },
   "exports": {
     "./component": {
-      "import": "./matric-table.component.js"
+      "import": "./metrics-table.component.js"
     }
   },
   "files": [

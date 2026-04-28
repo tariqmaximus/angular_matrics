@@ -1,13 +1,13 @@
-<div class="matric-table" [class.collapsed]="isCollapsed" [ngClass]="variant">
-  <div class="matric-header" *ngIf="matricHeader">
-    <div class="matric-container ">
-      <div class="matric-group gap">
+<div class="metrics-table" [class.collapsed]="isCollapsed" [ngClass]="variant">
+  <div class="metrics-header" *ngIf="metricsHeader">
+    <div class="metrics-container ">
+      <div class="metrics-group gap">
         <h6 class="table-title">
           <i class="title-icon" *ngIf="icon" [class]="icon"></i>
           {{ title }}
           <span class="text-muted">{{ sub }}</span>
         </h6>
-        <ul *ngIf="filterStyle.includes('tabs')" class="nav matric-tabs" id="myTab" role="tablist">
+        <ul *ngIf="filterStyle.includes('tabs')" class="nav metrics-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link" [ngClass]="{ active: selectedOption === '' }" (click)="selectTabOption('')"
               type="button" role="tab">
@@ -17,28 +17,28 @@
           <li class="nav-item" role="presentation" *ngFor="let option of searchOptions">
             <button class="nav-link" [ngClass]="{ active: selectedOption === option }" (click)="selectTabOption(option)"
               type="button" role="tab">
-              <span class="matric-badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
+              <span class="metrics-badge" [ngClass]="getStatusStyles(option).tagClass">{{ getTabCount(option) }}</span>
               {{ option }}
             </button>
           </li>
         </ul>
       </div>
-      <div class="matric-group gap">
+      <div class="metrics-group gap">
         <ng-content select="[header-component]"></ng-content>
-        <div class="matric-group gap">
-          <div class="matric-btn-group ">
+        <div class="metrics-group gap">
+          <div class="metrics-btn-group ">
             <ng-container>
               <ng-container *ngIf="filterStyle.includes('dropdown')">
-                <select class="matric-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
+                <select class="metrics-select" [(ngModel)]="selectedOption" (change)="applyFilters()">
                   <option value="">All</option>
                   <option *ngFor="let option of searchOptions" [value]="option">{{ option }}</option>
                 </select>
               </ng-container>
-              <input type="text" class="matric-input" placeholder="Search..." *ngIf="filterStyle.includes('keyword')"
+              <input type="text" class="metrics-input" placeholder="Search..." *ngIf="filterStyle.includes('keyword')"
                 [(ngModel)]="searchKeyword" (ngModelChange)="onSearchKeywordChange($event)" />
 
               <!-- Calendar Toggle Button -->
-              <button class="matric-btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
+              <button class="metrics-btn" *ngIf="filterStyle.includes('date')" (click)="toggleCalendar()"
                 style="min-width: 120px;">
                 <svg fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16" width="16" height="16"
                 >
@@ -50,11 +50,11 @@
 
               <!-- Calendar Popup -->
               <div class="date-picker" *ngIf="datePicker" style="min-width: 350px;">
-                <div class="matric-btn-group align-justify">
-                  <select class="matric-select" [(ngModel)]="selectedMonth" (change)="onMonthOrYearChange()">
+                <div class="metrics-btn-group align-justify">
+                  <select class="metrics-select" [(ngModel)]="selectedMonth" (change)="onMonthOrYearChange()">
                     <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
                   </select>
-                  <select class="matric-select" [(ngModel)]="selectedYear" (change)="onMonthOrYearChange()">
+                  <select class="metrics-select" [(ngModel)]="selectedYear" (change)="onMonthOrYearChange()">
                     <option *ngFor="let y of years" [value]="y">{{ y }}</option>
                   </select>
                 </div>
@@ -71,23 +71,23 @@
                     <div *ngIf="!day" style="height: 34px;"></div>
                   </ng-container>
                 </div>
-                <div class="matric-btn-group footer align-right">
-                  <button class="matric-btn" (click)="cancel()">Cancel</button>
-                  <button class="matric-btn primary" (click)="confirm()">Confirm</button>
+                <div class="metrics-btn-group footer align-right">
+                  <button class="metrics-btn" (click)="cancel()">Cancel</button>
+                  <button class="metrics-btn primary" (click)="confirm()">Confirm</button>
                 </div>
               </div>
             </ng-container>
           </div>
-           <div class="matric-btn-group">
+           <div class="metrics-btn-group">
             <ng-container  *ngFor="let button of viewTypes">
-              <button *ngIf="!button.isDropdown" type="button" class="matric-btn" [id]="button.targetId"
+              <button *ngIf="!button.isDropdown" type="button" class="metrics-btn" [id]="button.targetId"
                 [ngClass]="button.className" [attr.title]="button.tooltip"
                 (click)="executeAction(button)">
                 <i *ngIf="button.icon" [class]="button.icon"></i>
                
               </button>
-              <div *ngIf="button.isDropdown" class="matric-dropdown matric-btn" [id]="button.targetId">
-                <button type="button" class="matric-btn no-bg matric-btn-toggle"
+              <div *ngIf="button.isDropdown" class="metrics-dropdown metrics-btn" [id]="button.targetId">
+                <button type="button" class="metrics-btn no-bg metrics-btn-toggle"
                   [ngClass]="button.className" [attr.title]="button.tooltip"
                   (click)="toggleDropdown(-1, $event)">
                   <i *ngIf="button.icon" [class]="button.icon"></i>
@@ -103,16 +103,16 @@
               </div>
             </ng-container>
           </div>
-         <div class="matric-btn-group">
+         <div class="metrics-btn-group">
             <ng-container  *ngFor="let button of headerButtons">
-              <button *ngIf="!button.isDropdown" type="button" class="matric-btn" [id]="button.targetId"
+              <button *ngIf="!button.isDropdown" type="button" class="metrics-btn" [id]="button.targetId"
                 [ngClass]="button.className" [attr.title]="button.tooltip"
                 (click)="executeAction(button)">
                 <i *ngIf="button.icon" [class]="button.icon"></i>
                 <span *ngIf="button.label">{{ button.label }}</span>
               </button>
-              <div *ngIf="button.isDropdown" class="matric-dropdown matric-btn" [id]="button.targetId">
-                <button type="button" class="matric-btn no-bg matric-btn-toggle"
+              <div *ngIf="button.isDropdown" class="metrics-dropdown metrics-btn" [id]="button.targetId">
+                <button type="button" class="metrics-btn no-bg metrics-btn-toggle"
                   [ngClass]="button.className" [attr.title]="button.tooltip"
                   (click)="toggleDropdown(-1, $event)">
                   <i *ngIf="button.icon" [class]="button.icon"></i>
@@ -128,8 +128,8 @@
               </div>
             </ng-container>
           </div>
-          <div class="matric-btn-group">
-            <button *ngIf="collapsible" class="matric-btn " type="button" (click)="toggleCard()">
+          <div class="metrics-btn-group">
+            <button *ngIf="collapsible" class="metrics-btn " type="button" (click)="toggleCard()">
               <ng-container>
                 <svg *ngIf="isCollapsed" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   viewBox="0 0 16 16">
@@ -152,11 +152,11 @@
       <div class="progress-bar" [ngClass]="getStatusStyles(selectedOption || progressBy).progressClass"
         role="progressbar" [style.width.%]="progressValue" [attr.aria-valuenow]="progressValue" aria-valuemin="0"
         aria-valuemax="100">
-        <p class="matric-tag">{{ progressValue }}%</p>
+        <p class="metrics-tag">{{ progressValue }}%</p>
       </div>
     </div>
   </div>
-  <div class="matric-body" [ngClass]="'view-' + currentViewType">
+  <div class="metrics-body" [ngClass]="'view-' + currentViewType">
     <!-- LIST VIEW -->
     <div class="table-wrapper" *ngIf="currentViewType === 'list'">
       <table>
@@ -177,8 +177,8 @@
                           <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                         </svg>
                       </div>
-                      <div *ngIf="selectedRows.length > 1" class="matric-dropdown">
-                        <button class="matric-btn no-bg " (click)="toggleDropdown(-1, $event)">
+                      <div *ngIf="selectedRows.length > 1" class="metrics-dropdown">
+                        <button class="metrics-btn no-bg " (click)="toggleDropdown(-1, $event)">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                             <path
@@ -231,7 +231,7 @@
               <td *ngFor="let column of columns">
                 <ng-container [ngSwitch]="column.key">
                   <ng-container *ngSwitchCase="'mediaTile'">
-                    <div class="matric-group">
+                    <div class="metrics-group">
                       <div class="checkbox-wrapper">
                         <input class="inp-cbx" [id]="prefix + '-cbx-' + i" type="checkbox"
                           (change)="toggleSelectRow(row, $event)" [checked]="selectedRows.includes(row)" />
@@ -259,7 +259,7 @@
                           <p class="text-muted">{{ row.source || 'No Information' }}</p>
                         </div>
                       </div>
-                      <button class="matric-btn mobile-btn" (click)="toggleRowClass(i)">
+                      <button class="metrics-btn mobile-btn" (click)="toggleRowClass(i)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           viewBox="0 0 16 16" class="transition-icon" [ngClass]="{ 'rotate-90': activeRowIndex === i }">
                           <path fill-rule="evenodd"
@@ -275,15 +275,15 @@
                     </span>
                   </ng-container>
                   <ng-container *ngSwitchCase="'action'">
-                    <div class="matric-btn-group sm align-right ">
+                    <div class="metrics-btn-group sm align-right ">
                       <ng-container *ngFor="let btn of actionButtons">
-                        <button *ngIf="!btn.isDropdown" class="matric-btn" [ngClass]="btn.className"
+                        <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
                           [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
                           <i *ngIf="btn.icon" [class]="btn.icon"></i>
                           {{ btn.label }}
                         </button>
-                        <div *ngIf="btn.isDropdown" class="matric-dropdown matric-btn">
-                          <button class="matric-btn no-bg matric-btn-toggle" (click)="toggleDropdown(i, $event)"
+                        <div *ngIf="btn.isDropdown" class="metrics-dropdown metrics-btn">
+                          <button class="metrics-btn no-bg metrics-btn-toggle" (click)="toggleDropdown(i, $event)"
                             [ngClass]="btn.className" [attr.title]="btn.tooltip">
                             {{ btn.label }}
                           </button>
@@ -319,16 +319,16 @@
               <ng-content select="[footer-component]"></ng-content>
             </td>
             <td [attr.colspan]="columns.length + 0">
-              <div class="pagination matric-btn-group align-right ">
-                <button class="matric-btn" (click)="prevPage()" [disabled]="currentPage === 1">
+              <div class="pagination metrics-btn-group align-right ">
+                <button class="metrics-btn" (click)="prevPage()" [disabled]="currentPage === 1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chevron-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                       d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                   </svg>
                 </button>
-                <span class="matric-btn">Page {{ currentPage }} of {{ totalPages }}</span>
-                <button class="matric-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
+                <span class="metrics-btn">Page {{ currentPage }} of {{ totalPages }}</span>
+                <button class="metrics-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chevron-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -374,7 +374,7 @@
 
           <div class="grid-card-footer">
             <ng-container *ngFor="let btn of actionButtons">
-              <button *ngIf="!btn.isDropdown" class="matric-btn" [ngClass]="btn.className"
+              <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
                 [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
                 <i *ngIf="btn.icon" [class]="btn.icon"></i>
                 {{ btn.label }}
@@ -409,7 +409,7 @@
                   </div>
                   <div class="pipeline-card-footer">
                     <ng-container *ngFor="let btn of actionButtons">
-                      <button *ngIf="!btn.isDropdown" class="matric-btn" [ngClass]="btn.className"
+                      <button *ngIf="!btn.isDropdown" class="metrics-btn" [ngClass]="btn.className"
                         [attr.title]="btn.tooltip" (click)="handleButtonClick(btn, row)">
                         <i *ngIf="btn.icon" [class]="btn.icon"></i>
                         {{ btn.label }}

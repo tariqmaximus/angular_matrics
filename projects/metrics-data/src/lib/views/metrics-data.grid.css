@@ -213,7 +213,7 @@
   background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
 }
 
-.view-grid .grid-card-footer .matric-btn {
+.view-grid .grid-card-footer .metrics-btn {
   flex: 1;
   min-width: 100px;
   padding: 8px 12px;
@@ -231,49 +231,49 @@
   white-space: nowrap;
 }
 
-.view-grid .grid-card-footer .matric-btn:hover {
+.view-grid .grid-card-footer .metrics-btn:hover {
   background-color: #f5f5f5;
   border-color: #999;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.view-grid .grid-card-footer .matric-btn.danger {
+.view-grid .grid-card-footer .metrics-btn.danger {
   color: var(--color-danger);
   border-color: rgba(220, 53, 69, 0.2);
 }
 
-.view-grid .grid-card-footer .matric-btn.danger:hover {
+.view-grid .grid-card-footer .metrics-btn.danger:hover {
   background-color: rgba(220, 53, 69, 0.05);
   border-color: var(--color-danger);
 }
 
-.view-grid .grid-card-footer .matric-btn.success {
+.view-grid .grid-card-footer .metrics-btn.success {
   color: var(--color-success);
   border-color: rgba(40, 167, 69, 0.2);
 }
 
-.view-grid .grid-card-footer .matric-btn.success:hover {
+.view-grid .grid-card-footer .metrics-btn.success:hover {
   background-color: rgba(40, 167, 69, 0.05);
   border-color: var(--color-success);
 }
 
-.view-grid .grid-card-footer .matric-btn.warning {
+.view-grid .grid-card-footer .metrics-btn.warning {
   color: var(--color-warning);
   border-color: rgba(241, 161, 10, 0.2);
 }
 
-.view-grid .grid-card-footer .matric-btn.warning:hover {
+.view-grid .grid-card-footer .metrics-btn.warning:hover {
   background-color: rgba(241, 161, 10, 0.05);
   border-color: var(--color-warning);
 }
 
-.view-grid .grid-card-footer .matric-btn.primary {
+.view-grid .grid-card-footer .metrics-btn.primary {
   color: var(--color-primary);
   border-color: rgba(1, 115, 223, 0.2);
 }
 
-.view-grid .grid-card-footer .matric-btn.primary:hover {
+.view-grid .grid-card-footer .metrics-btn.primary:hover {
   background-color: rgba(1, 115, 223, 0.05);
   border-color: var(--color-primary);
 }
@@ -330,7 +330,7 @@
     flex-direction: column;
   }
 
-  .view-grid .grid-card-footer .matric-btn {
+  .view-grid .grid-card-footer .metrics-btn {
     min-width: auto;
     width: 100%;
   }

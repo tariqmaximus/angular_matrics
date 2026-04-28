@@ -249,7 +249,7 @@
   margin-top: 8px;
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn {
+.view-pipeline .pipeline-card-footer .metrics-btn {
   flex: 1;
   min-width: 60px;
   padding: 6px 10px;
@@ -268,49 +268,49 @@
   text-align: center;
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn:hover {
+.view-pipeline .pipeline-card-footer .metrics-btn:hover {
   background-color: #f5f5f5;
   border-color: #999;
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn.danger {
+.view-pipeline .pipeline-card-footer .metrics-btn.danger {
   color: var(--color-danger);
   border-color: rgba(220, 53, 69, 0.2);
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn.danger:hover {
+.view-pipeline .pipeline-card-footer .metrics-btn.danger:hover {
   background-color: rgba(220, 53, 69, 0.05);
   border-color: var(--color-danger);
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn.success {
+.view-pipeline .pipeline-card-footer .metrics-btn.success {
   color: var(--color-success);
   border-color: rgba(40, 167, 69, 0.2);
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn.success:hover {
+.view-pipeline .pipeline-card-footer .metrics-btn.success:hover {
   background-color: rgba(40, 167, 69, 0.05);
   border-color: var(--color-success);
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn.warning {
+.view-pipeline .pipeline-card-footer .metrics-btn.warning {
   color: var(--color-warning);
   border-color: rgba(241, 161, 10, 0.2);
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn.warning:hover {
+.view-pipeline .pipeline-card-footer .metrics-btn.warning:hover {
   background-color: rgba(241, 161, 10, 0.05);
   border-color: var(--color-warning);
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn.primary {
+.view-pipeline .pipeline-card-footer .metrics-btn.primary {
   color: var(--color-primary);
   border-color: rgba(1, 115, 223, 0.2);
 }
 
-.view-pipeline .pipeline-card-footer .matric-btn.primary:hover {
+.view-pipeline .pipeline-card-footer .metrics-btn.primary:hover {
   background-color: rgba(1, 115, 223, 0.05);
   border-color: var(--color-primary);
 }
@@ -399,7 +399,7 @@
     padding: 4px 8px;
   }
 
-  .view-pipeline .pipeline-card-footer .matric-btn {
+  .view-pipeline .pipeline-card-footer .metrics-btn {
     font-size: 10px;
     padding: 5px 8px;
   }
@@ -447,7 +447,7 @@
     padding: 3px 6px;
   }
 
-  .view-pipeline .pipeline-card-footer .matric-btn {
+  .view-pipeline .pipeline-card-footer .metrics-btn {
     font-size: 9px;
     padding: 4px 6px;
   }

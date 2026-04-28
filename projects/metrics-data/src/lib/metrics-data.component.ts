@@ -92,7 +92,7 @@ export class MetricsDataComponent implements OnInit, OnChanges {
   @Input() showViewTypes = false;
   @Input() collapsible = false;
   @Input() variant = '';
-  @Input() matricHeader = true;
+  @Input() metricsHeader = true;
   @Input() showFooter = false;
   @Input() icon?: string;
   @Input() title?: string;
@@ -253,7 +253,7 @@ onOutsideClick(event: MouseEvent): void {
 
   // Check if clicked element is inside the date-picker or the toggle button
   const clickedInsideDatePicker = target.closest('.date-picker');
-  const clickedCalendarButton = target.closest('.matric-btn');
+  const clickedCalendarButton = target.closest('.metrics-btn');
 
   if (!clickedInsideDatePicker && !clickedCalendarButton) {
     this.datePicker = false;
@@ -433,7 +433,7 @@ onOutsideClick(event: MouseEvent): void {
     getStatusStyles(status: string): { tagClass: string; progressClass: string } {
     const color = this.statusMap?.[status?.toLowerCase()] || 'info';
     return {
-      tagClass: `matric-tag ${color}`,
+      tagClass: `metrics-tag ${color}`,
       progressClass: `progress-bar ${color}`
     };
   }

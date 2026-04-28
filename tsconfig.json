@@ -11,8 +11,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "matric-table": [
-        "./dist/matric-table"
+      "metrics-table": [
+        "./dist/metrics-table"
       ]
     },
     "skipLibCheck": true,

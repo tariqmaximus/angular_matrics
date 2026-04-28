@@ -3,14 +3,14 @@
 @use './variables' as variables;
 @use './variants' as variants;
 @use './index' as *;
-.matric-group {
+.metrics-group {
   display: flex;
 
   align-items: stretch;
 
 }
 
-  .matric-btn-group {
+  .metrics-btn-group {
     display: flex;
     align-items: center;
     gap: 0;
@@ -63,7 +63,7 @@
 
   
   }
-.matric-group, .matric-btn-group {
+.metrics-group, .metrics-btn-group {
       &.align-center {
       justify-content: center;
     }
@@ -90,11 +90,11 @@
       height: variables.$group-height-sm !important;
     }
 }
-.matric-table {
+.metrics-table {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: variables.$table-flate;
-  min-height: variables.$matric-header-height;
+  min-height: variables.$metrics-header-height;
   padding-bottom: 0;
   transition: 0.4s;
   width: 100%;
@@ -102,7 +102,7 @@
   box-sizing: border-box;
 }
   -webkit-overflow-scrolling: touch; 
-  .matric-body {
+  .metrics-body {
     transition: 0.4s;
 
 width: 100%;
@@ -355,7 +355,7 @@ border-bottom:1px solid variables.$bs-border;
 
   }
 
-  .matric-select {
+  .metrics-select {
     appearance: none;
     /* Remove native arrow in most browsers */
     -webkit-appearance: none;
@@ -383,9 +383,9 @@ border-bottom:1px solid variables.$bs-border;
 
 
 
-  .matric-btn,
-  .matric-select,
-  .matric-input {
+  .metrics-btn,
+  .metrics-select,
+  .metrics-input {
     border: 1px solid variables.$bs-border;
     color: variables.$muted-color;
     padding:0 10px;
@@ -400,7 +400,7 @@ border-bottom:1px solid variables.$bs-border;
   }
 
 
-  .matric-btn {
+  .metrics-btn {
     font-size: 12px;
     background-color: $table-bg;
     display: flex;
@@ -453,7 +453,7 @@ svg {
 
   }
 
-  .matric-tag {
+  .metrics-tag {
     border-radius: variables.$table-round;
     padding: 4px;
     background: white;
@@ -479,7 +479,7 @@ svg {
 
 
 
-  .matric-tabs {
+  .metrics-tabs {
     padding: 0;
     margin: 0;
 
@@ -506,7 +506,7 @@ svg {
 
 
 
-        .matric-badge {
+        .metrics-badge {
           border-radius: 100%;
           padding: 5px;
           background: white;
@@ -534,7 +534,7 @@ svg {
         &.active {
           background: variables.$active-color;
 
-          .matric-badge {
+          .metrics-badge {
             display: block;
 
           }
@@ -558,7 +558,7 @@ svg {
       min-width: 55px;
       cursor: pointer;
 
-      .matric-btn {
+      .metrics-btn {
         padding: 0;
         height: auto;
       }
@@ -633,7 +633,7 @@ svg {
       position: relative;
       overflow: inherit;
 
-      .matric-tag {
+      .metrics-tag {
         width: auto;
         height: auto;
         position: absolute;
@@ -652,7 +652,7 @@ svg {
           $fallback: map.get(variants.$variant-colors, $name);
           background-color: if($fallback !=null, color.adjust($fallback, $lightness: 40%), color.adjust($color, 10%));
 
-          .matric-tag {
+          .metrics-tag {
 
             color: $color;
             $fallback: map.get(variants.$variant-colors, $name);
@@ -675,11 +675,11 @@ svg {
 
   }
 
-  .matric-header {
+  .metrics-header {
     background: none;
     padding: 0;
     border-bottom: 1px solid variables.$bs-border;
-    height: variables.$matric-header-height;
+    height: variables.$metrics-header-height;
 
     border-radius: variables.$table-round variables.$table-round 0 0;
     justify-content: center;
@@ -690,8 +690,8 @@ svg {
       display: flex;
     }
 
-    .matric-container {
-      height: $matric-header-height;
+    .metrics-container {
+      height: $metrics-header-height;
       display: flex !important;
       align-items: center;
       justify-content: space-between;
@@ -728,10 +728,10 @@ svg {
 
   &.collapsed {
     padding-bottom: 0;
-    height: variables.$matric-header-height;
+    height: variables.$metrics-header-height;
     border-radius: variables.$table-flate 0 0 !important;
 
-    .matric-header {
+    .metrics-header {
       border-bottom: 1px solid transparent;
 
       .progress {
@@ -739,12 +739,12 @@ svg {
       }
     }
 
-    .matric-body {
+    .metrics-body {
       max-height: 0;
       opacity: 0;
       padding: 0;
 
-      margin-top: variables.$matric-header-height - $table-spacing;
+      margin-top: variables.$metrics-header-height - $table-spacing;
     }
   }
 
@@ -756,7 +756,7 @@ svg {
  
     border-radius: variables.$btn-round;
 }
-    .matric-tabs {
+    .metrics-tabs {
 
 
       .nav-item {
@@ -800,12 +800,12 @@ svg {
 
 
       }
-    .matric-header {
-      .matric-container {
+    .metrics-header {
+      .metrics-container {
         padding: 0 calc($table-spacing);
       }
     }
- .matric-btn-group {
+ .metrics-btn-group {
   
 
     >* {
@@ -954,7 +954,7 @@ svg {
         }
       }
 
-      .matric-tabs {
+      .metrics-tabs {
         display: none;
       }
 
@@ -962,13 +962,13 @@ svg {
   }
 
 
-  .matric-dropdown {
+  .metrics-dropdown {
     position: relative;
     padding: 0;
-    .matric-btn {
+    .metrics-btn {
       padding: variables.$btn-spacing;
     }
-    .matric-btn-toggle {
+    .metrics-btn-toggle {
     &:after {
       display: inline-block;
       margin-left: 0.255em;
